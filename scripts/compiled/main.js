@@ -1953,6 +1953,7 @@ function $c_Ldev_sacode_flowrun_FlowRunEditor(mountElem, theme, programJson, mou
   this.Ldev_sacode_flowrun_FlowRunEditor__f_zoomControl = null;
   this.Ldev_sacode_flowrun_FlowRunEditor__f_history = null;
   this.Ldev_sacode_flowrun_FlowRunEditor__f_autoRun = null;
+  this.Ldev_sacode_flowrun_FlowRunEditor__f_diagramSettings = null;
   this.Ldev_sacode_flowrun_FlowRunEditor__f_declareGroupEditor = null;
   this.Ldev_sacode_flowrun_FlowRunEditor__f_startedTime = null;
   this.Ldev_sacode_flowrun_FlowRunEditor__f_fixedLayout = false;
@@ -2051,6 +2052,11 @@ function $c_Ldev_sacode_flowrun_FlowRunEditor(mountElem, theme, programJson, mou
     $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_runStepButton.click();
   })));
   $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_autoRun).init__V();
+  this.Ldev_sacode_flowrun_FlowRunEditor__f_diagramSettings = new $c_Ldev_sacode_flowrun_edit_DiagramSettings(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements, new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => {
+    $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowchartPresenter).loadCurrentFunction__s_concurrent_Future();
+  })));
+  $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowchartPresenter).Ldev_sacode_flowrun_edit_FlowchartPresenter__f_diagramStyle = new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_diagramSettings).style__Ldev_sacode_flowrun_formatgen_DiagramStyle()));
+  $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_diagramSettings).init__V();
   new $c_Ldev_sacode_flowrun_edit_Exporter(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements, this.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).init__V();
   new $c_Ldev_sacode_flowrun_edit_Help(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).init__V();
   new $c_Ldev_sacode_flowrun_edit_ViewExtras(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements, new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowchartPresenter).zoomBehavior__sjs_js_Dynamic())), new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => {
@@ -2456,8 +2462,8 @@ $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.codeText__T = (function() {
 $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.revision__I = (function() {
   return $n($n(this.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast).Ldev_sacode_flowrun_ast_Program__f_revision;
 });
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.revision = (function() {
-  return this.revision__I();
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.funDOT = (function() {
+  return this.funDOT__T();
 });
 Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunEditor.prototype, "flowRunElements", ({
   "get": (function() {
@@ -2468,11 +2474,11 @@ Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunEditor.prototype, "flowRunEl
 $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.name = (function() {
   return this.name__T();
 });
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.funDOT = (function() {
-  return this.funDOT__T();
-});
 $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.codeText = (function() {
   return this.codeText__T();
+});
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.revision = (function() {
+  return this.revision__I();
 });
 $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.json = (function() {
   return this.json__T();
@@ -2607,9 +2613,39 @@ $c_Ldev_sacode_flowrun_FlowRunElements.prototype.newDeleteFunButton__Lorg_scalaj
 $c_Ldev_sacode_flowrun_FlowRunElements.prototype.newDeleteParamButton__Lorg_scalajs_dom_HTMLElement = (function() {
   return this.Ldev_sacode_flowrun_FlowRunElements__f_deleteParamButton.cloneNode(true);
 });
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "useInputPromptCheckbox", ({
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "output", ({
   "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_useInputPromptCheckbox;
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_output;
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "addParamButton", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_addParamButton;
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "showDebugVarsCheckbox", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_showDebugVarsCheckbox;
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "syntaxOutput", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_syntaxOutput;
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "showCodeCheckbox", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_showCodeCheckbox;
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "loadButton", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_loadButton;
   }),
   "configurable": true
 }));
@@ -2619,9 +2655,9 @@ Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "codeLan
   }),
   "configurable": true
 }));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "mountElem", ({
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "downloadButton", ({
   "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_mountElem;
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_downloadButton;
   }),
   "configurable": true
 }));
@@ -2631,16 +2667,48 @@ Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "program
   }),
   "configurable": true
 }));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "configDialog", ({
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "zoomResetButton", ({
   "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_configDialog;
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_zoomResetButton;
   }),
   "configurable": true
 }));
-$c_Ldev_sacode_flowrun_FlowRunElements.prototype.newInputText = (function(...rest) {
-  var prep0 = ((rest[0] === (void 0)) ? 10 : $uI(rest[0]));
-  return this.newInputText__I__Lorg_scalajs_dom_HTMLInputElement(prep0);
-});
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "deleteParamButton", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_deleteParamButton;
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "showConfigButton", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_showConfigButton;
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "functionsChooser", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_functionsChooser;
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "stmtOutput", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_stmtOutput;
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "stopButton", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_stopButton;
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "copyDotButton", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_copyDotButton;
+  }),
+  "configurable": true
+}));
 Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "runtimeOutput", ({
   "get": (function() {
     return this.Ldev_sacode_flowrun_FlowRunElements__f_runtimeOutput;
@@ -2653,51 +2721,9 @@ Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "newDele
   }),
   "configurable": true
 }));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "deleteParamButton", ({
-  "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_deleteParamButton;
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "showCodeCheckbox", ({
-  "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_showCodeCheckbox;
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "newEnterButton", ({
-  "get": (function() {
-    return this.newEnterButton__Lorg_scalajs_dom_HTMLElement();
-  }),
-  "configurable": true
-}));
 Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "newInputText$default$1", ({
   "get": (function() {
     return 10;
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "syntaxOutput", ({
-  "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_syntaxOutput;
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "addParamButton", ({
-  "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_addParamButton;
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "functionsChooser", ({
-  "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_functionsChooser;
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "output", ({
-  "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_output;
   }),
   "configurable": true
 }));
@@ -2707,45 +2733,9 @@ Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "pasteSo
   }),
   "configurable": true
 }));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "functionsList", ({
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "flowrunDrawIoBtns", ({
   "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_functionsList;
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "newInputSelect", ({
-  "get": (function() {
-    return this.newInputSelect__Lorg_scalajs_dom_HTMLSelectElement();
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "runButton", ({
-  "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_runButton;
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "clearOutputBtn", ({
-  "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_clearOutputBtn;
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "runStepButton", ({
-  "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_runStepButton;
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "echoEnteredValueCheckbox", ({
-  "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_echoEnteredValueCheckbox;
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "closeConfigButton", ({
-  "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_closeConfigButton;
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_flowrunDrawIoBtns;
   }),
   "configurable": true
 }));
@@ -2755,15 +2745,9 @@ Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "configW
   }),
   "configurable": true
 }));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "copySourceButton", ({
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "newDeleteParamButton", ({
   "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_copySourceButton;
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "addFunButton", ({
-  "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_addFunButton;
+    return this.newDeleteParamButton__Lorg_scalajs_dom_HTMLElement();
   }),
   "configurable": true
 }));
@@ -2773,75 +2757,39 @@ Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "codeAre
   }),
   "configurable": true
 }));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "debugVariables", ({
-  "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_debugVariables;
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "copyDotButton", ({
-  "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_copyDotButton;
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "newInputRadio", ({
-  "get": (function() {
-    return this.newInputRadio__Lorg_scalajs_dom_HTMLInputElement();
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "newDeleteParamButton", ({
-  "get": (function() {
-    return this.newDeleteParamButton__Lorg_scalajs_dom_HTMLElement();
-  }),
-  "configurable": true
-}));
 Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "showFunctionsCheckbox", ({
   "get": (function() {
     return this.Ldev_sacode_flowrun_FlowRunElements__f_showFunctionsCheckbox;
   }),
   "configurable": true
 }));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "zoomResetButton", ({
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "debugVariables", ({
   "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_zoomResetButton;
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_debugVariables;
   }),
   "configurable": true
 }));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "downloadButton", ({
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "mountElem", ({
   "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_downloadButton;
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_mountElem;
   }),
   "configurable": true
 }));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "drawArea", ({
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "runButton", ({
   "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_drawArea;
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_runButton;
   }),
   "configurable": true
 }));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "stmtOutput", ({
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "runStepButton", ({
   "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_stmtOutput;
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_runStepButton;
   }),
   "configurable": true
 }));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "loadButton", ({
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "addFunButton", ({
   "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_loadButton;
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "showDebugVarsCheckbox", ({
-  "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_showDebugVarsCheckbox;
-  }),
-  "configurable": true
-}));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "stopButton", ({
-  "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_stopButton;
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_addFunButton;
   }),
   "configurable": true
 }));
@@ -2851,21 +2799,79 @@ Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "copyGen
   }),
   "configurable": true
 }));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "showConfigButton", ({
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "newEnterButton", ({
   "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_showConfigButton;
+    return this.newEnterButton__Lorg_scalajs_dom_HTMLElement();
   }),
   "configurable": true
 }));
-Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "flowrunDrawIoBtns", ({
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "newInputRadio", ({
   "get": (function() {
-    return this.Ldev_sacode_flowrun_FlowRunElements__f_flowrunDrawIoBtns;
+    return this.newInputRadio__Lorg_scalajs_dom_HTMLInputElement();
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "echoEnteredValueCheckbox", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_echoEnteredValueCheckbox;
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "newInputSelect", ({
+  "get": (function() {
+    return this.newInputSelect__Lorg_scalajs_dom_HTMLSelectElement();
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "copySourceButton", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_copySourceButton;
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "closeConfigButton", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_closeConfigButton;
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "useInputPromptCheckbox", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_useInputPromptCheckbox;
+  }),
+  "configurable": true
+}));
+$c_Ldev_sacode_flowrun_FlowRunElements.prototype.newInputText = (function(...rest) {
+  var prep0 = ((rest[0] === (void 0)) ? 10 : $uI(rest[0]));
+  return this.newInputText__I__Lorg_scalajs_dom_HTMLInputElement(prep0);
+});
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "drawArea", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_drawArea;
   }),
   "configurable": true
 }));
 Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "showIoBtnsCheckbox", ({
   "get": (function() {
     return this.Ldev_sacode_flowrun_FlowRunElements__f_showIoBtnsCheckbox;
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "functionsList", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_functionsList;
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "clearOutputBtn", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_clearOutputBtn;
+  }),
+  "configurable": true
+}));
+Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunElements.prototype, "configDialog", ({
+  "get": (function() {
+    return this.Ldev_sacode_flowrun_FlowRunElements__f_configDialog;
   }),
   "configurable": true
 }));
@@ -5698,6 +5704,117 @@ $c_Ldev_sacode_flowrun_edit_DeclareGroupEditor.prototype.open__T__V = (function(
 var $d_Ldev_sacode_flowrun_edit_DeclareGroupEditor = new $TypeData().initClass($c_Ldev_sacode_flowrun_edit_DeclareGroupEditor, "dev.sacode.flowrun.edit.DeclareGroupEditor", ({
   Ldev_sacode_flowrun_edit_DeclareGroupEditor: 1
 }));
+function $p_Ldev_sacode_flowrun_edit_DiagramSettings__read__T__D__D($thiz, key, fallback) {
+  var this$1 = $n($m_s_Option$().apply__O__s_Option($as_T(window.localStorage.getItem(key))));
+  if (this$1.isEmpty__Z()) {
+    var this$5 = $m_s_None$();
+  } else {
+    var x0 = this$1.get__O();
+    var _$1 = $as_T(x0);
+    var this$4 = $m_sc_StringParsers$();
+    var this$5 = (this$4.checkFloatFormat__T__Z(_$1) ? new $c_s_Some($m_jl_Double$().parseDouble__T__D(_$1)) : $m_s_None$());
+  }
+  return $uD((this$5.isEmpty__Z() ? fallback : this$5.get__O()));
+}
+function $p_Ldev_sacode_flowrun_edit_DiagramSettings__open__V($thiz) {
+  var this$1 = $n($m_s_Option$().apply__O__s_Option(document.querySelector(".fr-stile-finestra")));
+  if ((!this$1.isEmpty__Z())) {
+    var x0 = this$1.get__O();
+    x0.parentNode.removeChild(x0);
+  }
+  var d = document.createElement("dialog");
+  d.className = "fr-stile-finestra";
+  var cur = $thiz.style__Ldev_sacode_flowrun_formatgen_DiagramStyle();
+  var x = (((((((((((((((("<div class=\"fr-stile-corpo\">\n           |  <label>Grandezza di scritte e simboli\n           |    <span class=\"fr-stile-valore\" data-per=\"scala\">" + $p_Ldev_sacode_flowrun_edit_DiagramSettings__pct__D__T($thiz, $n(cur).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_scale)) + "</span>\n           |  </label>\n           |  <input type=\"range\" class=\"fr-stile-scala\" min=\"") + $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$().Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MinScale) + "\" max=\"") + $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$().Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MaxScale) + "\"\n           |         step=\"0.05\" value=\"") + $n(cur).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_scale) + "\">\n           |  <label>Distanza fra i blocchi\n           |    <span class=\"fr-stile-valore\" data-per=\"spaziatura\">") + $p_Ldev_sacode_flowrun_edit_DiagramSettings__pct__D__T($thiz, $n(cur).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing)) + "</span>\n           |  </label>\n           |  <input type=\"range\" class=\"fr-stile-spaziatura\" min=\"") + $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$().Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MinSpacing) + "\" max=\"") + $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$().Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MaxSpacing) + "\"\n           |         step=\"0.05\" value=\"") + $n(cur).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing) + "\">\n           |  <div class=\"fr-stile-piede\">\n           |    <button type=\"button\" class=\"fr-stile-reset\">Valori predefiniti</button>\n           |    <span class=\"fr-stile-versione\">versione 1.0.0</span>\n           |  </div>\n           |</div>");
+  d.innerHTML = ("<div class=\"fr-aiuto-testa\"><span>Dimensioni del disegno</span><button type=\"button\" class=\"fr-stile-chiudi\"><span class=\"material-icons\">close</span></button></div>" + $m_sc_StringOps$().stripMargin$extension__T__C__T(x, 124));
+  var scala = $ps_Ldev_sacode_flowrun_edit_DiagramSettings__slider$1__Lorg_scalajs_dom_HTMLElement__T__Lorg_scalajs_dom_HTMLInputElement(d, ".fr-stile-scala");
+  var spaziatura = $ps_Ldev_sacode_flowrun_edit_DiagramSettings__slider$1__Lorg_scalajs_dom_HTMLElement__T__Lorg_scalajs_dom_HTMLInputElement(d, ".fr-stile-spaziatura");
+  scala.oninput = ((_$3) => {
+    $p_Ldev_sacode_flowrun_edit_DiagramSettings__apply$1__Lorg_scalajs_dom_HTMLInputElement__Lorg_scalajs_dom_HTMLInputElement__Lorg_scalajs_dom_HTMLElement__V($thiz, scala, spaziatura, d);
+  });
+  spaziatura.oninput = ((_$4) => {
+    $p_Ldev_sacode_flowrun_edit_DiagramSettings__apply$1__Lorg_scalajs_dom_HTMLInputElement__Lorg_scalajs_dom_HTMLInputElement__Lorg_scalajs_dom_HTMLElement__V($thiz, scala, spaziatura, d);
+  });
+  d.querySelector(".fr-stile-reset").onclick = ((_$5) => {
+    scala.value = "1";
+    spaziatura.value = "1";
+    $p_Ldev_sacode_flowrun_edit_DiagramSettings__apply$1__Lorg_scalajs_dom_HTMLInputElement__Lorg_scalajs_dom_HTMLInputElement__Lorg_scalajs_dom_HTMLElement__V($thiz, scala, spaziatura, d);
+  });
+  d.querySelector(".fr-stile-chiudi").onclick = ((_$6) => {
+    d.close();
+    return d.parentNode.removeChild(d);
+  });
+  document.body.appendChild(d);
+  d.showModal();
+}
+function $p_Ldev_sacode_flowrun_edit_DiagramSettings__pct__D__T($thiz, v) {
+  var x = (100.0 * v);
+  var value = $uD(Math.round(x));
+  var this$3 = $m_RTLong$();
+  var lo = this$3.org$scalajs$linker$runtime$RuntimeLong$$fromDoubleImpl__D__I(value);
+  var hi = this$3.RTLong$__f_org$scalajs$linker$runtime$RuntimeLong$$hiReturn;
+  return (new $c_RTLong(lo, hi) + "%");
+}
+function $ps_Ldev_sacode_flowrun_edit_DiagramSettings__slider$1__Lorg_scalajs_dom_HTMLElement__T__Lorg_scalajs_dom_HTMLInputElement(d$1, cls) {
+  return d$1.querySelector(cls);
+}
+function $p_Ldev_sacode_flowrun_edit_DiagramSettings__show$1__Lorg_scalajs_dom_HTMLElement__Lorg_scalajs_dom_HTMLInputElement__Lorg_scalajs_dom_HTMLInputElement__V($thiz, d$2, scala$1, spaziatura$1) {
+  var domList = d$2.querySelectorAll(".fr-stile-valore");
+  var this$2 = new $c_Lorg_scalajs_dom_DOMList$DOMListSeq(domList);
+  var it = this$2.iterator__sc_Iterator();
+  while ($n(it).hasNext__Z()) {
+    var x0 = $n(it).next__O();
+    var v = (($as_T(x0.getAttribute("data-per")) === "scala") ? $as_T(scala$1.value) : $as_T(spaziatura$1.value));
+    var this$5 = $m_sc_StringParsers$();
+    var this$6 = (this$5.checkFloatFormat__T__Z(v) ? new $c_s_Some($m_jl_Double$().parseDouble__T__D(v)) : $m_s_None$());
+    x0.textContent = $p_Ldev_sacode_flowrun_edit_DiagramSettings__pct__D__T($thiz, $uD((this$6.isEmpty__Z() ? 1.0 : this$6.get__O())));
+  }
+}
+function $p_Ldev_sacode_flowrun_edit_DiagramSettings__apply$1__Lorg_scalajs_dom_HTMLInputElement__Lorg_scalajs_dom_HTMLInputElement__Lorg_scalajs_dom_HTMLElement__V($thiz, scala$3, spaziatura$3, d$3) {
+  window.localStorage.setItem($thiz.Ldev_sacode_flowrun_edit_DiagramSettings__f_KeyScale, $as_T(scala$3.value));
+  window.localStorage.setItem($thiz.Ldev_sacode_flowrun_edit_DiagramSettings__f_KeySpacing, $as_T(spaziatura$3.value));
+  $p_Ldev_sacode_flowrun_edit_DiagramSettings__show$1__Lorg_scalajs_dom_HTMLElement__Lorg_scalajs_dom_HTMLInputElement__Lorg_scalajs_dom_HTMLInputElement__V($thiz, d$3, scala$3, spaziatura$3);
+  $n($thiz.Ldev_sacode_flowrun_edit_DiagramSettings__f_redraw).apply__O();
+}
+/** @constructor */
+function $c_Ldev_sacode_flowrun_edit_DiagramSettings(flowRunElements, redraw) {
+  this.Ldev_sacode_flowrun_edit_DiagramSettings__f_flowRunElements = null;
+  this.Ldev_sacode_flowrun_edit_DiagramSettings__f_redraw = null;
+  this.Ldev_sacode_flowrun_edit_DiagramSettings__f_KeyScale = null;
+  this.Ldev_sacode_flowrun_edit_DiagramSettings__f_KeySpacing = null;
+  this.Ldev_sacode_flowrun_edit_DiagramSettings__f_flowRunElements = flowRunElements;
+  this.Ldev_sacode_flowrun_edit_DiagramSettings__f_redraw = redraw;
+  this.Ldev_sacode_flowrun_edit_DiagramSettings__f_KeyScale = "fr-stile:scala";
+  this.Ldev_sacode_flowrun_edit_DiagramSettings__f_KeySpacing = "fr-stile:spaziatura";
+}
+$c_Ldev_sacode_flowrun_edit_DiagramSettings.prototype = new $h_O();
+$c_Ldev_sacode_flowrun_edit_DiagramSettings.prototype.constructor = $c_Ldev_sacode_flowrun_edit_DiagramSettings;
+/** @constructor */
+function $h_Ldev_sacode_flowrun_edit_DiagramSettings() {
+}
+$h_Ldev_sacode_flowrun_edit_DiagramSettings.prototype = $c_Ldev_sacode_flowrun_edit_DiagramSettings.prototype;
+$c_Ldev_sacode_flowrun_edit_DiagramSettings.prototype.style__Ldev_sacode_flowrun_formatgen_DiagramStyle = (function() {
+  $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$();
+  var scale = $p_Ldev_sacode_flowrun_edit_DiagramSettings__read__T__D__D(this, this.Ldev_sacode_flowrun_edit_DiagramSettings__f_KeyScale, 1.0);
+  var spacing = $p_Ldev_sacode_flowrun_edit_DiagramSettings__read__T__D__D(this, this.Ldev_sacode_flowrun_edit_DiagramSettings__f_KeySpacing, 1.0);
+  return new $c_Ldev_sacode_flowrun_formatgen_DiagramStyle(scale, spacing);
+});
+$c_Ldev_sacode_flowrun_edit_DiagramSettings.prototype.init__V = (function() {
+  var group = $n(this.Ldev_sacode_flowrun_edit_DiagramSettings__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelector(".fr-gruppo-stile");
+  if ((group !== null)) {
+    var b = document.createElement("button");
+    b.className = "fr-stile-btn";
+    b.title = "Dimensioni del disegno";
+    b.innerHTML = "<span class=\"material-icons\">tune</span>";
+    b.onclick = ((_$2) => {
+      $p_Ldev_sacode_flowrun_edit_DiagramSettings__open__V(this);
+    });
+    group.appendChild(b);
+  }
+});
+var $d_Ldev_sacode_flowrun_edit_DiagramSettings = new $TypeData().initClass($c_Ldev_sacode_flowrun_edit_DiagramSettings, "dev.sacode.flowrun.edit.DiagramSettings", ({
+  Ldev_sacode_flowrun_edit_DiagramSettings: 1
+}));
 function $p_Ldev_sacode_flowrun_edit_Dialogs$__open__T__Lorg_scalajs_dom_HTMLElement($thiz, cls) {
   var this$1 = $n($m_s_Option$().apply__O__s_Option(document.querySelector(("." + cls))));
   if ((!this$1.isEmpty__Z())) {
@@ -6390,12 +6507,14 @@ function $c_Ldev_sacode_flowrun_edit_FlowchartPresenter(programModel, flowRunEle
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowRunElements = null;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowRunTheme = null;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowrunChannel = null;
+  this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_diagramStyle = null;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_graphviz = null;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_onRendered = null;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_programModel = programModel;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowRunElements = flowRunElements;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowRunTheme = flowRunTheme;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowrunChannel = flowrunChannel;
+  this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_diagramStyle = new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$().Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_default));
   var $x_2 = d3.select($n(flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_drawArea);
   var fields = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$ct_T2__O__O__(new $c_T2(), "zoom", true), $ct_T2__O__O__(new $c_T2(), "fit", true)]));
   var $x_1 = $x_2.graphviz($m_sjs_js_special_package$().objectLiteral__sci_Seq__sjs_js_Object(fields));
@@ -6520,7 +6639,7 @@ $c_Ldev_sacode_flowrun_edit_FlowchartPresenter.prototype.loadCurrentFunction__s_
   return p;
 });
 $c_Ldev_sacode_flowrun_edit_FlowchartPresenter.prototype.funDOT__T = (function() {
-  var dotGenerator = new $c_Ldev_sacode_flowrun_formatgen_DotGenerator($n(this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_programModel).currentFunction__Ldev_sacode_flowrun_ast_Function(), this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowRunTheme);
+  var dotGenerator = new $c_Ldev_sacode_flowrun_formatgen_DotGenerator($n(this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_programModel).currentFunction__Ldev_sacode_flowrun_ast_Function(), this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowRunTheme, $as_Ldev_sacode_flowrun_formatgen_DiagramStyle($n(this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_diagramStyle).apply__O()));
   var raw = dotGenerator.generate__T();
   $m_Ldev_sacode_flowrun_formatgen_ColumnSplit$().Ldev_sacode_flowrun_formatgen_ColumnSplit$__f_lastRawDot = raw;
   var key = $m_Ldev_sacode_flowrun_edit_ColumnCuts$().keyFor__T__T($n($as_Ldev_sacode_flowrun_ast_Statement($n($n($n(this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_programModel).currentFunction__Ldev_sacode_flowrun_ast_Function()).Ldev_sacode_flowrun_ast_Function__f_statements).head__O())).id__T());
@@ -12744,7 +12863,9 @@ $c_Ldev_sacode_flowrun_formatgen_ArrowSpacing$.prototype.constructor = $c_Ldev_s
 function $h_Ldev_sacode_flowrun_formatgen_ArrowSpacing$() {
 }
 $h_Ldev_sacode_flowrun_formatgen_ArrowSpacing$.prototype = $c_Ldev_sacode_flowrun_formatgen_ArrowSpacing$.prototype;
-$c_Ldev_sacode_flowrun_formatgen_ArrowSpacing$.prototype.uniform__T__sci_List__T = (function(dot, groups) {
+$c_Ldev_sacode_flowrun_formatgen_ArrowSpacing$.prototype.uniform__T__sci_List__D__D__T = (function(dot, groups, scale, spacing) {
+  var finalGap = ((this.Ldev_sacode_flowrun_formatgen_ArrowSpacing$__f_FinalGap * scale) * spacing);
+  var bendLane = ((this.Ldev_sacode_flowrun_formatgen_ArrowSpacing$__f_BendLane * scale) * spacing);
   var this$5 = new $c_sc_StringOps$$anon$1(dot, true);
   var p = new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((_$1) => {
     var _$1$1 = $as_T(_$1);
@@ -13030,23 +13151,22 @@ $c_Ldev_sacode_flowrun_formatgen_ArrowSpacing$.prototype.uniform__T__sci_List__T
             if (sameGroup) {
               var gap = 0.0;
             } else {
-              var $x_3 = $m_Ldev_sacode_flowrun_formatgen_ArrowSpacing$().Ldev_sacode_flowrun_formatgen_ArrowSpacing$__f_FinalGap;
               var this$60 = $n(inBetween);
-              var gap = ($x_3 + (this$60.length__I() * $m_Ldev_sacode_flowrun_formatgen_ArrowSpacing$().Ldev_sacode_flowrun_formatgen_ArrowSpacing$__f_BendLane));
+              var gap = (finalGap + (this$60.length__I() * bendLane));
             }
             $n(x14).Ldev_sacode_flowrun_formatgen_ArrowSpacing$Level__f_to = ((($n(x13).Ldev_sacode_flowrun_formatgen_ArrowSpacing$Level__f_to - ($n(x13).Ldev_sacode_flowrun_formatgen_ArrowSpacing$Level__f_height / 2.0)) - ($n(x14).Ldev_sacode_flowrun_formatgen_ArrowSpacing$Level__f_height / 2.0)) - gap);
             var this$61 = $n(inBetween);
             var this$63 = $n($as_sci_List($f_sc_StrictOptimizedIterableOps__zipWithIndex__O(this$61)));
-            var f$7 = ((x13) => ((x$1$2$1) => {
+            var f$7 = ((x13, bendLane) => ((x$1$2$1) => {
               var x$1$4 = $as_T2(x$1$2$1);
               if ((x$1$4 !== null)) {
                 var y$3 = $uD($n(x$1$4)._1__O());
                 var i = $uI($n(x$1$4)._2__O());
-                var _2$1 = (($n(x13).Ldev_sacode_flowrun_formatgen_ArrowSpacing$Level__f_to - ($n(x13).Ldev_sacode_flowrun_formatgen_ArrowSpacing$Level__f_height / 2.0)) - (((1 + i) | 0) * $m_Ldev_sacode_flowrun_formatgen_ArrowSpacing$().Ldev_sacode_flowrun_formatgen_ArrowSpacing$__f_BendLane));
+                var _2$1 = (($n(x13).Ldev_sacode_flowrun_formatgen_ArrowSpacing$Level__f_to - ($n(x13).Ldev_sacode_flowrun_formatgen_ArrowSpacing$Level__f_height / 2.0)) - (((1 + i) | 0) * bendLane));
                 return $ct_T2__O__O__(new $c_T2(), y$3, _2$1);
               }
               throw new $c_s_MatchError(x$1$4);
-            }))(x13);
+            }))(x13, bendLane);
             if ((this$63 === $m_sci_Nil$())) {
               var lanes = $m_sci_Nil$();
             } else {
@@ -13063,13 +13183,13 @@ $c_Ldev_sacode_flowrun_formatgen_ArrowSpacing$.prototype.uniform__T__sci_List__T
               }
               var lanes = h$4;
             }
-            var $x_4 = $n(x14);
+            var $x_3 = $n(x14);
             var _2$2 = ($n(x13).Ldev_sacode_flowrun_formatgen_ArrowSpacing$Level__f_to - ($n(x13).Ldev_sacode_flowrun_formatgen_ArrowSpacing$Level__f_height / 2.0));
             var elem$1$1 = $ct_T2__O__O__(new $c_T2(), high, _2$2);
             var this$66 = new $c_sci_$colon$colon(elem$1$1, lanes);
             var _2$3 = ($n(x14).Ldev_sacode_flowrun_formatgen_ArrowSpacing$Level__f_to + ($n(x14).Ldev_sacode_flowrun_formatgen_ArrowSpacing$Level__f_height / 2.0));
             var elem$4 = $ct_T2__O__O__(new $c_T2(), low, _2$3);
-            $x_4.Ldev_sacode_flowrun_formatgen_ArrowSpacing$Level__f_knots = $as_sci_List($f_sc_StrictOptimizedSeqOps__appended__O__O(this$66, elem$4));
+            $x_3.Ldev_sacode_flowrun_formatgen_ArrowSpacing$Level__f_knots = $as_sci_List($f_sc_StrictOptimizedSeqOps__appended__O__O(this$66, elem$4));
             break matchResult6;
           }
         }
@@ -13082,10 +13202,10 @@ $c_Ldev_sacode_flowrun_formatgen_ArrowSpacing$.prototype.uniform__T__sci_List__T
     while (it$1.hasNext__Z()) {
       var x0$14 = it$1.next__s_util_matching_Regex$Match();
       var this$69 = $n(x0$14);
-      var $x_5 = $f_s_util_matching_Regex$MatchData__group__I__T(this$69, 1);
+      var $x_4 = $f_s_util_matching_Regex$MatchData__group__I__T(this$69, 1);
       var this$70 = $n(x0$14);
       var x$4 = $f_s_util_matching_Regex$MatchData__group__I__T(this$70, 2);
-      var rs = (((("pos=\"" + $x_5) + ",") + $p_Ldev_sacode_flowrun_formatgen_ArrowSpacing$__mapped$1__sci_List__D__D(this, levels, $m_jl_Double$().parseDouble__T__D(x$4))) + "!\"");
+      var rs = (((("pos=\"" + $x_4) + ",") + $p_Ldev_sacode_flowrun_formatgen_ArrowSpacing$__mapped$1__sci_List__D__D(this, levels, $m_jl_Double$().parseDouble__T__D(x$4))) + "!\"");
       $n(it$1.matcher__ju_regex_Matcher()).appendReplacement__jl_StringBuffer__T__ju_regex_Matcher(it$1.s_util_matching_Regex$MatchIterator$$anon$4__f_scala$util$matching$Regex$Replacement$$sb, rs);
     }
     return $f_s_util_matching_Regex$Replacement__replaced__T(it$1);
@@ -13912,7 +14032,8 @@ $c_Ldev_sacode_flowrun_formatgen_DeclareCompact$.prototype.constructor = $c_Ldev
 function $h_Ldev_sacode_flowrun_formatgen_DeclareCompact$() {
 }
 $h_Ldev_sacode_flowrun_formatgen_DeclareCompact$.prototype = $c_Ldev_sacode_flowrun_formatgen_DeclareCompact$.prototype;
-$c_Ldev_sacode_flowrun_formatgen_DeclareCompact$.prototype.compact__T__T2 = (function(dot) {
+$c_Ldev_sacode_flowrun_formatgen_DeclareCompact$.prototype.compact__T__D__T2 = (function(dot, scale) {
+  var groupHeight = (this.Ldev_sacode_flowrun_formatgen_DeclareCompact$__f_GroupHeight * scale);
   var lines = $f_T__split__T__I__AT($n(dot), "\n", (-1));
   var nodes = new $c_scm_LinkedHashMap();
   var edges = new $c_scm_ListBuffer();
@@ -14174,7 +14295,7 @@ $c_Ldev_sacode_flowrun_formatgen_DeclareCompact$.prototype.compact__T__T2 = (fun
                   var $x_4 = false;
                 }
                 if ($x_4) {
-                  var saving = (($n($as_Ldev_sacode_flowrun_formatgen_DeclareCompact$Node(cur.sr_ObjectRef__f_elem)).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_y - $n(next$1).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_y) - $m_Ldev_sacode_flowrun_formatgen_DeclareCompact$().Ldev_sacode_flowrun_formatgen_DeclareCompact$__f_GroupHeight);
+                  var saving = (($n($as_Ldev_sacode_flowrun_formatgen_DeclareCompact$Node(cur.sr_ObjectRef__f_elem)).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_y - $n(next$1).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_y) - groupHeight);
                   if ((saving > 0.0)) {
                     var _1$1 = $n(next$1).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_y;
                     var elem$3 = $ct_T2__O__O__(new $c_T2(), _1$1, saving);
@@ -14243,7 +14364,7 @@ $c_Ldev_sacode_flowrun_formatgen_DeclareCompact$.prototype.compact__T__T2 = (fun
     var this$47 = $n(grouped);
     var elem$6 = $n(n$2).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_name;
     if (this$47.contains__O__Z(elem$6)) {
-      $n(lines).set($n(n$2).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_line, $n($m_Ldev_sacode_flowrun_formatgen_DeclareCompact$().Ldev_sacode_flowrun_formatgen_DeclareCompact$__f_HeightAttr).replaceAllIn__jl_CharSequence__T__T($n(lines).get($n(n$2).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_line), ("height=" + $m_Ldev_sacode_flowrun_formatgen_DeclareCompact$().Ldev_sacode_flowrun_formatgen_DeclareCompact$__f_GroupHeight)));
+      $n(lines).set($n(n$2).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_line, $n($m_Ldev_sacode_flowrun_formatgen_DeclareCompact$().Ldev_sacode_flowrun_formatgen_DeclareCompact$__f_HeightAttr).replaceAllIn__jl_CharSequence__T__T($n(lines).get($n(n$2).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_line), ("height=" + groupHeight)));
     }
   }
   var cutsList = cuts.toList__sci_List();
@@ -14584,7 +14705,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodeDOT__Ldev_sacode_flo
     var this$45 = $n($as_sc_IterableOnceOps($n(trueNodeDOTs)._1__O()));
     var $x_2 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$45, "", "\n", "");
     var this$46 = $n($as_sc_IterableOnceOps($n(falseNodeDOTs)._1__O()));
-    var x$9 = (((((((((((((((((((((((((((((((((((((((((((((("|" + $x_10) + " [id=\"") + stmtId) + "\" ") + $x_9) + " ") + $x_8) + " ") + group) + " \n              |  label=\"") + lbl$8) + "\" tooltip=\"") + lbl$8) + "\" shape=\"diamond\" ") + $x_7) + "]\n              |\n              |true_dummy_up_") + $x_6) + " [") + $x_5) + " shape=point width=0]\n              |false_dummy_up_") + $x_4) + " [") + $x_3) + " shape=point width=0]\n              |\n              |") + $x_2) + "\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$46, "", "\n", "")) + "\n              |\n              |true_dummy_down_") + $n(x52).Ldev_sacode_flowrun_ast_Statement$If__f_id) + " [ ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, trueOffsetX, maxBranchY, 0)) + " shape=point width=0]\n              |false_dummy_down_") + $n(x52).Ldev_sacode_flowrun_ast_Statement$If__f_id) + " [ ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, falseOffsetX, maxBranchY, 0)) + " shape=point width=0]\n              |\n              |") + ifEndId) + " [id=\"") + ifEndId) + "#IfEnd\" class=\"flowrun-not-selectable\" ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY, 0)) + " ") + group) + " ") + $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T()) + "\n              |  label=\"\" tooltip=\" \" shape=\"circle\" fixedsize=true width=0.2 height=0.2]\n              |\n              |");
+    var x$9 = (((((((((((((((((((((((((((((((((((((((((((((((((("|" + $x_10) + " [id=\"") + stmtId) + "\" ") + $x_9) + " ") + $x_8) + " ") + group) + " \n              |  label=\"") + lbl$8) + "\" tooltip=\"") + lbl$8) + "\" shape=\"diamond\" ") + $x_7) + "]\n              |\n              |true_dummy_up_") + $x_6) + " [") + $x_5) + " shape=point width=0]\n              |false_dummy_up_") + $x_4) + " [") + $x_3) + " shape=point width=0]\n              |\n              |") + $x_2) + "\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$46, "", "\n", "")) + "\n              |\n              |true_dummy_down_") + $n(x52).Ldev_sacode_flowrun_ast_Statement$If__f_id) + " [ ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, trueOffsetX, maxBranchY, 0)) + " shape=point width=0]\n              |false_dummy_down_") + $n(x52).Ldev_sacode_flowrun_ast_Statement$If__f_id) + " [ ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, falseOffsetX, maxBranchY, 0)) + " shape=point width=0]\n              |\n              |") + ifEndId) + " [id=\"") + ifEndId) + "#IfEnd\" class=\"flowrun-not-selectable\" ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY, 0)) + " ") + group) + " ") + $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T()) + "\n              |  label=\"\" tooltip=\" \" shape=\"circle\" fixedsize=true width=") + (0.2 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k)) + " height=") + (0.2 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k)) + "]\n              |\n              |");
     var dot$8$1 = $m_sc_StringOps$().stripMargin$extension__T__C__T(x$9, 124);
     return $ct_T2__O__O__(new $c_T2(), dot$8$1, maxBranchY);
   }
@@ -14635,18 +14756,20 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodeDOT__Ldev_sacode_flo
     var maxBranchY$2 = $uI($n(blockDOTs)._2__O());
     var this$61 = $n($as_sc_IterableOnceOps($n(blockDOTs)._1__O()));
     var right = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__rightCorridor__T__I__T__D($thiz, $f_sc_IterableOnceOps__mkString__T__T__T__T(this$61, "", "\n", ""), posX, lbl$9);
-    var $x_20 = $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id;
-    var $x_19 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 42);
-    var $x_18 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, lbl$9, true);
-    var $x_17 = $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T();
-    var $x_16 = $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id;
-    var $x_15 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 0);
+    var $x_22 = $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id;
+    var $x_21 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 42);
+    var $x_20 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, lbl$9, true);
+    var $x_19 = $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T();
+    var $x_18 = $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id;
+    var $x_17 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 0);
+    var $x_16 = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k;
+    var $x_15 = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k;
     var $x_14 = $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id;
     var $x_13 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 95);
     var $x_12 = $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id;
     var $x_11 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, falseX, posY, 42);
     var this$62 = $n($as_sc_IterableOnceOps($n(blockDOTs)._1__O()));
-    var x$10 = (((((((((((((((((((((((((((((((((((((((((((((((((((("|" + $x_20) + " [id=\"") + stmtId) + "\" ") + $x_19) + " ") + $x_18) + " ") + group) + "\n              | label=\"") + lbl$9) + "\" tooltip=\"") + lbl$9) + "\" shape=\"diamond\" ") + $x_17) + "]\n              |while_entry_") + $x_16) + " [") + $x_15) + " shape=circle width=0.12 height=0.12 fixedsize=true label=\"\" fillcolor=\"#FFF0DC\" color=\"#C8781E\"]\n              |true_dummy_up_") + $x_14) + " [") + $x_13) + " shape=point width=0]\n              |false_dummy_up_") + $x_12) + " [") + $x_11) + " shape=point width=0]\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$62, "", "\n", "")) + "\n              |true_dummy_down_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY$2, (-10))) + " shape=point width=0]\n              |true_dummy_down_left_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right, maxBranchY$2, (-10))) + " shape=point width=0]\n              |while_return_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right, posY, 0)) + " shape=point width=0]\n              |false_dummy_down_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, falseX, ((1 + maxBranchY$2) | 0), 0)) + " shape=point width=0]\n              |end_dummy_down_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, ((1 + maxBranchY$2) | 0), 0)) + " ") + group) + " shape=point width=0]\n              |");
+    var x$10 = (((((((((((((((((((((((((((((((((((((((((((((((((((((((("|" + $x_22) + " [id=\"") + stmtId) + "\" ") + $x_21) + " ") + $x_20) + " ") + group) + "\n              | label=\"") + lbl$9) + "\" tooltip=\"") + lbl$9) + "\" shape=\"diamond\" ") + $x_19) + "]\n              |while_entry_") + $x_18) + " [") + $x_17) + " shape=circle width=") + (0.12 * $x_16)) + " height=") + (0.12 * $x_15)) + " fixedsize=true label=\"\" fillcolor=\"#FFF0DC\" color=\"#C8781E\"]\n              |true_dummy_up_") + $x_14) + " [") + $x_13) + " shape=point width=0]\n              |false_dummy_up_") + $x_12) + " [") + $x_11) + " shape=point width=0]\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$62, "", "\n", "")) + "\n              |true_dummy_down_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY$2, (-10))) + " shape=point width=0]\n              |true_dummy_down_left_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right, maxBranchY$2, (-10))) + " shape=point width=0]\n              |while_return_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right, posY, 0)) + " shape=point width=0]\n              |false_dummy_down_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, falseX, ((1 + maxBranchY$2) | 0), 0)) + " shape=point width=0]\n              |end_dummy_down_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, ((1 + maxBranchY$2) | 0), 0)) + " ") + group) + " shape=point width=0]\n              |");
     var dot$9$1 = $m_sc_StringOps$().stripMargin$extension__T__C__T(x$10, 124);
     var _2$6 = ((1 + maxBranchY$2) | 0);
     return $ct_T2__O__O__(new $c_T2(), dot$9$1, _2$6);
@@ -14677,20 +14800,22 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodeDOT__Ldev_sacode_flo
       var elem$3 = $n(dot$10)._1__O();
       var _1$7 = $f_sc_StrictOptimizedSeqOps__appended__O__O(this$72, elem$3);
       var _2$8 = ((1 + $uI($n(dot$10)._2__O())) | 0);
-      var $x_21___1 = _1$7;
-      var $x_21___2 = _2$8;
-      acc$3___1 = $x_21___1;
-      acc$3___2 = $x_21___2;
+      var $x_23___1 = _1$7;
+      var $x_23___2 = _2$8;
+      acc$3___1 = $x_23___1;
+      acc$3___2 = $x_23___2;
       these$3 = $as_sc_LinearSeq($n(these$3).tail__O());
     }
     var dots$4___1 = acc$3___1;
     var dots$4___2 = acc$3___2;
     var trueOffsetX$3 = ((posX + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthTrue__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, x50, 0)) | 0);
     var maxBranchY$3 = $uI(dots$4___2);
-    var $x_23 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 16);
-    var $x_22 = $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T();
+    var $x_27 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 16);
+    var $x_26 = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k;
+    var $x_25 = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k;
+    var $x_24 = $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T();
     var this$75 = $n($as_sc_IterableOnceOps(dots$4___1));
-    var x$11 = (((((((((((((((((((((((((((((((((((("|" + doWhileEndId) + " [id=\"") + doWhileEndId) + "#DoWhileEndId\" class=\"flowrun-not-selectable\" ") + $x_23) + " ") + group) + " \n              |  label=\"\" tooltip=\" \" shape=\"circle\" fixedsize=true width=0.2 height=0.2 ") + $x_22) + "]\n              |\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$75, "", "\n", "")) + "\n              |\n              |") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [id=\"") + stmtId) + "\" ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY$3, 0)) + " ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, lbl$10, true)) + " ") + group) + " \n              |label=\"") + lbl$10) + "\" tooltip=\"") + lbl$10) + "\" shape=\"diamond\" ") + $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T()) + "]\n              |\n              |true_dummy_up_") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, trueOffsetX$3, posY, 16)) + " shape=point width=0]\n              |true_dummy_down_") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, trueOffsetX$3, maxBranchY$3, 0)) + " shape=point width=0]\n              |\n              |");
+    var x$11 = (((((((((((((((((((((((((((((((((((((((("|" + doWhileEndId) + " [id=\"") + doWhileEndId) + "#DoWhileEndId\" class=\"flowrun-not-selectable\" ") + $x_27) + " ") + group) + " \n              |  label=\"\" tooltip=\" \" shape=\"circle\" fixedsize=true width=") + (0.2 * $x_26)) + " height=") + (0.2 * $x_25)) + " ") + $x_24) + "]\n              |\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$75, "", "\n", "")) + "\n              |\n              |") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [id=\"") + stmtId) + "\" ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY$3, 0)) + " ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, lbl$10, true)) + " ") + group) + " \n              |label=\"") + lbl$10) + "\" tooltip=\"") + lbl$10) + "\" shape=\"diamond\" ") + $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T()) + "]\n              |\n              |true_dummy_up_") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, trueOffsetX$3, posY, 16)) + " shape=point width=0]\n              |true_dummy_down_") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, trueOffsetX$3, maxBranchY$3, 0)) + " shape=point width=0]\n              |\n              |");
     var dot$10$1 = $m_sc_StringOps$().stripMargin$extension__T__C__T(x$11, 124);
     return $ct_T2__O__O__(new $c_T2(), dot$10$1, maxBranchY$3);
   }
@@ -14739,18 +14864,20 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodeDOT__Ldev_sacode_flo
     var maxBranchY$4 = $uI($n(blockDOTs$3)._2__O());
     var this$88 = $n($as_sc_IterableOnceOps($n(blockDOTs$3)._1__O()));
     var right$2 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__rightCorridor__T__I__T__D($thiz, $f_sc_IterableOnceOps__mkString__T__T__T__T(this$88, "", "\n", ""), posX, lbl$11);
-    var $x_33 = $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id;
-    var $x_32 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 42);
-    var $x_31 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, lbl$11, true);
-    var $x_30 = $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T();
+    var $x_39 = $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id;
+    var $x_38 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 42);
+    var $x_37 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, lbl$11, true);
+    var $x_36 = $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T();
+    var $x_35 = $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id;
+    var $x_34 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 0);
+    var $x_33 = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k;
+    var $x_32 = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k;
+    var $x_31 = $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id;
+    var $x_30 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 95);
     var $x_29 = $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id;
-    var $x_28 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 0);
-    var $x_27 = $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id;
-    var $x_26 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 95);
-    var $x_25 = $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id;
-    var $x_24 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, falseX$2, posY, 42);
+    var $x_28 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, falseX$2, posY, 42);
     var this$89 = $n($as_sc_IterableOnceOps($n(blockDOTs$3)._1__O()));
-    var x$12 = (((((((((((((((((((((((((((((((((((((((((((((((((((("|" + $x_33) + " [id=\"") + stmtId) + "\" ") + $x_32) + " ") + $x_31) + " ") + group) + "\n              | label=\"") + lbl$11) + "\" tooltip=\"") + lbl$11) + "\" shape=\"hexagon\" ") + $x_30) + "]\n              |while_entry_") + $x_29) + " [") + $x_28) + " shape=circle width=0.12 height=0.12 fixedsize=true label=\"\" fillcolor=\"#FFF0DC\" color=\"#C8781E\"]\n              |true_dummy_up_") + $x_27) + " [") + $x_26) + " shape=point width=0]\n              |false_dummy_up_") + $x_25) + " [") + $x_24) + " shape=point width=0]\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$89, "", "\n", "")) + "\n              |true_dummy_down_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY$4, (-10))) + " shape=point width=0]\n              |true_dummy_down_left_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right$2, maxBranchY$4, (-10))) + " shape=point width=0]\n              |while_return_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right$2, posY, 0)) + " shape=point width=0]\n              |false_dummy_down_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, falseX$2, ((1 + maxBranchY$4) | 0), 0)) + " shape=point width=0]\n              |end_dummy_down_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, ((1 + maxBranchY$4) | 0), 0)) + " ") + group) + " shape=point width=0]\n              |");
+    var x$12 = (((((((((((((((((((((((((((((((((((((((((((((((((((((((("|" + $x_39) + " [id=\"") + stmtId) + "\" ") + $x_38) + " ") + $x_37) + " ") + group) + "\n              | label=\"") + lbl$11) + "\" tooltip=\"") + lbl$11) + "\" shape=\"hexagon\" ") + $x_36) + "]\n              |while_entry_") + $x_35) + " [") + $x_34) + " shape=circle width=") + (0.12 * $x_33)) + " height=") + (0.12 * $x_32)) + " fixedsize=true label=\"\" fillcolor=\"#FFF0DC\" color=\"#C8781E\"]\n              |true_dummy_up_") + $x_31) + " [") + $x_30) + " shape=point width=0]\n              |false_dummy_up_") + $x_29) + " [") + $x_28) + " shape=point width=0]\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$89, "", "\n", "")) + "\n              |true_dummy_down_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY$4, (-10))) + " shape=point width=0]\n              |true_dummy_down_left_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right$2, maxBranchY$4, (-10))) + " shape=point width=0]\n              |while_return_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right$2, posY, 0)) + " shape=point width=0]\n              |false_dummy_down_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, falseX$2, ((1 + maxBranchY$4) | 0), 0)) + " shape=point width=0]\n              |end_dummy_down_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, ((1 + maxBranchY$4) | 0), 0)) + " ") + group) + " shape=point width=0]\n              |");
     var dot$11$1 = $m_sc_StringOps$().stripMargin$extension__T__C__T(x$12, 124);
     var _2$11 = ((1 + maxBranchY$4) | 0);
     return $ct_T2__O__O__(new $c_T2(), dot$11$1, _2$11);
@@ -15304,7 +15431,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__leftCorridor__T__I__T__D
   var ord = $m_s_math_Ordering$DeprecatedDoubleOrdering$();
   var this$21 = $n($f_sc_IterableOnceOps__minOption__s_math_Ordering__s_Option(this$20, ord));
   var bodyLeft = $uD((this$21.isEmpty__Z() ? ownLeft : this$21.get__O()));
-  return ($uD(Math.min(ownLeft, bodyLeft)) - 0.5);
+  return ($uD(Math.min(ownLeft, bodyLeft)) - (0.5 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k));
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__rightCorridor__T__I__T__D($thiz, bodyDot, x, label) {
   var position = $ct_s_util_matching_Regex__T__sci_Seq__(new $c_s_util_matching_Regex(), "pos=\"([-\\d.]+),[-\\d.]+!", $m_sci_Nil$());
@@ -15341,32 +15468,34 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__rightCorridor__T__I__T__
   var ord = $m_s_math_Ordering$DeprecatedDoubleOrdering$();
   var this$21 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$20, ord));
   var bodyRight = $uD((this$21.isEmpty__Z() ? ownRight : this$21.get__O()));
-  return ($uD(Math.max(ownRight, bodyRight)) + 0.5);
+  return ($uD(Math.max(ownRight, bodyRight)) + (0.5 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k));
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, x, y, yOff) {
-  var realY = (10000.0 - (((y * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_yIncrement) + yOff) / $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch));
+  var realY = (10000.0 - (((y * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_yIncrement) + (yOff * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k)) / $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch));
   return $f_T__trim__T((((("pos=\"" + x) + ",") + realY) + "!\" "));
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, x, y, yOff) {
-  var xPx = ((x === 0) ? 0.0 : $p_Ldev_sacode_flowrun_formatgen_DotGenerator__px2Inch__I__D($thiz, Math.imul(x, $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement)));
-  var yPx = ((y === 0) ? 0.0 : $p_Ldev_sacode_flowrun_formatgen_DotGenerator__px2Inch__I__D($thiz, ((Math.imul(y, $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_yIncrement) + yOff) | 0)));
+  var xPx = ((x === 0) ? 0.0 : $p_Ldev_sacode_flowrun_formatgen_DotGenerator__px2Inch__D__D($thiz, (x * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement)));
+  var yPx = (((y === 0) && (yOff === 0)) ? 0.0 : $p_Ldev_sacode_flowrun_formatgen_DotGenerator__px2Inch__D__D($thiz, ((y * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_yIncrement) + (yOff * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k))));
   var realY = (10000.0 - yPx);
   return $f_T__trim__T(((((" pos=\"" + xPx) + ",") + realY) + "!\" "));
 }
-function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__px2Inch__I__D($thiz, px) {
+function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__px2Inch__D__D($thiz, px) {
   return (px / $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch);
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__ioDimensions__T__T($thiz, label) {
+  var x = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k;
   var this$1 = $n(label);
-  var y = ((0.11 * this$1.length) + 0.2);
-  var width = ($uD(Math.max(1.0, y)) + 0.5);
-  return (("height=0.4 width=" + width) + " fixedsize=true");
+  var y = (((0.11 * this$1.length) * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k) + (0.2 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k));
+  var width = ($uD(Math.max(x, y)) + (0.5 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k));
+  return (((("height=" + (0.4 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k)) + " width=") + width) + " fixedsize=true");
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, label, luft) {
   var this$1 = $n(label);
-  var w = ((0.11 * this$1.length) + (luft ? 0.5 : 0.2));
-  var width = $uD(Math.max(w, 1.0));
-  var h = (0.4 + (luft ? 0.1 : 0.0));
+  var w = (((0.11 * this$1.length) + (luft ? 0.5 : 0.2)) * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k);
+  var that = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k;
+  var width = $uD(Math.max(w, that));
+  var h = ((0.4 + (luft ? 0.1 : 0.0)) * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k);
   return (((("height=" + h) + " width=") + width) + " fixedsize=true");
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__edgeAttrs__T__T($thiz, nextStmtId) {
@@ -15704,16 +15833,20 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowr
   return $doubleToInt($uD(Math.floor(x)));
 }
 /** @constructor */
-function $c_Ldev_sacode_flowrun_formatgen_DotGenerator(function$1, flowRunTheme) {
+function $c_Ldev_sacode_flowrun_formatgen_DotGenerator(function$1, flowRunTheme, style) {
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_function = null;
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme = null;
-  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement = 0;
-  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_yIncrement = 0;
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_style = null;
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k = 0.0;
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement = 0.0;
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_yIncrement = 0.0;
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch = 0;
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_function = function$1;
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme = flowRunTheme;
-  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement = 120;
-  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_yIncrement = 90;
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_style = style;
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k = $n(style).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_scale;
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement = (120.0 * this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k);
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_yIncrement = ((90.0 * this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k) * $n(style).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing);
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch = 96;
 }
 $c_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype = new $h_O();
@@ -15723,7 +15856,7 @@ function $h_Ldev_sacode_flowrun_formatgen_DotGenerator() {
 }
 $h_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype = $c_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype;
 $c_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype.generate__T = (function() {
-  var x = (((((((("\n    |digraph {\n    |  bgcolor=\"transparent\"\n    |\n    |  node [penwidth=0.5 fontsize=\"12\" shape=\"box\" style=\"filled\" fontcolor=\"white\" fontname=\"" + $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_fontName) + "\"]\n    |  edge [penwidth=2 fontsize=\"10\" color=\"#0A1931\" arrowsize=0.8 fontname=\"") + $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_fontName) + "\"]\n    |\n    |#########\n    |# NODES #\n    |#########\n    |") + $m_Ldev_sacode_flowrun_FlowRun$package$().indented__T__I__T($p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodesDOT__T(this), 2)) + "\n    |\n    |#########\n    |# EDGES #\n    |#########\n    |") + $m_Ldev_sacode_flowrun_FlowRun$package$().indented__T__I__T($p_Ldev_sacode_flowrun_formatgen_DotGenerator__edgesDOT__T(this), 2)) + "\n    |\n    |}\n    |");
+  var x = (((((((((((("\n    |digraph {\n    |  bgcolor=\"transparent\"\n    |\n    |  node [penwidth=0.5 fontsize=\"" + (12.0 * this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k)) + "\" shape=\"box\" style=\"filled\" fontcolor=\"white\" fontname=\"") + $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_fontName) + "\"]\n    |  edge [penwidth=2 fontsize=\"") + (10.0 * this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k)) + "\" color=\"#0A1931\" arrowsize=0.8 fontname=\"") + $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_fontName) + "\"]\n    |\n    |#########\n    |# NODES #\n    |#########\n    |") + $m_Ldev_sacode_flowrun_FlowRun$package$().indented__T__I__T($p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodesDOT__T(this), 2)) + "\n    |\n    |#########\n    |# EDGES #\n    |#########\n    |") + $m_Ldev_sacode_flowrun_FlowRun$package$().indented__T__I__T($p_Ldev_sacode_flowrun_formatgen_DotGenerator__edgesDOT__T(this), 2)) + "\n    |\n    |}\n    |");
   var raw = $m_sc_StringOps$().stripMargin$extension__T__C__T(x, 124);
   var this$6 = $n($ct_s_util_matching_Regex__T__sci_Seq__(new $c_s_util_matching_Regex(), "(\\w+) \\[id=\"[^\"\\n]+#(?:While|ForLoop)", $m_sci_Nil$()).findAllMatchIn__jl_CharSequence__sc_Iterator(raw));
   var f = new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((_$1) => {
@@ -15762,7 +15895,7 @@ $c_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype.generate__T = (function(
   var routed = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$16, "", "\n", "");
   matchResult1: {
     var \u03b42$;
-    var x1$1 = $m_Ldev_sacode_flowrun_formatgen_DeclareCompact$().compact__T__T2(routed);
+    var x1$1 = $m_Ldev_sacode_flowrun_formatgen_DeclareCompact$().compact__T__D__T2(routed, this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k);
     if ((x1$1 !== null)) {
       var \u03b42$ = x1$1;
       break matchResult1;
@@ -15771,7 +15904,7 @@ $c_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype.generate__T = (function(
   }
   var compacted = $as_T($n(\u03b42$)._1__O());
   var declareGroups = $as_sci_List($n(\u03b42$)._2__O());
-  var uniformed = $m_Ldev_sacode_flowrun_formatgen_ArrowSpacing$().uniform__T__sci_List__T(compacted, declareGroups);
+  var uniformed = $m_Ldev_sacode_flowrun_formatgen_ArrowSpacing$().uniform__T__sci_List__D__D__T(compacted, declareGroups, this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_k, $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_style).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing);
   if ($n(declareGroups).isEmpty__Z()) {
     var groupsComment = "";
   } else {
@@ -63313,6 +63446,43 @@ function $m_Ldev_sacode_flowrun_eval_SymbolKey$() {
   }
   return $n_Ldev_sacode_flowrun_eval_SymbolKey$;
 }
+/** @constructor */
+function $c_Ldev_sacode_flowrun_formatgen_DiagramStyle$() {
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_default = null;
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MinScale = 0.0;
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MaxScale = 0.0;
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MinSpacing = 0.0;
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MaxSpacing = 0.0;
+  $n_Ldev_sacode_flowrun_formatgen_DiagramStyle$ = this;
+  $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$();
+  $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$();
+  var scale = 1.0;
+  $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$();
+  var spacing = 1.0;
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_default = new $c_Ldev_sacode_flowrun_formatgen_DiagramStyle(scale, spacing);
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MinScale = 0.6;
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MaxScale = 2.0;
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MinSpacing = 0.6;
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MaxSpacing = 2.0;
+}
+$c_Ldev_sacode_flowrun_formatgen_DiagramStyle$.prototype = new $h_O();
+$c_Ldev_sacode_flowrun_formatgen_DiagramStyle$.prototype.constructor = $c_Ldev_sacode_flowrun_formatgen_DiagramStyle$;
+/** @constructor */
+function $h_Ldev_sacode_flowrun_formatgen_DiagramStyle$() {
+}
+$h_Ldev_sacode_flowrun_formatgen_DiagramStyle$.prototype = $c_Ldev_sacode_flowrun_formatgen_DiagramStyle$.prototype;
+var $d_Ldev_sacode_flowrun_formatgen_DiagramStyle$ = new $TypeData().initClass($c_Ldev_sacode_flowrun_formatgen_DiagramStyle$, "dev.sacode.flowrun.formatgen.DiagramStyle$", ({
+  Ldev_sacode_flowrun_formatgen_DiagramStyle$: 1,
+  s_deriving_Mirror: 1,
+  s_deriving_Mirror$Product: 1
+}));
+var $n_Ldev_sacode_flowrun_formatgen_DiagramStyle$;
+function $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$() {
+  if ((!$n_Ldev_sacode_flowrun_formatgen_DiagramStyle$)) {
+    $n_Ldev_sacode_flowrun_formatgen_DiagramStyle$ = new $c_Ldev_sacode_flowrun_formatgen_DiagramStyle$();
+  }
+  return $n_Ldev_sacode_flowrun_formatgen_DiagramStyle$;
+}
 function $s_Ldev_sacode_flowrun_parse_Token$Type$__Integer__Ldev_sacode_flowrun_parse_Token$Type() {
   $m_Ldev_sacode_flowrun_parse_Token$Type$();
   return $t_Ldev_sacode_flowrun_parse_Token$Type$__Integer;
@@ -73783,6 +73953,80 @@ function $asArrayOf_Ldev_sacode_flowrun_formatgen_DeclareCompact$Node(obj, depth
 }
 var $d_Ldev_sacode_flowrun_formatgen_DeclareCompact$Node = new $TypeData().initClass($c_Ldev_sacode_flowrun_formatgen_DeclareCompact$Node, "dev.sacode.flowrun.formatgen.DeclareCompact$Node", ({
   Ldev_sacode_flowrun_formatgen_DeclareCompact$Node: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1
+}));
+/** @constructor */
+function $c_Ldev_sacode_flowrun_formatgen_DiagramStyle(scale, spacing) {
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_scale = 0.0;
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing = 0.0;
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_scale = scale;
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing = spacing;
+}
+$c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype = new $h_O();
+$c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype.constructor = $c_Ldev_sacode_flowrun_formatgen_DiagramStyle;
+/** @constructor */
+function $h_Ldev_sacode_flowrun_formatgen_DiagramStyle() {
+}
+$h_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype = $c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype;
+$c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype.productIterator__sc_Iterator = (function() {
+  return new $c_s_Product$$anon$1(this);
+});
+$c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype.hashCode__I = (function() {
+  var acc = (-889275714);
+  var hash = acc;
+  acc = $m_sr_Statics$().mix__I__I__I(hash, 1621400766);
+  var hash$1 = acc;
+  var dv = this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_scale;
+  var data = $m_sr_Statics$().doubleHash__D__I(dv);
+  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data);
+  var hash$2 = acc;
+  var dv$1 = this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing;
+  var data$1 = $m_sr_Statics$().doubleHash__D__I(dv$1);
+  acc = $m_sr_Statics$().mix__I__I__I(hash$2, data$1);
+  var hash$3 = acc;
+  return $m_sr_Statics$().finalizeHash__I__I__I(hash$3, 2);
+});
+$c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype.equals__O__Z = (function(x$0) {
+  if ((this === x$0)) {
+    return true;
+  } else if ((x$0 instanceof $c_Ldev_sacode_flowrun_formatgen_DiagramStyle)) {
+    var x2 = $as_Ldev_sacode_flowrun_formatgen_DiagramStyle(x$0);
+    return (((this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_scale === $n(x2).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_scale) && (this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing === $n(x2).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing)) && ($n(x2), true));
+  } else {
+    return false;
+  }
+});
+$c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this);
+});
+$c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype.productArity__I = (function() {
+  return 2;
+});
+$c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype.productPrefix__T = (function() {
+  return "DiagramStyle";
+});
+$c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype.productElement__I__O = (function(n) {
+  if ((n === 0)) {
+    return this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_scale;
+  }
+  if ((n === 1)) {
+    return this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing;
+  }
+  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n));
+});
+function $as_Ldev_sacode_flowrun_formatgen_DiagramStyle(obj) {
+  return (((obj instanceof $c_Ldev_sacode_flowrun_formatgen_DiagramStyle) || (obj === null)) ? obj : $throwClassCastException(obj, "dev.sacode.flowrun.formatgen.DiagramStyle"));
+}
+function $isArrayOf_Ldev_sacode_flowrun_formatgen_DiagramStyle(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Ldev_sacode_flowrun_formatgen_DiagramStyle)));
+}
+function $asArrayOf_Ldev_sacode_flowrun_formatgen_DiagramStyle(obj, depth) {
+  return (($isArrayOf_Ldev_sacode_flowrun_formatgen_DiagramStyle(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Ldev.sacode.flowrun.formatgen.DiagramStyle;", depth));
+}
+var $d_Ldev_sacode_flowrun_formatgen_DiagramStyle = new $TypeData().initClass($c_Ldev_sacode_flowrun_formatgen_DiagramStyle, "dev.sacode.flowrun.formatgen.DiagramStyle", ({
+  Ldev_sacode_flowrun_formatgen_DiagramStyle: 1,
   s_Equals: 1,
   s_Product: 1,
   Ljava_io_Serializable: 1
