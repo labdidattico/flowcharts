@@ -1,0 +1,97 @@
+{
+  "functions": [],
+  "name": "Input singolo e multiplo",
+  "main": {
+    "rawId": "main",
+    "tpe": "Void",
+    "name": "main",
+    "statements": [
+      {
+        "@type": "Begin",
+        "id": "inizio_input"
+      },
+      {
+        "@type": "Declare",
+        "id": "d_nome",
+        "name": "nome",
+        "tpe": "String",
+        "initValue": null,
+        "lengthValue": -1,
+        "lengthValue1": "5",
+        "lengthValue2": "5"
+      },
+      {
+        "@type": "Declare",
+        "id": "d_A",
+        "name": "A",
+        "tpe": "Integer",
+        "initValue": null,
+        "lengthValue": -1,
+        "lengthValue1": "5",
+        "lengthValue2": "5"
+      },
+      {
+        "@type": "Declare",
+        "id": "d_B",
+        "name": "B",
+        "tpe": "Real",
+        "initValue": null,
+        "lengthValue": -1,
+        "lengthValue1": "5",
+        "lengthValue2": "5"
+      },
+      {
+        "@type": "Declare",
+        "id": "d_C",
+        "name": "C",
+        "tpe": "Integer",
+        "initValue": null,
+        "lengthValue": -1,
+        "lengthValue1": "5",
+        "lengthValue2": "5"
+      },
+      {
+        "@type": "Input",
+        "id": "leggi_nome",
+        "name": "nome",
+        "prompt": null
+      },
+      {
+        "@type": "Input",
+        "id": "leggi_abc",
+        "name": "A, B, C",
+        "prompt": null
+      },
+      {
+        "@type": "Output",
+        "id": "saluto",
+        "value": "\"Ciao \" + nome",
+        "newline": true
+      },
+      {
+        "@type": "Output",
+        "id": "somma",
+        "value": "A + B + C",
+        "newline": true
+      },
+      {
+        "@type": "Return",
+        "id": "fine_input",
+        "maybeValue": null
+      }
+    ],
+    "parameters": []
+  },
+  "id": "esempio_input_singolo_multiplo",
+  "config": {
+    "showDebugVars": true,
+    "useInputPrompt": false,
+    "echoEnteredValue": false,
+    "showIoBtns": true,
+    "showFunctions": false,
+    "lang": "java",
+    "showGenCode": false
+  },
+  "version": "0.3",
+  "revision": 81
+}

@@ -1,0 +1,241 @@
+/* Stile compatto per uso didattico - nessuna risorsa esterna */
+:root {
+    --flowrun-font-monospace: 'DejaVu Sans Mono', 'Courier New', monospace;
+}
+
+html, body { height: 100%; margin: 0; padding: 0; overflow: hidden; }
+
+body {
+    font-family: 'DejaVu Sans', 'Segoe UI', sans-serif;
+    background-color: #eef1f4;
+}
+
+.flowrun-instance {
+    height: 100vh;
+    width: 100vw;
+    gap: 4px !important;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.flowrun-instance .flowrun--panel {
+    padding: 0.35rem !important;
+    margin-bottom: 0 !important;
+    box-shadow: 0 0 0 1px #ccd2d8 !important;
+    border-radius: 3px !important;
+}
+
+.flowrun-instance .flowrun-functions-list,
+.flowrun-instance .flowrun-gen-code { display: none !important; }
+.fr-nascosto { display: none !important; }
+
+/* ---------- disposizione: diagramma a sinistra, colonna destra divisa in due ---------- */
+.flowrun-instance {
+    display: grid !important;
+    grid-template-columns: calc(var(--fr-larghezza-diagramma, 75%) - 4px) 1fr !important;
+    grid-template-rows: minmax(0, 3fr) minmax(0, 2fr) !important;
+    grid-template-areas: none !important;
+}
+.flowrun-instance .flowrun-diagram { grid-area: auto !important; grid-row: 1 / 3 !important; grid-column: 1 !important; }
+.flowrun-instance .flowrun-output { grid-area: auto !important; grid-row: 1 !important; grid-column: 2 !important; overflow: auto; }
+.flowrun-instance .fr-pannello-vars { grid-row: 2 !important; grid-column: 2 !important; overflow: auto; }
+
+.flowrun-instance.fr-vista-piena {
+    grid-template-columns: 100% !important;
+    grid-template-rows: minmax(0, 1fr) !important;
+}
+.flowrun-instance.fr-vista-piena .flowrun-diagram { grid-row: 1 !important; grid-column: 1 !important; }
+.flowrun-instance.fr-vista-piena .flowrun-output,
+.flowrun-instance.fr-vista-piena .fr-pannello-vars { display: none !important; }
+
+/* pannello del diagramma: barra dei comandi sopra, disegno sotto */
+.flowrun-instance .flowrun-diagram {
+    display: grid !important;
+    grid-template-columns: 100% !important;
+    grid-template-rows: 36px 28px minmax(0, 1fr) !important;
+    grid-template-areas: "fr-toolbar" "fr-tabs" "flowrun-draw" !important;
+}
+.flowrun-instance .fr-toolbar { grid-area: fr-toolbar; }
+.flowrun-instance .fr-tabs { grid-area: fr-tabs; }
+.flowrun-instance .flowrun-draw { grid-area: flowrun-draw; }
+
+/* il disegno resta invisibile finche' non e' applicata la scala iniziale */
+.flowrun-draw svg { visibility: hidden; }
+.flowrun-draw.fr-pronto svg { visibility: visible; }
+
+/* ---------- schede delle funzioni ---------- */
+.fr-tabs {
+    display: flex; align-items: flex-end; gap: 3px;
+    padding: 2px 4px 0 4px; border-bottom: 1px solid #ccd2d8;
+}
+.fr-tab {
+    position: relative; background: #f2f2f4; border: 1px solid #ccd2d8; border-bottom: none;
+    border-radius: 4px 4px 0 0; padding: 3px 10px; font-family: inherit; font-size: 12px;
+    color: #444; cursor: pointer; line-height: 1.5;
+}
+.fr-tab:hover { background: #e9e4f5; }
+.fr-tab-attiva { background: #fff; color: #824696; font-weight: 700; border-color: #824696; }
+.fr-tab-chiudi { margin-left: 7px; color: #aa3232; font-weight: 700; }
+.fr-tab-piu { font-weight: 700; color: #824696; padding: 3px 9px; }
+
+/* ---------- zoom ---------- */
+.flowrun-instance .fr-toolbar .fr-zoom-btn .material-icons { color: #7a4a9c; font-size: 20px; }
+.flowrun-instance .fr-toolbar .fr-zoom-livello {
+    font-size: 11px; font-weight: 700; color: #7a4a9c; min-width: 38px; text-align: center; cursor: pointer;
+}
+
+/* ---------- barra dei comandi: una fila, a gruppi, un colore per gruppo ---------- */
+.flowrun-instance .fr-toolbar {
+    display: flex; align-items: center; gap: 3px;
+    padding: 3px 8px; width: 100%; box-sizing: border-box; min-width: 0;
+    background: linear-gradient(#fdfdfd, #eceaf0);
+    border-bottom: 1px solid #c9c2cf;
+}
+.flowrun-instance .fr-toolbar > :not(.fr-toolbar-coda) { flex-shrink: 0; }
+.flowrun-instance .fr-gruppo { display: inline-flex; align-items: center; gap: 3px; }
+.flowrun-instance .fr-toolbar button {
+    background: linear-gradient(#ffffff, #f0edf3);
+    border: 1px solid #cdc4d4; border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.07);
+    cursor: pointer; padding: 3px;
+    display: inline-flex; align-items: center;
+}
+.flowrun-instance .fr-toolbar button:hover { background: linear-gradient(#ffffff, #e4dcec); }
+.flowrun-instance .fr-toolbar button:disabled,
+.flowrun-instance .fr-toolbar button.flowrun--disabled { opacity: .35; box-shadow: none; cursor: default; }
+.flowrun-instance .fr-toolbar .material-icons { font-size: 22px; }
+.flowrun-instance .fr-toolbar .flowrun-btn-load .material-icons,
+.flowrun-instance .fr-toolbar .flowrun-btn-download .material-icons { color: #2f6fb0; }
+.flowrun-instance .fr-toolbar .flowrun-btn-run .material-icons,
+.flowrun-instance .fr-toolbar .flowrun-btn-run-step .material-icons { color: #1f8a3b; }
+.flowrun-instance .fr-toolbar .flowrun-btn-stop .material-icons { color: #b02f2f; }
+.flowrun-instance .fr-toolbar .flowrun-btn-zoom-reset .material-icons { color: #7a4a9c; }
+.flowrun-instance .fr-toolbar .fr-opt-btn .material-icons { color: #b0b6bd; }
+.flowrun-instance .fr-toolbar .fr-opt-btn.fr-opt-attiva .material-icons { color: #b07a1f; }
+.flowrun-instance .fr-toolbar .flowrun-btn-config .material-icons { color: #4a4a4a; }
+.fr-sep { display: inline-block; width: 1px; height: 20px; background: #c3bac9; margin: 0 6px; }
+.flowrun-instance .fr-toolbar-coda {
+    margin-left: 8px; flex: 1 1 0; min-width: 0;
+    display: inline-flex; align-items: center; justify-content: flex-end; gap: 6px;
+}
+.flowrun-instance .fr-toolbar-coda .flowrun-program-name { font-size: 12px; }
+
+/* ---------- colonna destra ---------- */
+.fr-pannello-titolo {
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+    color: #7a4a9c; border-bottom: 1px solid #ddd6e4; padding-bottom: 2px; margin-bottom: 4px;
+}
+.flowrun-instance .flowrun-output { position: relative; }
+.flowrun-instance .flowrun-btn-clear-output { position: absolute; top: 2px; right: 4px; }
+.flowrun-instance .fr-pannello-vars .flowrun-debug-vars {
+    position: static !important; padding: 0 !important; display: block !important;
+}
+.flowrun-instance .fr-pannello-vars .flowrun-debug-vars * { background-color: transparent !important; }
+.flowrun-instance .fr-pannello-vars .flowrun-debug-vars table { width: 100%; font-size: 12px; }
+.flowrun-instance .fr-pannello-vars .flowrun-debug-vars:empty::after {
+    content: "nessuna variabile in memoria";
+    display: block; font-size: 11px; color: #9aa0a6; font-style: italic;
+}
+.flowrun-instance .fr-pannello-vars .flowrun-debug-vars.fr-vars-finali::before {
+    content: "valori al termine dell'esecuzione";
+    display: block; font-size: 10px; color: #9aa0a6; font-style: italic; margin-bottom: 3px;
+}
+
+/* ---------- pulsanti nuovo / annulla / ripeti ---------- */
+.flowrun-instance .fr-toolbar .fr-storia-btn .material-icons { color: #2f6fb0; }
+.flowrun-instance .fr-toolbar .fr-storia-btn:disabled { opacity: .35; }
+
+/* nome del progetto: etichetta, si cambia salvando */
+.flowrun-instance .fr-toolbar .flowrun-program-name {
+    background: none; border: none; box-shadow: none; font-weight: 700; color: #2f6fb0;
+    text-align: right; cursor: default; pointer-events: none;
+    width: 100% !important; min-width: 0; max-width: 100%; box-sizing: border-box;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* ---------- finestrelle salva / conferma ---------- */
+.fr-salva-finestra, .fr-conferma-finestra {
+    width: min(420px, 92vw); border: 1px solid #ccd2d8; border-radius: 6px;
+    padding: 0; font-family: inherit; overflow: hidden;
+}
+.fr-salva-finestra::backdrop, .fr-conferma-finestra::backdrop { background: rgba(0,0,0,.35); }
+.fr-salva-testa, .fr-conferma-testa {
+    background: linear-gradient(#fdfdfd, #eceaf0); border-bottom: 1px solid #c9c2cf;
+    padding: 8px 14px; font-weight: 700; color: #2f6fb0;
+}
+.fr-conferma-testa { color: #b02f2f; }
+.fr-salva-corpo { padding: 14px; }
+.fr-conferma-corpo { padding: 14px; font-size: 13px; line-height: 1.45; color: #333; }
+.fr-salva-etichetta {
+    display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .04em;
+    color: #7a8087; margin-bottom: 4px;
+}
+.fr-salva-campo {
+    width: 100%; box-sizing: border-box; font-family: inherit; font-size: 14px;
+    padding: 6px 8px; border: 1px solid #cdc4d4; border-radius: 4px;
+}
+.fr-salva-campo:focus { outline: 2px solid #824696; outline-offset: -1px; }
+.fr-salva-nota { font-size: 11px; color: #9aa0a6; margin-top: 6px; }
+.fr-salva-piede, .fr-conferma-piede { display: flex; justify-content: flex-end; gap: 8px; padding: 0 14px 14px 14px; }
+.fr-salva-piede button, .fr-conferma-piede button {
+    font-family: inherit; font-size: 12px; cursor: pointer;
+    border: 1px solid #cdc4d4; border-radius: 4px; padding: 5px 14px;
+    background: linear-gradient(#ffffff, #f0edf3);
+}
+.fr-salva-conferma { font-weight: 700; color: #1f8a3b; border-color: #a9cdb4 !important; }
+.fr-conferma-ok { font-weight: 700; color: #b02f2f; border-color: #e0b4b4 !important; }
+
+/* ---------- esecuzione automatica ---------- */
+.flowrun-instance .fr-toolbar .fr-auto-btn .material-icons { color: #1f8a3b; }
+.flowrun-instance .fr-toolbar select.fr-auto-vel {
+    font-family: inherit; font-size: 11px; font-weight: 700; color: #1f8a3b;
+    background: linear-gradient(#ffffff, #f0edf3); border: 1px solid #cdc4d4; border-radius: 4px;
+    height: 30px; padding: 0 4px; cursor: pointer; margin-left: 2px;
+}
+
+/* Durante l'esecuzione il disegno resta trascinabile e zoomabile:
+   si bloccano solo i clic su blocchi e frecce, non lo spostamento. */
+.flowrun-instance .flowrun-draw.flowrun--disabled { pointer-events: auto; }
+.flowrun-instance .flowrun-draw.flowrun--disabled .node,
+.flowrun-instance .flowrun-draw.flowrun--disabled .edge { pointer-events: none; }
+
+/* ---------- esportazione e aiuto ---------- */
+.flowrun-instance .fr-toolbar .fr-img-btn .material-icons { color: #1f7f7a; }
+.flowrun-instance .fr-toolbar .mm-export .material-icons { color: #4a4a4a; }
+.flowrun-instance .fr-toolbar .fr-aiuto-btn { font-family: inherit; font-size: 11px; font-weight: 700; color: #2f6fb0; padding: 3px 9px; }
+.fr-aiuto-finestra {
+    width: min(900px, 92vw); height: 86vh; max-height: 86vh; border: 1px solid #ccd2d8; border-radius: 6px;
+    padding: 0; font-family: inherit; overflow: hidden; display: grid; grid-template-rows: auto minmax(0, 1fr);
+}
+.fr-aiuto-finestra::backdrop { background: rgba(0,0,0,.35); }
+.fr-aiuto-testa {
+    display: flex; align-items: center; justify-content: space-between;
+    background: linear-gradient(#fdfdfd, #eceaf0); border-bottom: 1px solid #c9c2cf;
+    padding: 7px 12px; font-weight: 700; color: #2f6fb0;
+}
+.fr-aiuto-chiudi { background: none; border: none; cursor: pointer; color: #777; display: inline-flex; }
+.fr-aiuto-corpo { padding: 12px 16px 28px 16px; overflow: auto; min-height: 0; font-size: 13px; line-height: 1.45; color: #333; }
+.fr-aiuto-corpo h3 { font-size: 13px; color: #824696; margin: 16px 0 6px 0; border-bottom: 1px solid #e4dcec; padding-bottom: 3px; }
+.fr-aiuto-corpo h3:first-child { margin-top: 0; }
+.fr-aiuto-corpo p { margin: 4px 0 8px 0; }
+.fr-aiuto-tab { border-collapse: collapse; width: 100%; margin-bottom: 6px; }
+.fr-aiuto-tab th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: #7a8087; border-bottom: 1px solid #ccd2d8; padding: 3px 6px; }
+.fr-aiuto-tab td { padding: 3px 6px; border-bottom: 1px solid #eef1f4; vertical-align: top; }
+.fr-aiuto-cod, .fr-aiuto-tab td.fr-aiuto-cod { font-family: var(--flowrun-font-monospace); color: #1f6f4a; white-space: nowrap; }
+
+/* ---------- griglia di sfondo ---------- */
+.flowrun-instance .flowrun-draw.fr-griglia-accesa {
+    background-image:
+        linear-gradient(to right, #e3e8ee 1px, transparent 1px),
+        linear-gradient(to bottom, #e3e8ee 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* ---------- maniglia fra diagramma e colonna destra ---------- */
+.fr-maniglia {
+    position: fixed; top: 0; bottom: 0; width: 8px; margin-left: -4px;
+    cursor: col-resize; z-index: 40; background: transparent;
+}
+.fr-maniglia:hover, .fr-maniglia.fr-in-trascinamento { background: rgba(130,70,150,.25); }
+body.fr-trascinando { cursor: col-resize; user-select: none; }
+.fr-maniglia.fr-nascosta { display: none; }

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Diagrammi a blocchi</title>
+
+    <link href="vendor/prism.css" rel="stylesheet" />
+    <link href="vendor/material-icons.css" rel="stylesheet">
+    <link href="vendor/toastify.min.css" rel="stylesheet" type="text/css">
+
+    <link href="flowrun.css" rel="stylesheet" type="text/css">
+    <link href="main.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <template id="flowrun-template">
+        <div class="flowrun-functions-list flowrun--panel">
+            <div class="flowrun-fun-chooser"></div>
+            <button class="flowrun-btn-fun-add" title="Add new function"> <span class="material-icons">add</span> </button>
+        </div>
+
+        <div class="flowrun-diagram flowrun--panel">
+            <div class="fr-toolbar">
+                <span class="flowrun-draw-io-btns fr-gruppo">
+                    <button class="flowrun-btn-load" title="Apri un diagramma da file"> <span class="material-icons">folder_open</span> </button>
+                    <button class="flowrun-btn-download" title="Salva il diagramma su file"> <span class="material-icons">save</span> </button>
+                    <button class="flowrun-btn-copy-source fr-nascosto" title="Copia il diagramma negli appunti"> <span class="material-icons">content_copy</span> </button>
+                    <button class="flowrun-btn-paste-source fr-nascosto" title="Incolla un diagramma dagli appunti"> <span class="material-icons">content_paste</span> </button>
+                    <button class="flowrun-btn-copy-dot fr-nascosto" title="Copia la descrizione DOT del disegno"> <span class="material-icons">account_tree</span> </button>
+                </span>
+                <span class="fr-sep"></span>
+                <span class="flowrun-draw-exec-btns fr-gruppo">
+                    <button class="flowrun-btn-run" title="Esegui tutto"> <span class="material-icons">play_arrow</span> </button>
+                    <button class="flowrun-btn-run-step" title="Esegui un passo alla volta"> <span class="material-icons">skip_next</span> </button>
+                    <button class="flowrun-btn-stop flowrun--disabled" title="Interrompi l'esecuzione"> <span class="material-icons">stop</span> </button>
+                </span>
+                <span class="fr-sep"></span>
+                <span class="fr-gruppo fr-gruppo-vista">
+                    <button class="flowrun-btn-zoom-reset" title="Adatta il disegno alla finestra"><span class="material-icons">fit_screen</span></button>
+                </span>
+                <span class="fr-sep"></span>
+                <span class="fr-gruppo fr-gruppo-pannelli">
+                    <button class="fr-opt-btn fr-vista-btn" data-piena="1" title="Solo il diagramma, a tutto schermo"><span class="material-icons">crop_free</span></button>
+                    <button class="fr-opt-btn fr-vista-btn fr-opt-attiva" data-piena="0" title="Diagramma, messaggi e variabili"><span class="material-icons">vertical_split</span></button>
+                </span>
+                <span class="fr-sep"></span>
+                <span class="fr-gruppo fr-gruppo-esporta"></span>
+                <span class="fr-sep"></span>
+                <span class="fr-gruppo fr-gruppo-aiuto"></span>
+                <span class="flowrun-diagram-info fr-toolbar-coda">
+                    <input class="flowrun-program-name flowrun--disabled" type="text">
+                    <button class="flowrun-btn-config fr-nascosto" title="Impostazioni"><span class="material-icons">settings</span></button>
+                </span>
+            </div>
+            <div class="fr-tabs"></div>
+            <div class="flowrun-draw"> </div>
+        </div>
+        <div class="flowrun-output flowrun--panel">
+            <div class="fr-pannello-titolo">Messaggi</div>
+            <div class="flowrun-scratchpad">
+                <div class="flowrun-output-statement"></div>
+                <div class="flowrun-output-syntax"></div>
+                <div class="flowrun-output-runtime"></div>
+            </div>
+            <button class="flowrun-btn-clear-output fr-nascosto" title="Pulisci i messaggi"> <span class="material-icons">clear</span> </button>
+        </div>
+        <div class="fr-pannello-vars flowrun--panel">
+            <div class="fr-pannello-titolo">Variabili</div>
+            <div class="flowrun-debug-vars"></div>
+        </div>
+        <div class="flowrun-gen-code flowrun--panel line-numbers">
+            <pre class="flowrun-code"></pre>
+            <div class="flowrun-gen-code-btns">
+                <button class="flowrun-btn-copy-gencode" title="Copy Generated Code"> <span class="material-icons">code</span> </button>
+                <select class="flowrun-gencode-lang"></select>
+            </div>
+        </div>
+
+        <!-- this whole div will be deleted -->
+        <div class="flowrun-template-transient">
+            <button class="flowrun-btn-fun-delete" title="Delete function"> <span class="material-icons">remove</span> </button>
+            <button class="flowrun-btn-fun-add-param" title="Add new parameter"> <span class="material-icons">add</span> </button>
+            <button class="flowrun-btn-fun-delete-param" title="Delete parameter"> <span class="material-icons">remove</span> </button>
+            <select class="flowrun-input-select"></select>
+            <input class="flowrun-input-text" type="text" size="10">
+            <input type="radio" class="flowrun-input-radio">
+            <input type="checkbox" class="flowrun-input-checkbox">
+            <button class="flowrun-btn-enter"> <span class="material-icons">input</span> Enter</button>
+        </div>
+
+        <!-- context menus -->
+        <div class="flowrun-edge-context-menu flowrun-context-menu">
+            <div class="fr-menu-titolo"><span class="fr-menu-punto"></span> Nuova istruzione…</div>
+            <button class="flowrun-add-declare"><svg class="fr-ico" viewBox="0 0 26 18" width="24" height="17" fill="none" stroke="#333" stroke-width="1.4" stroke-linejoin="round"><g transform="translate(1,1)"><rect x="2" y="2" width="20" height="12"/><line x1="6" y1="2" x2="6" y2="14"/><line x1="18" y1="2" x2="18" y2="14"/></g></svg> Dichiarazione</button>
+            <button class="flowrun-add-assign"><svg class="fr-ico" viewBox="0 0 26 18" width="24" height="17" fill="none" stroke="#333" stroke-width="1.4" stroke-linejoin="round"><g transform="translate(1,1)"><rect x="2" y="2" width="20" height="12"/></g></svg> Assegnamento</button>
+            <button class="flowrun-add-input"><svg class="fr-ico" viewBox="0 0 26 18" width="24" height="17" fill="none" stroke="#333" stroke-width="1.4" stroke-linejoin="round"><g transform="translate(1,1)"><polygon points="6,2 22,2 18,14 2,14"/><polyline points="9,5 13,8 9,11" stroke-width="1.2"/></g></svg> Input</button>
+            <button class="flowrun-add-output"><svg class="fr-ico" viewBox="0 0 26 18" width="24" height="17" fill="none" stroke="#333" stroke-width="1.4" stroke-linejoin="round"><g transform="translate(1,1)"><polygon points="6,2 22,2 18,14 2,14"/><line x1="8" y1="6" x2="16" y2="6" stroke-width="1.2"/><line x1="8" y1="10" x2="15" y2="10" stroke-width="1.2"/></g></svg> Output</button>
+            <button class="flowrun-add-if"><svg class="fr-ico" viewBox="0 0 26 18" width="24" height="17" fill="none" stroke="#333" stroke-width="1.4" stroke-linejoin="round"><g transform="translate(1,1)"><polygon points="12,1 21,8 12,15 3,8"/><line x1="3" y1="8" x2="0.5" y2="8"/><line x1="21" y1="8" x2="23.5" y2="8"/></g></svg> If</button>
+            <button class="flowrun-add-for"><svg class="fr-ico" viewBox="0 0 26 18" width="24" height="17" fill="none" stroke="#333" stroke-width="1.4" stroke-linejoin="round"><polygon points="5,2 19,2 24,9 19,16 5,16 0,9"/><path d="M9 6.5 h6 v5 h-6 z" stroke-width="1.1"/></svg> For</button>
+            <button class="flowrun-add-while"><svg class="fr-ico" viewBox="0 0 26 18" width="24" height="17" fill="none" stroke="#333" stroke-width="1.4" stroke-linejoin="round"><polygon points="8,2 14,7 8,12 2,7"/><path d="M14 7 h9 v9 h-15 v-3" stroke-width="1.1"/><polyline points="6,15 8,13 10,15" stroke-width="1.1"/></svg> While</button>
+            <button class="flowrun-add-do-while"><svg class="fr-ico" viewBox="0 0 26 18" width="24" height="17" fill="none" stroke="#333" stroke-width="1.4" stroke-linejoin="round"><polygon points="8,16 14,11 8,6 2,11"/><path d="M8 6 v-4 h15 v9 h-9" stroke-width="1.1"/><polyline points="12,9 14,11 16,9" stroke-width="1.1"/></svg> Do-While</button>
+            <button class="flowrun-add-comment"><svg class="fr-ico" viewBox="0 0 26 18" width="24" height="17" fill="none" stroke="#333" stroke-width="1.4" stroke-linejoin="round"><g transform="translate(1,1)"><polygon points="8,2 22,2 22,14 8,14"/><line x1="8" y1="8" x2="2" y2="8"/></g></svg> Commento</button>
+            <button class="flowrun-add-call"><svg class="fr-ico" viewBox="0 0 26 18" width="24" height="17" fill="none" stroke="#333" stroke-width="1.4" stroke-linejoin="round"><g transform="translate(1,1)"><rect x="2" y="2" width="20" height="12"/><rect x="5" y="4.5" width="14" height="7" fill="#333" stroke="none" opacity=".45"/></g></svg> Chiamata</button>
+            <div class="fr-menu-sep"></div>
+            <button class="flowrun-paste-stmt"><svg class="fr-ico" viewBox="0 0 26 18" width="24" height="17" fill="none" stroke="#333" stroke-width="1.4" stroke-linejoin="round"><g transform="translate(1,1)"><rect x="5" y="3" width="14" height="12" rx="1"/><rect x="9" y="1" width="6" height="3.5" fill="#fff"/></g></svg> Incolla</button>
+        </div>
+
+        <div class="flowrun-node-context-menu flowrun-context-menu">
+            <button class="flowrun-copy-stmt"><svg class="fr-ico" viewBox="0 0 26 18" width="24" height="17" fill="none" stroke="#333" stroke-width="1.4" stroke-linejoin="round"><g transform="translate(1,1)"><rect x="3" y="1" width="12" height="11"/><rect x="8" y="5" width="12" height="10" fill="#fff"/></g></svg> Copia</button>
+            <button class="flowrun-delete"><svg class="fr-ico" viewBox="0 0 26 18" width="24" height="17" fill="none" stroke="#333" stroke-width="1.4" stroke-linejoin="round"><g transform="translate(1,1)"><line x1="6" y1="3" x2="18" y2="13"/><line x1="18" y1="3" x2="6" y2="13"/></g></svg> Elimina</button>
+            <div class="fr-menu-sep"></div>
+            <button class="flowrun-divide"><svg class="fr-ico" viewBox="0 0 26 18" width="24" height="17" fill="none" stroke="#333" stroke-width="1.4" stroke-linejoin="round"><g transform="translate(1,1)"><rect x="2" y="2" width="8" height="12"/><rect x="14" y="2" width="8" height="12"/></g></svg> Dividi prima di questo blocco</button>
+        </div>
+
+        <dialog class="flowrun-config">
+            <button class="flowrun-btn-config-close"><span class="material-icons">close</span></button>
+            <div class="flowrun-config-layout">
+                <label>
+                    <input class="flowrun-cb-show-functions" type="checkbox">
+                    Show functions
+                </label>
+                <label>
+                    <input class="flowrun-cb-show-gen-code" type="checkbox">
+                    Show generated code
+                </label>
+                <label>
+                    <input class="flowrun-cb-show-debug-vars" type="checkbox">
+                    Show debug variables
+                </label>
+                <label>
+                    <input class="flowrun-cb-show-io-btns" type="checkbox">
+                    Show import/export buttons
+                </label>
+                <label>
+                    <input class="flowrun-cb-use-input-prompt" type="checkbox">
+                    Use input prompt
+                </label>
+                <label>
+                    <input class="flowrun-cb-echo-entered-value" type="checkbox">
+                    Echo entered value
+                </label>
+            </div>
+        </dialog>
+    </template>
+
+    <!-- blank editor instance -->
+    <div class="flowrun-instance"></div>
+
+    <!-- graphviz -->
+    <script src="vendor/graphviz.umd.js"></script>
+    <script src="vendor/d3.min.js"></script>
+    <script src="vendor/d3-graphviz.min.js"></script>
+    <!-- highlight code -->
+    <script src="vendor/prism.js"></script>
+    <!-- popups -->
+    <script src="vendor/toastify-js.js"></script>
+
+    <script src="scripts/compiled/main.js"></script>
+</body>
+
+</html>

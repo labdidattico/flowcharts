@@ -1,0 +1,71 @@
+{
+  "functions": [],
+  "name": "Esempio While - conta da 1 a 5",
+  "main": {
+    "rawId": "main",
+    "tpe": "Void",
+    "name": "main",
+    "statements": [
+      {
+        "@type": "Begin",
+        "id": "inizio_while"
+      },
+      {
+        "@type": "Declare",
+        "id": "dichiara_contatore",
+        "name": "contatore",
+        "tpe": "Integer",
+        "initValue": "1",
+        "lengthValue": -1,
+        "lengthValue1": "5",
+        "lengthValue2": "5"
+      },
+      {
+        "@type": "While",
+        "id": "ciclo_contatore",
+        "condition": "contatore <= 5",
+        "body": {
+          "id": "corpo_contatore",
+          "statements": [
+            {
+              "@type": "Output",
+              "id": "scrivi_contatore",
+              "value": "contatore",
+              "newline": true
+            },
+            {
+              "@type": "Assign",
+              "id": "incrementa_contatore",
+              "name": "contatore",
+              "value": "contatore + 1"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Output",
+        "id": "scrivi_fine",
+        "value": "\"Ciclo terminato\"",
+        "newline": true
+      },
+      {
+        "@type": "Return",
+        "id": "fine_while",
+        "maybeValue": null
+      }
+    ],
+    "parameters": []
+  },
+  "id": "esempio_while_contatore",
+  "config": {
+    "showDebugVars": true,
+    "useInputPrompt": false,
+    "echoEnteredValue": false,
+    "showIoBtns": true,
+    "showFunctions": false,
+    "lang": "java",
+    "showGenCode": false
+  },
+  "version": "0.3",
+  "revision": 81
+}
