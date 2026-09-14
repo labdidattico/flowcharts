@@ -15486,15 +15486,15 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__px2Inch__D__D($thiz, px)
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__ioDimensions__T__T($thiz, label) {
   var this$1 = $n(label);
-  var y = ((0.11 * this$1.length) + 0.2);
+  var y = ((0.125 * this$1.length) + 0.22);
   var width = ($uD(Math.max(1.0, y)) + 0.5);
-  return (("height=0.4 width=" + width) + " fixedsize=true");
+  return (("height=0.46 width=" + width) + " fixedsize=true");
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, label, luft) {
   var this$1 = $n(label);
-  var w = ((0.11 * this$1.length) + (luft ? 0.5 : 0.2));
+  var w = ((0.125 * this$1.length) + (luft ? 0.52 : 0.22));
   var width = $uD(Math.max(w, 1.0));
-  var h = (0.4 + (luft ? 0.1 : 0.0));
+  var h = (0.46 + (luft ? 0.1 : 0.0));
   return (((("height=" + h) + " width=") + width) + " fixedsize=true");
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__edgeAttrs__T__T($thiz, nextStmtId) {
@@ -15853,7 +15853,7 @@ function $h_Ldev_sacode_flowrun_formatgen_DotGenerator() {
 }
 $h_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype = $c_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype;
 $c_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype.generate__T = (function() {
-  var x = (((((((("\n    |digraph {\n    |  bgcolor=\"transparent\"\n    |\n    |  node [penwidth=0.5 fontsize=\"12\" shape=\"box\" style=\"filled\" fontcolor=\"white\" fontname=\"" + $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_fontName) + "\"]\n    |  edge [penwidth=2 fontsize=\"10\" color=\"#0A1931\" arrowsize=0.8 fontname=\"") + $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_fontName) + "\"]\n    |\n    |#########\n    |# NODES #\n    |#########\n    |") + $m_Ldev_sacode_flowrun_FlowRun$package$().indented__T__I__T($p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodesDOT__T(this), 2)) + "\n    |\n    |#########\n    |# EDGES #\n    |#########\n    |") + $m_Ldev_sacode_flowrun_FlowRun$package$().indented__T__I__T($p_Ldev_sacode_flowrun_formatgen_DotGenerator__edgesDOT__T(this), 2)) + "\n    |\n    |}\n    |");
+  var x = (((((((("\n    |digraph {\n    |  bgcolor=\"transparent\"\n    |\n    |  node [penwidth=0.5 fontsize=\"15\" shape=\"box\" style=\"filled\" fontcolor=\"white\" fontname=\"" + $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_fontName) + "\"]\n    |  edge [penwidth=2 fontsize=\"12\" color=\"#0A1931\" arrowsize=0.8 fontname=\"") + $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_fontName) + "\"]\n    |\n    |#########\n    |# NODES #\n    |#########\n    |") + $m_Ldev_sacode_flowrun_FlowRun$package$().indented__T__I__T($p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodesDOT__T(this), 2)) + "\n    |\n    |#########\n    |# EDGES #\n    |#########\n    |") + $m_Ldev_sacode_flowrun_FlowRun$package$().indented__T__I__T($p_Ldev_sacode_flowrun_formatgen_DotGenerator__edgesDOT__T(this), 2)) + "\n    |\n    |}\n    |");
   var raw = $m_sc_StringOps$().stripMargin$extension__T__C__T(x, 124);
   var this$6 = $n($ct_s_util_matching_Regex__T__sci_Seq__(new $c_s_util_matching_Regex(), "(\\w+) \\[id=\"[^\"\\n]+#(?:While|ForLoop)", $m_sci_Nil$()).findAllMatchIn__jl_CharSequence__sc_Iterator(raw));
   var f = new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((_$1) => {
