@@ -162,6 +162,10 @@
     <script src="vendor/toastify-js.js"></script>
 
     <script src="scripts/compiled/main.js"></script>
+    <script>
+      if ('serviceWorker' in navigator && location.protocol === 'https:')
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+    </script>
 </body>
 
 </html>
