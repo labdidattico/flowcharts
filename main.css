@@ -272,3 +272,30 @@ body.fr-trascinando { cursor: col-resize; user-select: none; }
     padding: 3px 9px; cursor: pointer; font-family: inherit; font-size: 12px; color: #555;
 }
 .fr-stile-versione { font-size: 11px; color: #9aa0a6; }
+
+/* ---- Finestra di esportazione immagine ---- */
+.fr-export-finestra {
+    width: min(400px, 92vw); border: 1px solid #ccd2d8; border-radius: 6px;
+    padding: 0; font-family: inherit; overflow: hidden;
+}
+.fr-export-finestra::backdrop { background: rgba(0,0,0,.35); }
+.fr-export-chiudi { background: none; border: none; cursor: pointer; color: #777; display: inline-flex; }
+.fr-export-corpo { padding: 14px 16px; font-size: 13px; color: #333; }
+.fr-export-corpo label {
+    display: flex; justify-content: space-between; align-items: center;
+    font-weight: 600; color: #555; gap: 12px;
+}
+.fr-export-font {
+    font-family: inherit; font-size: 13px; padding: 3px 6px;
+    border: 1px solid #ccd2d8; border-radius: 4px; background: #fff;
+}
+.fr-export-nota { margin: 8px 0 0 0; font-size: 11px; color: #9aa0a6; line-height: 1.4; }
+.fr-export-piede {
+    display: flex; gap: 8px; justify-content: flex-end;
+    margin-top: 16px; padding-top: 10px; border-top: 1px solid #e4dcec;
+}
+.fr-export-annulla, .fr-export-ok {
+    font-family: inherit; font-size: 12px; padding: 4px 12px;
+    border: 1px solid #ccd2d8; border-radius: 4px; cursor: pointer; background: #f4f4f6; color: #555;
+}
+.fr-export-ok { background: #2f6fb0; border-color: #2f6fb0; color: #fff; font-weight: 600; }

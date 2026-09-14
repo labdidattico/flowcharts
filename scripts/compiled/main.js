@@ -1453,8 +1453,23 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__newInterpeter__Ldev_sacode_flowru
     $m_sjs_js_timers_package$().clearInterval__sjs_js_timers_SetIntervalHandle__V(handle);
   })));
 }
+function $p_Ldev_sacode_flowrun_FlowRunEditor__conTestoIngrandito__D__F0__V($thiz, scala, salva) {
+  if ((scala === 1.0)) {
+    $n(salva).apply__O();
+  } else {
+    $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowchartPresenter).Ldev_sacode_flowrun_edit_FlowchartPresenter__f_exportFontScale = scala;
+    $n($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowchartPresenter).loadCurrentFunction__s_concurrent_Future()).foreach__F1__s_concurrent_ExecutionContext__V(new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((_$2) => {
+      $as_jl_Void(_$2);
+      return $uI(window.setTimeout((() => {
+        $n(salva).apply__O();
+        $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowchartPresenter).Ldev_sacode_flowrun_edit_FlowchartPresenter__f_exportFontScale = 1.0;
+        return $uI(window.setTimeout((() => $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowchartPresenter).loadCurrentFunction__s_concurrent_Future()), 400.0));
+      }), 150.0));
+    })), $m_s_concurrent_ExecutionContext$().global__s_concurrent_ExecutionContextExecutor());
+  }
+}
 function $p_Ldev_sacode_flowrun_FlowRunEditor__attachRunAndCopyListeners__V($thiz) {
-  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_runButton.onclick = ((_$6) => {
+  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_runButton.onclick = ((_$7) => {
     if ($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_interpreter).isRunning__Z()) {
       $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_interpreter).Ldev_sacode_flowrun_eval_Interpreter__f_execMode = $s_Ldev_sacode_flowrun_eval_Interpreter$ExecMode$__NORMAL__Ldev_sacode_flowrun_eval_Interpreter$ExecMode();
       return (void 0);
@@ -1462,7 +1477,7 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__attachRunAndCopyListeners__V($thi
       return $p_Ldev_sacode_flowrun_FlowRunEditor__doRun$1__Ldev_sacode_flowrun_eval_Interpreter$ExecMode__I($thiz, $s_Ldev_sacode_flowrun_eval_Interpreter$ExecMode$__NORMAL__Ldev_sacode_flowrun_eval_Interpreter$ExecMode());
     }
   });
-  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_runStepButton.onclick = ((_$7) => {
+  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_runStepButton.onclick = ((_$8) => {
     if ($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_interpreter).isRunning__Z()) {
       $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_interpreter).Ldev_sacode_flowrun_eval_Interpreter__f_pauseBeforeNext = false;
       return (void 0);
@@ -1470,17 +1485,17 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__attachRunAndCopyListeners__V($thi
       return $p_Ldev_sacode_flowrun_FlowRunEditor__doRun$1__Ldev_sacode_flowrun_eval_Interpreter$ExecMode__I($thiz, $s_Ldev_sacode_flowrun_eval_Interpreter$ExecMode$__STEP_BY_STEP__Ldev_sacode_flowrun_eval_Interpreter$ExecMode());
     }
   });
-  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_stopButton.onclick = ((_$8) => {
+  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_stopButton.onclick = ((_$9) => {
     $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_interpreter).Ldev_sacode_flowrun_eval_Interpreter__f_state = $s_Ldev_sacode_flowrun_eval_Interpreter$State$__FINISHED_STOPPED__Ldev_sacode_flowrun_eval_Interpreter$State();
   });
-  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_downloadButton.onclick = ((_$9) => {
+  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_downloadButton.onclick = ((_$10) => {
     var this$5 = $n($m_s_Option$().apply__O__s_Option($n($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast).Ldev_sacode_flowrun_ast_Program__f_name));
     if (this$5.isEmpty__Z()) {
       var this$6 = $m_s_None$();
     } else {
       var x0 = this$5.get__O();
-      var _$10 = $as_T(x0);
-      var this$6 = new $c_s_Some($f_T__trim__T($n(_$10)));
+      var _$11 = $as_T(x0);
+      var this$6 = new $c_s_Some($f_T__trim__T($n(_$11)));
     }
     if (this$6.isEmpty__Z()) {
       var $x_1 = true;
@@ -1510,8 +1525,8 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__attachRunAndCopyListeners__V($thi
         var $x_4 = true;
       } else {
         var x0$2 = this$12.get__O();
-        var _$11 = $as_T(x0$2);
-        var this$15 = $n(_$11);
+        var _$12 = $as_T(x0$2);
+        var this$15 = $n(_$12);
         var $x_4 = (!(this$15 === ""));
       }
       if ($x_4) {
@@ -1534,7 +1549,7 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__attachRunAndCopyListeners__V($thi
     var $x_5 = (this$17 === x$2);
   }
   if ($x_5) {
-    $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_loadButton.onclick = ((_$12) => {
+    $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_loadButton.onclick = ((_$13) => {
       var inputForFile = $n($n($as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().input__Lscalatags_generic_TypedTag())).apply__sci_Seq__Lscalatags_JsDom$TypedTag($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$n($m_Lscalatags_JsDom$all$().tpe__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("file", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr), $n($m_Lscalatags_JsDom$all$().accept__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(".flowrun", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr)])))).render__Lorg_scalajs_dom_Element();
       inputForFile.onchange = ((event) => {
         var file = inputForFile.files.item(0);
@@ -1601,7 +1616,7 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__attachRunAndCopyListeners__V($thi
   if ($x_8) {
     $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_copySourceButton.remove();
   } else {
-    $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_copySourceButton.onclick = ((_$13) => {
+    $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_copySourceButton.onclick = ((_$14) => {
       window.navigator.clipboard.writeText($thiz.json__T());
       var $x_10 = Toastify;
       var this$28 = $m_Ldev_sacode_flowrun_ToastifyOptions$();
@@ -1610,7 +1625,7 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__attachRunAndCopyListeners__V($thi
       $x_9.showToast();
     });
   }
-  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_copyDotButton.onclick = ((_$14) => {
+  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_copyDotButton.onclick = ((_$15) => {
     window.navigator.clipboard.writeText($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowchartPresenter).funDOT__T());
     var $x_12 = Toastify;
     var this$29 = $m_Ldev_sacode_flowrun_ToastifyOptions$();
@@ -1618,7 +1633,7 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__attachRunAndCopyListeners__V($thi
     var $x_11 = $x_12(this$29.apply__T__T__T__Ldev_sacode_flowrun_Color__Ldev_sacode_flowrun_ToastifyOptions("Copied DOT to clipboard.", "bottom", "center", color$2));
     $x_11.showToast();
   });
-  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_copyGencodeButton.onclick = ((_$15) => {
+  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_copyGencodeButton.onclick = ((_$16) => {
     window.navigator.clipboard.writeText($thiz.codeText__T());
     var $x_14 = Toastify;
     var this$30 = $m_Ldev_sacode_flowrun_ToastifyOptions$();
@@ -1635,7 +1650,7 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__attachRunAndCopyListeners__V($thi
     var $x_15 = (this$31 === x$6);
   }
   if ($x_15) {
-    $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_pasteSourceButton.onclick = ((_$16) => {
+    $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_pasteSourceButton.onclick = ((_$17) => {
       var \u03b44$ = window.navigator.clipboard.readText();
       return \u03b44$.then(((copiedText) => {
         var copiedText$1 = $as_T(copiedText);
@@ -1676,31 +1691,31 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__attachRunAndCopyListeners__V($thi
   } else {
     $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_pasteSourceButton.remove();
   }
-  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_showConfigButton.onclick = ((_$17) => {
+  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_showConfigButton.onclick = ((_$18) => {
     $m_Ldev_sacode_flowrun_package$package$();
     var any = $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_configDialog;
     return any.showModal();
   });
-  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_closeConfigButton.onclick = ((_$18) => {
+  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_closeConfigButton.onclick = ((_$19) => {
     $m_Ldev_sacode_flowrun_package$package$();
     var any$1 = $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_configDialog;
     return any$1.close();
   });
-  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_zoomResetButton.onclick = ((_$19) => {
+  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_zoomResetButton.onclick = ((_$20) => {
     $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_zoomControl).fit__V();
   });
-  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_clearOutputBtn.onclick = ((_$20) => {
+  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_clearOutputBtn.onclick = ((_$21) => {
     $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_outputArea).clearRuntime__V();
   });
 }
 function $p_Ldev_sacode_flowrun_FlowRunEditor__attachEditListeners__V($thiz) {
   $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_programNameInput.classList.remove("flowrun--disabled");
   $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_programNameInput.maxLength = 30;
-  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_programNameInput.oninput = ((_$21) => {
+  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_programNameInput.oninput = ((_$22) => {
     $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).setName__T__V($f_T__trim__T($n($as_T($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_programNameInput.value))));
   });
   if ($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_mode).Ldev_sacode_flowrun_EditMode__f_editable) {
-    $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_addFunButton.onclick = ((_$22) => {
+    $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_addFunButton.onclick = ((_$23) => {
       $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).addFunction__V();
     });
   } else {
@@ -1725,10 +1740,10 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__attachEditListeners__V($thiz) {
       return (void 0);
     }
   }));
-  element.addEventListener("pointermove", ((_$23) => {
+  element.addEventListener("pointermove", ((_$24) => {
     window.clearTimeout(pressTimer.sr_IntRef__f_elem);
   }));
-  element.addEventListener("pointerup", ((_$24) => {
+  element.addEventListener("pointerup", ((_$25) => {
     window.clearTimeout(pressTimer.sr_IntRef__f_elem);
   }));
   element.addEventListener("contextmenu", ((event$2) => {
@@ -1744,20 +1759,20 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__attachEditListeners__V($thiz) {
   $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_useInputPromptCheckbox.checked = $n($n($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast).Ldev_sacode_flowrun_ast_Program__f_config).Ldev_sacode_flowrun_ast_FlowRunConfig__f_useInputPrompt;
   $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_echoEnteredValueCheckbox.checked = $n($n($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast).Ldev_sacode_flowrun_ast_Program__f_config).Ldev_sacode_flowrun_ast_FlowRunConfig__f_echoEnteredValue;
   if ((!$thiz.Ldev_sacode_flowrun_FlowRunEditor__f_fixedLayout)) {
-    $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_showFunctionsCheckbox.oninput = ((_$25) => {
+    $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_showFunctionsCheckbox.oninput = ((_$26) => {
       $p_Ldev_sacode_flowrun_FlowRunEditor__setLayout__V($thiz);
     });
-    $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_showCodeCheckbox.oninput = ((_$26) => {
+    $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_showCodeCheckbox.oninput = ((_$27) => {
       $p_Ldev_sacode_flowrun_FlowRunEditor__setLayout__V($thiz);
     });
   }
-  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_showDebugVarsCheckbox.oninput = ((_$27) => {
+  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_showDebugVarsCheckbox.oninput = ((_$28) => {
     $p_Ldev_sacode_flowrun_FlowRunEditor__setLayout__V($thiz);
   });
-  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_showIoBtnsCheckbox.oninput = ((_$28) => {
+  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_showIoBtnsCheckbox.oninput = ((_$29) => {
     $p_Ldev_sacode_flowrun_FlowRunEditor__setLayout__V($thiz);
   });
-  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_useInputPromptCheckbox.oninput = ((_$29) => {
+  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_useInputPromptCheckbox.oninput = ((_$30) => {
     var \u03b46$ = $n($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast).Ldev_sacode_flowrun_ast_Program__f_config;
     var useInputPrompt$1 = $uZ($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_useInputPromptCheckbox.checked);
     var this$10 = $n(\u03b46$);
@@ -1776,7 +1791,7 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__attachEditListeners__V($thiz) {
     var newConfig = new $c_Ldev_sacode_flowrun_ast_FlowRunConfig(lang$1, showFunctions$1, showGenCode$1, showDebugVars$1, showIoBtns$1, useInputPrompt$1, echoEnteredValue$1);
     $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).setConfig__Ldev_sacode_flowrun_ast_FlowRunConfig__V(newConfig);
   });
-  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_echoEnteredValueCheckbox.oninput = ((_$30) => {
+  $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_echoEnteredValueCheckbox.oninput = ((_$31) => {
     var \u03b47$ = $n($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast).Ldev_sacode_flowrun_ast_Program__f_config;
     var echoEnteredValue$2 = $uZ($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_echoEnteredValueCheckbox.checked);
     var this$17 = $n(\u03b47$);
@@ -2058,7 +2073,11 @@ function $c_Ldev_sacode_flowrun_FlowRunEditor(mountElem, theme, programJson, mou
   $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowchartPresenter).Ldev_sacode_flowrun_edit_FlowchartPresenter__f_diagramStyle = new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_diagramSettings).style__Ldev_sacode_flowrun_formatgen_DiagramStyle()));
   $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_diagramSettings).init__V();
   new $c_Ldev_sacode_flowrun_edit_VersionLabel(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).init__V();
-  new $c_Ldev_sacode_flowrun_edit_Exporter(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements, this.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).init__V();
+  new $c_Ldev_sacode_flowrun_edit_Exporter(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements, this.Ldev_sacode_flowrun_FlowRunEditor__f_programModel, new $c_sr_AbstractFunction2_$$Lambda$286cbfc6187197affcadc8465aaec93d6b7d20dc(((v1, v2) => {
+    var scala = $uD(v1);
+    var salva = $as_F0(v2);
+    $p_Ldev_sacode_flowrun_FlowRunEditor__conTestoIngrandito__D__F0__V(this, scala, salva);
+  }))).init__V();
   new $c_Ldev_sacode_flowrun_edit_Help(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).init__V();
   new $c_Ldev_sacode_flowrun_edit_ViewExtras(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements, new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowchartPresenter).zoomBehavior__sjs_js_Dynamic())), new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => {
     $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_zoomControl).fit__V();
@@ -2096,8 +2115,8 @@ function $c_Ldev_sacode_flowrun_FlowRunEditor(mountElem, theme, programJson, mou
   var it = this$29.iterator__sc_Iterator();
   while (((!res) && $n(it).hasNext__Z())) {
     var x0$2 = $n(it).next__O();
-    var _$2 = $as_T(x0$2);
-    var this$30 = $n(_$2);
+    var _$3 = $as_T(x0$2);
+    var this$30 = $n(_$3);
     res = $uZ(this$30.startsWith("flowrun-layout"));
   }
   this.Ldev_sacode_flowrun_FlowRunEditor__f_fixedLayout = res;
@@ -2112,7 +2131,7 @@ function $c_Ldev_sacode_flowrun_FlowRunEditor(mountElem, theme, programJson, mou
   var it$1 = this$32.iterator__sc_Iterator();
   while ($n(it$1).hasNext__Z()) {
     var x0$3 = $n(it$1).next__O();
-    x0$3.onclick = ((x0$3) => ((_$3) => {
+    x0$3.onclick = ((x0$3) => ((_$4) => {
       var piena = ($as_T(x0$3.getAttribute("data-piena")) === "1");
       $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.classList.toggle("fr-vista-piena", piena);
       var domList$3 = $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelectorAll(".fr-vista-btn");
@@ -2294,8 +2313,8 @@ function $c_Ldev_sacode_flowrun_FlowRunEditor(mountElem, theme, programJson, mou
         var this$57 = $n(x20);
         var x24 = this$57.Ldev_sacode_flowrun_FlowRun$Event$EvalError__f_funId;
         $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_currentSelectedFunctionId = x24;
-        $n($n(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowchartPresenter).loadCurrentFunction__s_concurrent_Future()).foreach__F1__s_concurrent_ExecutionContext__V(new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((_$4) => {
-          $as_jl_Void(_$4);
+        $n($n(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowchartPresenter).loadCurrentFunction__s_concurrent_Future()).foreach__F1__s_concurrent_ExecutionContext__V(new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((_$5) => {
+          $as_jl_Void(_$5);
           var $x_18 = $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_outputArea);
           var $x_17 = $n($m_Ldev_sacode_flowrun_package$package$().Ldev_sacode_flowrun_package$package$__f_DTF).format__Ljava_time_temporal_TemporalAccessor__T(this.Ldev_sacode_flowrun_FlowRunEditor__f_startedTime);
           var $x_16 = $m_Ldev_sacode_flowrun_package$package$().Ldev_sacode_flowrun_package$package$__f_DTF;
@@ -2425,8 +2444,8 @@ function $c_Ldev_sacode_flowrun_FlowRunEditor(mountElem, theme, programJson, mou
   var priority = 0.0;
   $f_Lreactify_Reactive__attach__F1__D__Lreactify_reaction_Reaction(this$76, f, priority);
   var this$78 = $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowrunChannel);
-  var f$1 = new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((_$5) => {
-    $as_Ldev_sacode_flowrun_FlowRun$Event(_$5);
+  var f$1 = new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((_$6) => {
+    $as_Ldev_sacode_flowrun_FlowRun$Event(_$6);
     $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_ctxMenu).hideAllMenus__V();
   }));
   $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowrunChannel);
@@ -2463,8 +2482,11 @@ $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.codeText__T = (function() {
 $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.revision__I = (function() {
   return $n($n(this.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast).Ldev_sacode_flowrun_ast_Program__f_revision;
 });
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.revision = (function() {
-  return this.revision__I();
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.funDOT = (function() {
+  return this.funDOT__T();
+});
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.codeText = (function() {
+  return this.codeText__T();
 });
 Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunEditor.prototype, "flowRunElements", ({
   "get": (function() {
@@ -2475,14 +2497,11 @@ Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunEditor.prototype, "flowRunEl
 $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.json = (function() {
   return this.json__T();
 });
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.revision = (function() {
+  return this.revision__I();
+});
 $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.name = (function() {
   return this.name__T();
-});
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.codeText = (function() {
-  return this.codeText__T();
-});
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.funDOT = (function() {
-  return this.funDOT__T();
 });
 function $as_Ldev_sacode_flowrun_FlowRunEditor(obj) {
   return (((obj instanceof $c_Ldev_sacode_flowrun_FlowRunEditor) || (obj === null)) ? obj : $throwClassCastException(obj, "dev.sacode.flowrun.FlowRunEditor"));
@@ -5778,7 +5797,9 @@ $h_Ldev_sacode_flowrun_edit_DiagramSettings.prototype = $c_Ldev_sacode_flowrun_e
 $c_Ldev_sacode_flowrun_edit_DiagramSettings.prototype.style__Ldev_sacode_flowrun_formatgen_DiagramStyle = (function() {
   $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$();
   var spacing = $p_Ldev_sacode_flowrun_edit_DiagramSettings__read__T__D__D(this, this.Ldev_sacode_flowrun_edit_DiagramSettings__f_KeySpacing, 1.0);
-  return new $c_Ldev_sacode_flowrun_formatgen_DiagramStyle(spacing);
+  $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$();
+  var fontScale = 1.0;
+  return new $c_Ldev_sacode_flowrun_formatgen_DiagramStyle(spacing, fontScale);
 });
 $c_Ldev_sacode_flowrun_edit_DiagramSettings.prototype.init__V = (function() {
   var group = $n(this.Ldev_sacode_flowrun_edit_DiagramSettings__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelector(".fr-gruppo-stile");
@@ -5873,15 +5894,15 @@ function $p_Ldev_sacode_flowrun_edit_Exporter__fileName__T($thiz) {
     var this$2 = $m_s_None$();
   } else {
     var x0 = this$1.get__O();
-    var _$1 = $as_T(x0);
-    var this$2 = new $c_s_Some($f_T__trim__T($n(_$1)));
+    var _$2 = $as_T(x0);
+    var this$2 = new $c_s_Some($f_T__trim__T($n(_$2)));
   }
   if (this$2.isEmpty__Z()) {
     var $x_1 = true;
   } else {
     var x0$1 = this$2.get__O();
-    var _$2 = $as_T(x0$1);
-    var this$5 = $n(_$2);
+    var _$3 = $as_T(x0$1);
+    var this$5 = $n(_$3);
     var $x_1 = (!(this$5 === ""));
   }
   if ($x_1) {
@@ -5896,8 +5917,83 @@ function $p_Ldev_sacode_flowrun_edit_Exporter__button__T__T__T__F0__Lorg_scalajs
   b.className = cls;
   b.title = title;
   b.innerHTML = (("<span class=\"material-icons\">" + icon) + "</span>");
-  b.onclick = ((_$3) => $n(action).apply__O());
+  b.onclick = ((_$4) => $n(action).apply__O());
   return b;
+}
+function $p_Ldev_sacode_flowrun_edit_Exporter__chiedi__Z__V($thiz, svg) {
+  var this$1 = $n($m_s_Option$().apply__O__s_Option(document.querySelector(".fr-export-finestra")));
+  if ((!this$1.isEmpty__Z())) {
+    var x0 = this$1.get__O();
+    x0.parentNode.removeChild(x0);
+  }
+  var this$2 = $n($m_s_Option$().apply__O__s_Option($as_T(window.localStorage.getItem($thiz.Ldev_sacode_flowrun_edit_Exporter__f_KeyFont))));
+  if (this$2.isEmpty__Z()) {
+    var this$6 = $m_s_None$();
+  } else {
+    var x0$1 = this$2.get__O();
+    var _$5 = $as_T(x0$1);
+    var this$5 = $m_sc_StringParsers$();
+    var this$6 = (this$5.checkFloatFormat__T__Z(_$5) ? new $c_s_Some($m_jl_Double$().parseDouble__T__D(_$5)) : $m_s_None$());
+  }
+  var corrente = $uD((this$6.isEmpty__Z() ? 1.0 : this$6.get__O()));
+  var d = document.createElement("dialog");
+  d.className = "fr-export-finestra";
+  var formato = (svg ? "SVG" : "PNG");
+  var scelte = new $c_sci_$colon$colon($ct_T2__O__O__(new $c_T2(), 1.0, "Normale"), new $c_sci_$colon$colon($ct_T2__O__O__(new $c_T2(), 1.3, "Grande"), new $c_sci_$colon$colon($ct_T2__O__O__(new $c_T2(), 1.6, "Molto grande"), $m_sci_Nil$())));
+  var f = ((x$1) => {
+    var x$1$1 = $as_T2(x$1);
+    var v = $uD($n(x$1$1)._1__O());
+    var testo = $as_T($n(x$1$1)._2__O());
+    var x = (v - corrente);
+    if (($uD(Math.abs(x)) < 0.01)) {
+      var sel = " selected";
+    } else {
+      var sel = "";
+    }
+    return (((((("<option value=\"" + v) + "\"") + sel) + ">") + testo) + "</option>");
+  });
+  if ((scelte === $m_sci_Nil$())) {
+    var this$15 = $m_sci_Nil$();
+  } else {
+    var x0$2 = scelte.sci_$colon$colon__f_head;
+    var h = new $c_sci_$colon$colon(f(x0$2), $m_sci_Nil$());
+    var t = h;
+    var rest = scelte.sci_$colon$colon__f_next;
+    while ((rest !== $m_sci_Nil$())) {
+      var x0$3 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(x0$3), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O());
+    }
+    var this$15 = h;
+  }
+  var opzioni = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$15, "", "", "");
+  var x$2 = (("<div class=\"fr-export-corpo\">\n           |  <label>Dimensione del testo\n           |    <select class=\"fr-export-font\">" + opzioni) + "</select>\n           |  </label>\n           |  <p class=\"fr-export-nota\">Un testo piu' grande resta leggibile anche quando\n           |  l'immagine viene rimpicciolita, per esempio in una dispensa.</p>\n           |  <div class=\"fr-export-piede\">\n           |    <button type=\"button\" class=\"fr-export-annulla\">Annulla</button>\n           |    <button type=\"button\" class=\"fr-export-ok\">Esporta</button>\n           |  </div>\n           |</div>");
+  d.innerHTML = ((("<div class=\"fr-aiuto-testa\"><span>Esporta in " + formato) + "</span><button type=\"button\" class=\"fr-export-chiudi\"><span class=\"material-icons\">close</span></button></div>") + $m_sc_StringOps$().stripMargin$extension__T__C__T(x$2, 124));
+  d.querySelector(".fr-export-chiudi").onclick = ((_$6) => {
+    $ps_Ldev_sacode_flowrun_edit_Exporter__chiudi$1__Lorg_scalajs_dom_HTMLElement__V(d);
+  });
+  d.querySelector(".fr-export-annulla").onclick = ((_$7) => {
+    $ps_Ldev_sacode_flowrun_edit_Exporter__chiudi$1__Lorg_scalajs_dom_HTMLElement__V(d);
+  });
+  d.querySelector(".fr-export-ok").onclick = ((_$8) => {
+    var x$3 = $as_T(d.querySelector(".fr-export-font").value);
+    var this$21 = $m_sc_StringParsers$();
+    var this$22 = (this$21.checkFloatFormat__T__Z(x$3) ? new $c_s_Some($m_jl_Double$().parseDouble__T__D(x$3)) : $m_s_None$());
+    var v$1 = $uD((this$22.isEmpty__Z() ? 1.0 : this$22.get__O()));
+    window.localStorage.setItem($thiz.Ldev_sacode_flowrun_edit_Exporter__f_KeyFont, ("" + v$1));
+    $ps_Ldev_sacode_flowrun_edit_Exporter__chiudi$1__Lorg_scalajs_dom_HTMLElement__V(d);
+    return $n($thiz.Ldev_sacode_flowrun_edit_Exporter__f_withFontScale).apply__O__O__O(v$1, new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => {
+      if (svg) {
+        $thiz.exportSvg__V();
+      } else {
+        $thiz.exportPng__V();
+      }
+    })));
+  });
+  document.body.appendChild(d);
+  d.showModal();
 }
 function $p_Ldev_sacode_flowrun_edit_Exporter__download__T__T__V($thiz, url, name) {
   var a = document.createElement("a");
@@ -5964,14 +6060,22 @@ function $p_Ldev_sacode_flowrun_edit_Exporter__svgUrl__Ldev_sacode_flowrun_edit_
   })());
   return $as_T(URL.createObjectURL(blob));
 }
+function $ps_Ldev_sacode_flowrun_edit_Exporter__chiudi$1__Lorg_scalajs_dom_HTMLElement__V(d$1) {
+  d$1.close();
+  d$1.parentNode.removeChild(d$1);
+}
 /** @constructor */
-function $c_Ldev_sacode_flowrun_edit_Exporter(flowRunElements, programModel) {
+function $c_Ldev_sacode_flowrun_edit_Exporter(flowRunElements, programModel, withFontScale) {
   this.Ldev_sacode_flowrun_edit_Exporter__f_flowRunElements = null;
   this.Ldev_sacode_flowrun_edit_Exporter__f_programModel = null;
+  this.Ldev_sacode_flowrun_edit_Exporter__f_withFontScale = null;
+  this.Ldev_sacode_flowrun_edit_Exporter__f_KeyFont = null;
   this.Ldev_sacode_flowrun_edit_Exporter__f_Clean$lzy1 = null;
   this.Ldev_sacode_flowrun_edit_Exporter__f_flowRunElements = flowRunElements;
   this.Ldev_sacode_flowrun_edit_Exporter__f_programModel = programModel;
+  this.Ldev_sacode_flowrun_edit_Exporter__f_withFontScale = withFontScale;
   this.Ldev_sacode_flowrun_edit_Exporter__f_Clean$lzy1 = new $c_Ldev_sacode_flowrun_edit_Exporter$Clean$(this);
+  this.Ldev_sacode_flowrun_edit_Exporter__f_KeyFont = "fr-export:testo";
 }
 $c_Ldev_sacode_flowrun_edit_Exporter.prototype = new $h_O();
 $c_Ldev_sacode_flowrun_edit_Exporter.prototype.constructor = $c_Ldev_sacode_flowrun_edit_Exporter;
@@ -5982,10 +6086,10 @@ $h_Ldev_sacode_flowrun_edit_Exporter.prototype = $c_Ldev_sacode_flowrun_edit_Exp
 $c_Ldev_sacode_flowrun_edit_Exporter.prototype.init__V = (function() {
   var group = $n(this.Ldev_sacode_flowrun_edit_Exporter__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelector(".fr-gruppo-esporta");
   group.appendChild($p_Ldev_sacode_flowrun_edit_Exporter__button__T__T__T__F0__Lorg_scalajs_dom_HTMLButtonElement(this, "fr-img-btn fr-img-svg", "image", "Salva il diagramma come immagine SVG", new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => {
-    this.exportSvg__V();
+    $p_Ldev_sacode_flowrun_edit_Exporter__chiedi__Z__V(this, true);
   }))));
   group.appendChild($p_Ldev_sacode_flowrun_edit_Exporter__button__T__T__T__F0__Lorg_scalajs_dom_HTMLButtonElement(this, "fr-img-btn fr-img-png", "photo_camera", "Salva il diagramma come immagine PNG", new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => {
-    this.exportPng__V();
+    $p_Ldev_sacode_flowrun_edit_Exporter__chiedi__Z__V(this, false);
   }))));
   group.appendChild($p_Ldev_sacode_flowrun_edit_Exporter__button__T__T__T__F0__Lorg_scalajs_dom_HTMLButtonElement(this, "mm-export", "account_tree", "Mostra il diagramma in sintassi Mermaid", new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => {
     this.showMermaid__V();
@@ -6010,7 +6114,7 @@ $c_Ldev_sacode_flowrun_edit_Exporter.prototype.exportPng__V = (function() {
     var c = $as_Ldev_sacode_flowrun_edit_Exporter$Clean(x0);
     var url = $p_Ldev_sacode_flowrun_edit_Exporter__svgUrl__Ldev_sacode_flowrun_edit_Exporter$Clean__T(this, c);
     var img = document.createElement("img");
-    img.onload = ((_$5) => {
+    img.onload = ((_$10) => {
       var canvas = document.createElement("canvas");
       var a = (2.0 * $n(c).Ldev_sacode_flowrun_edit_Exporter$Clean__f_width);
       var value = $uD(Math.round(a));
@@ -6039,7 +6143,7 @@ $c_Ldev_sacode_flowrun_edit_Exporter.prototype.exportPng__V = (function() {
         }), 4000.0));
       }))), "image/png");
     });
-    img.addEventListener("error", ((_$6) => {
+    img.addEventListener("error", ((_$11) => {
       URL.revokeObjectURL(url);
     }));
     img.src = url;
@@ -6054,11 +6158,11 @@ $c_Ldev_sacode_flowrun_edit_Exporter.prototype.showMermaid__V = (function() {
   var ta = d.querySelector(".fr-mermaid-testo");
   ta.value = text;
   var copy = d.querySelector(".fr-mermaid-copia");
-  copy.onclick = ((_$7) => {
+  copy.onclick = ((_$12) => {
     window.navigator.clipboard.writeText(text);
     copy.textContent = "Copiato";
   });
-  d.querySelector(".fr-mermaid-chiudi").onclick = ((_$8) => {
+  d.querySelector(".fr-mermaid-chiudi").onclick = ((_$13) => {
     d.close();
     return d.parentNode.removeChild(d);
   });
@@ -6489,6 +6593,7 @@ function $c_Ldev_sacode_flowrun_edit_FlowchartPresenter(programModel, flowRunEle
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowRunTheme = null;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowrunChannel = null;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_diagramStyle = null;
+  this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_exportFontScale = 0.0;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_graphviz = null;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_onRendered = null;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_programModel = programModel;
@@ -6496,6 +6601,7 @@ function $c_Ldev_sacode_flowrun_edit_FlowchartPresenter(programModel, flowRunEle
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowRunTheme = flowRunTheme;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowrunChannel = flowrunChannel;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_diagramStyle = new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$().Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_default));
+  this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_exportFontScale = 1.0;
   var $x_2 = d3.select($n(flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_drawArea);
   var fields = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$ct_T2__O__O__(new $c_T2(), "zoom", true), $ct_T2__O__O__(new $c_T2(), "fit", true)]));
   var $x_1 = $x_2.graphviz($m_sjs_js_special_package$().objectLiteral__sci_Seq__sjs_js_Object(fields));
@@ -6620,7 +6726,14 @@ $c_Ldev_sacode_flowrun_edit_FlowchartPresenter.prototype.loadCurrentFunction__s_
   return p;
 });
 $c_Ldev_sacode_flowrun_edit_FlowchartPresenter.prototype.funDOT__T = (function() {
-  var dotGenerator = new $c_Ldev_sacode_flowrun_formatgen_DotGenerator($n(this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_programModel).currentFunction__Ldev_sacode_flowrun_ast_Function(), this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowRunTheme, $as_Ldev_sacode_flowrun_formatgen_DiagramStyle($n(this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_diagramStyle).apply__O()));
+  var $x_2 = $n(this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_programModel).currentFunction__Ldev_sacode_flowrun_ast_Function();
+  var $x_1 = this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowRunTheme;
+  var \u03b43$ = $as_Ldev_sacode_flowrun_formatgen_DiagramStyle($n(this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_diagramStyle).apply__O());
+  var fontScale$1 = this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_exportFontScale;
+  var this$1 = $n(\u03b43$);
+  var spacing$1 = this$1.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing;
+  $n(\u03b43$);
+  var dotGenerator = new $c_Ldev_sacode_flowrun_formatgen_DotGenerator($x_2, $x_1, new $c_Ldev_sacode_flowrun_formatgen_DiagramStyle(spacing$1, fontScale$1));
   var raw = dotGenerator.generate__T();
   $m_Ldev_sacode_flowrun_formatgen_ColumnSplit$().Ldev_sacode_flowrun_formatgen_ColumnSplit$__f_lastRawDot = raw;
   var key = $m_Ldev_sacode_flowrun_edit_ColumnCuts$().keyFor__T__T($n($as_Ldev_sacode_flowrun_ast_Statement($n($n($n(this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_programModel).currentFunction__Ldev_sacode_flowrun_ast_Function()).Ldev_sacode_flowrun_ast_Function__f_statements).head__O())).id__T());
@@ -12866,9 +12979,9 @@ $c_Ldev_sacode_flowrun_formatgen_ArrowSpacing$.prototype.constructor = $c_Ldev_s
 function $h_Ldev_sacode_flowrun_formatgen_ArrowSpacing$() {
 }
 $h_Ldev_sacode_flowrun_formatgen_ArrowSpacing$.prototype = $c_Ldev_sacode_flowrun_formatgen_ArrowSpacing$.prototype;
-$c_Ldev_sacode_flowrun_formatgen_ArrowSpacing$.prototype.uniform__T__sci_List__D__T = (function(dot, groups, spacing) {
-  var finalGap = (this.Ldev_sacode_flowrun_formatgen_ArrowSpacing$__f_FinalGap * spacing);
-  var bendLane = (this.Ldev_sacode_flowrun_formatgen_ArrowSpacing$__f_BendLane * spacing);
+$c_Ldev_sacode_flowrun_formatgen_ArrowSpacing$.prototype.uniform__T__sci_List__D__D__T = (function(dot, groups, spacing, fontScale) {
+  var finalGap = ((this.Ldev_sacode_flowrun_formatgen_ArrowSpacing$__f_FinalGap * spacing) * fontScale);
+  var bendLane = ((this.Ldev_sacode_flowrun_formatgen_ArrowSpacing$__f_BendLane * spacing) * fontScale);
   var this$5 = new $c_sc_StringOps$$anon$1(dot, true);
   var p = new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((_$1) => {
     var _$1$1 = $as_T(_$1);
@@ -14035,7 +14148,8 @@ $c_Ldev_sacode_flowrun_formatgen_DeclareCompact$.prototype.constructor = $c_Ldev
 function $h_Ldev_sacode_flowrun_formatgen_DeclareCompact$() {
 }
 $h_Ldev_sacode_flowrun_formatgen_DeclareCompact$.prototype = $c_Ldev_sacode_flowrun_formatgen_DeclareCompact$.prototype;
-$c_Ldev_sacode_flowrun_formatgen_DeclareCompact$.prototype.compact__T__T2 = (function(dot) {
+$c_Ldev_sacode_flowrun_formatgen_DeclareCompact$.prototype.compact__T__D__T2 = (function(dot, fontScale) {
+  var groupHeight = (this.Ldev_sacode_flowrun_formatgen_DeclareCompact$__f_GroupHeight * fontScale);
   var lines = $f_T__split__T__I__AT($n(dot), "\n", (-1));
   var nodes = new $c_scm_LinkedHashMap();
   var edges = new $c_scm_ListBuffer();
@@ -14297,7 +14411,7 @@ $c_Ldev_sacode_flowrun_formatgen_DeclareCompact$.prototype.compact__T__T2 = (fun
                   var $x_4 = false;
                 }
                 if ($x_4) {
-                  var saving = (($n($as_Ldev_sacode_flowrun_formatgen_DeclareCompact$Node(cur.sr_ObjectRef__f_elem)).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_y - $n(next$1).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_y) - $m_Ldev_sacode_flowrun_formatgen_DeclareCompact$().Ldev_sacode_flowrun_formatgen_DeclareCompact$__f_GroupHeight);
+                  var saving = (($n($as_Ldev_sacode_flowrun_formatgen_DeclareCompact$Node(cur.sr_ObjectRef__f_elem)).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_y - $n(next$1).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_y) - groupHeight);
                   if ((saving > 0.0)) {
                     var _1$1 = $n(next$1).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_y;
                     var elem$3 = $ct_T2__O__O__(new $c_T2(), _1$1, saving);
@@ -14366,7 +14480,7 @@ $c_Ldev_sacode_flowrun_formatgen_DeclareCompact$.prototype.compact__T__T2 = (fun
     var this$47 = $n(grouped);
     var elem$6 = $n(n$2).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_name;
     if (this$47.contains__O__Z(elem$6)) {
-      $n(lines).set($n(n$2).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_line, $n($m_Ldev_sacode_flowrun_formatgen_DeclareCompact$().Ldev_sacode_flowrun_formatgen_DeclareCompact$__f_HeightAttr).replaceAllIn__jl_CharSequence__T__T($n(lines).get($n(n$2).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_line), ("height=" + $m_Ldev_sacode_flowrun_formatgen_DeclareCompact$().Ldev_sacode_flowrun_formatgen_DeclareCompact$__f_GroupHeight)));
+      $n(lines).set($n(n$2).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_line, $n($m_Ldev_sacode_flowrun_formatgen_DeclareCompact$().Ldev_sacode_flowrun_formatgen_DeclareCompact$__f_HeightAttr).replaceAllIn__jl_CharSequence__T__T($n(lines).get($n(n$2).Ldev_sacode_flowrun_formatgen_DeclareCompact$Node__f_line), ("height=" + groupHeight)));
     }
   }
   var cutsList = cuts.toList__sci_List();
@@ -14707,7 +14821,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodeDOT__Ldev_sacode_flo
     var this$45 = $n($as_sc_IterableOnceOps($n(trueNodeDOTs)._1__O()));
     var $x_2 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$45, "", "\n", "");
     var this$46 = $n($as_sc_IterableOnceOps($n(falseNodeDOTs)._1__O()));
-    var x$9 = (((((((((((((((((((((((((((((((((((((((((((((("|" + $x_10) + " [id=\"") + stmtId) + "\" ") + $x_9) + " ") + $x_8) + " ") + group) + " \n              |  label=\"") + lbl$8) + "\" tooltip=\"") + lbl$8) + "\" shape=\"diamond\" ") + $x_7) + "]\n              |\n              |true_dummy_up_") + $x_6) + " [") + $x_5) + " shape=point width=0]\n              |false_dummy_up_") + $x_4) + " [") + $x_3) + " shape=point width=0]\n              |\n              |") + $x_2) + "\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$46, "", "\n", "")) + "\n              |\n              |true_dummy_down_") + $n(x52).Ldev_sacode_flowrun_ast_Statement$If__f_id) + " [ ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, trueOffsetX, maxBranchY, 0)) + " shape=point width=0]\n              |false_dummy_down_") + $n(x52).Ldev_sacode_flowrun_ast_Statement$If__f_id) + " [ ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, falseOffsetX, maxBranchY, 0)) + " shape=point width=0]\n              |\n              |") + ifEndId) + " [id=\"") + ifEndId) + "#IfEnd\" class=\"flowrun-not-selectable\" ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY, 0)) + " ") + group) + " ") + $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T()) + "\n              |  label=\"\" tooltip=\" \" shape=\"circle\" fixedsize=true width=0.2 height=0.2]\n              |\n              |");
+    var x$9 = (((((((((((((((((((((((((((((((((((((((((((((((((("|" + $x_10) + " [id=\"") + stmtId) + "\" ") + $x_9) + " ") + $x_8) + " ") + group) + " \n              |  label=\"") + lbl$8) + "\" tooltip=\"") + lbl$8) + "\" shape=\"diamond\" ") + $x_7) + "]\n              |\n              |true_dummy_up_") + $x_6) + " [") + $x_5) + " shape=point width=0]\n              |false_dummy_up_") + $x_4) + " [") + $x_3) + " shape=point width=0]\n              |\n              |") + $x_2) + "\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$46, "", "\n", "")) + "\n              |\n              |true_dummy_down_") + $n(x52).Ldev_sacode_flowrun_ast_Statement$If__f_id) + " [ ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, trueOffsetX, maxBranchY, 0)) + " shape=point width=0]\n              |false_dummy_down_") + $n(x52).Ldev_sacode_flowrun_ast_Statement$If__f_id) + " [ ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, falseOffsetX, maxBranchY, 0)) + " shape=point width=0]\n              |\n              |") + ifEndId) + " [id=\"") + ifEndId) + "#IfEnd\" class=\"flowrun-not-selectable\" ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY, 0)) + " ") + group) + " ") + $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T()) + "\n              |  label=\"\" tooltip=\" \" shape=\"circle\" fixedsize=true width=") + (0.2 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF)) + " height=") + (0.2 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF)) + "]\n              |\n              |");
     var dot$8$1 = $m_sc_StringOps$().stripMargin$extension__T__C__T(x$9, 124);
     return $ct_T2__O__O__(new $c_T2(), dot$8$1, maxBranchY);
   }
@@ -14758,18 +14872,20 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodeDOT__Ldev_sacode_flo
     var maxBranchY$2 = $uI($n(blockDOTs)._2__O());
     var this$61 = $n($as_sc_IterableOnceOps($n(blockDOTs)._1__O()));
     var right = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__rightCorridor__T__I__T__D($thiz, $f_sc_IterableOnceOps__mkString__T__T__T__T(this$61, "", "\n", ""), posX, lbl$9);
-    var $x_20 = $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id;
-    var $x_19 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 42);
-    var $x_18 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, lbl$9, true);
-    var $x_17 = $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T();
-    var $x_16 = $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id;
-    var $x_15 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 0);
+    var $x_22 = $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id;
+    var $x_21 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 42);
+    var $x_20 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, lbl$9, true);
+    var $x_19 = $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T();
+    var $x_18 = $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id;
+    var $x_17 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 0);
+    var $x_16 = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF;
+    var $x_15 = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF;
     var $x_14 = $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id;
     var $x_13 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 95);
     var $x_12 = $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id;
     var $x_11 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, falseX, posY, 42);
     var this$62 = $n($as_sc_IterableOnceOps($n(blockDOTs)._1__O()));
-    var x$10 = (((((((((((((((((((((((((((((((((((((((((((((((((((("|" + $x_20) + " [id=\"") + stmtId) + "\" ") + $x_19) + " ") + $x_18) + " ") + group) + "\n              | label=\"") + lbl$9) + "\" tooltip=\"") + lbl$9) + "\" shape=\"diamond\" ") + $x_17) + "]\n              |while_entry_") + $x_16) + " [") + $x_15) + " shape=circle width=0.12 height=0.12 fixedsize=true label=\"\" fillcolor=\"#FFF0DC\" color=\"#C8781E\"]\n              |true_dummy_up_") + $x_14) + " [") + $x_13) + " shape=point width=0]\n              |false_dummy_up_") + $x_12) + " [") + $x_11) + " shape=point width=0]\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$62, "", "\n", "")) + "\n              |true_dummy_down_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY$2, (-10))) + " shape=point width=0]\n              |true_dummy_down_left_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right, maxBranchY$2, (-10))) + " shape=point width=0]\n              |while_return_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right, posY, 0)) + " shape=point width=0]\n              |false_dummy_down_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, falseX, ((1 + maxBranchY$2) | 0), 0)) + " shape=point width=0]\n              |end_dummy_down_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, ((1 + maxBranchY$2) | 0), 0)) + " ") + group) + " shape=point width=0]\n              |");
+    var x$10 = (((((((((((((((((((((((((((((((((((((((((((((((((((((((("|" + $x_22) + " [id=\"") + stmtId) + "\" ") + $x_21) + " ") + $x_20) + " ") + group) + "\n              | label=\"") + lbl$9) + "\" tooltip=\"") + lbl$9) + "\" shape=\"diamond\" ") + $x_19) + "]\n              |while_entry_") + $x_18) + " [") + $x_17) + " shape=circle width=") + (0.12 * $x_16)) + " height=") + (0.12 * $x_15)) + " fixedsize=true label=\"\" fillcolor=\"#FFF0DC\" color=\"#C8781E\"]\n              |true_dummy_up_") + $x_14) + " [") + $x_13) + " shape=point width=0]\n              |false_dummy_up_") + $x_12) + " [") + $x_11) + " shape=point width=0]\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$62, "", "\n", "")) + "\n              |true_dummy_down_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY$2, (-10))) + " shape=point width=0]\n              |true_dummy_down_left_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right, maxBranchY$2, (-10))) + " shape=point width=0]\n              |while_return_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right, posY, 0)) + " shape=point width=0]\n              |false_dummy_down_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, falseX, ((1 + maxBranchY$2) | 0), 0)) + " shape=point width=0]\n              |end_dummy_down_") + $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, ((1 + maxBranchY$2) | 0), 0)) + " ") + group) + " shape=point width=0]\n              |");
     var dot$9$1 = $m_sc_StringOps$().stripMargin$extension__T__C__T(x$10, 124);
     var _2$6 = ((1 + maxBranchY$2) | 0);
     return $ct_T2__O__O__(new $c_T2(), dot$9$1, _2$6);
@@ -14800,20 +14916,22 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodeDOT__Ldev_sacode_flo
       var elem$3 = $n(dot$10)._1__O();
       var _1$7 = $f_sc_StrictOptimizedSeqOps__appended__O__O(this$72, elem$3);
       var _2$8 = ((1 + $uI($n(dot$10)._2__O())) | 0);
-      var $x_21___1 = _1$7;
-      var $x_21___2 = _2$8;
-      acc$3___1 = $x_21___1;
-      acc$3___2 = $x_21___2;
+      var $x_23___1 = _1$7;
+      var $x_23___2 = _2$8;
+      acc$3___1 = $x_23___1;
+      acc$3___2 = $x_23___2;
       these$3 = $as_sc_LinearSeq($n(these$3).tail__O());
     }
     var dots$4___1 = acc$3___1;
     var dots$4___2 = acc$3___2;
     var trueOffsetX$3 = ((posX + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthTrue__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, x50, 0)) | 0);
     var maxBranchY$3 = $uI(dots$4___2);
-    var $x_23 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 16);
-    var $x_22 = $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T();
+    var $x_27 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 16);
+    var $x_26 = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF;
+    var $x_25 = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF;
+    var $x_24 = $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T();
     var this$75 = $n($as_sc_IterableOnceOps(dots$4___1));
-    var x$11 = (((((((((((((((((((((((((((((((((((("|" + doWhileEndId) + " [id=\"") + doWhileEndId) + "#DoWhileEndId\" class=\"flowrun-not-selectable\" ") + $x_23) + " ") + group) + " \n              |  label=\"\" tooltip=\" \" shape=\"circle\" fixedsize=true width=0.2 height=0.2 ") + $x_22) + "]\n              |\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$75, "", "\n", "")) + "\n              |\n              |") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [id=\"") + stmtId) + "\" ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY$3, 0)) + " ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, lbl$10, true)) + " ") + group) + " \n              |label=\"") + lbl$10) + "\" tooltip=\"") + lbl$10) + "\" shape=\"diamond\" ") + $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T()) + "]\n              |\n              |true_dummy_up_") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, trueOffsetX$3, posY, 16)) + " shape=point width=0]\n              |true_dummy_down_") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, trueOffsetX$3, maxBranchY$3, 0)) + " shape=point width=0]\n              |\n              |");
+    var x$11 = (((((((((((((((((((((((((((((((((((((((("|" + doWhileEndId) + " [id=\"") + doWhileEndId) + "#DoWhileEndId\" class=\"flowrun-not-selectable\" ") + $x_27) + " ") + group) + " \n              |  label=\"\" tooltip=\" \" shape=\"circle\" fixedsize=true width=") + (0.2 * $x_26)) + " height=") + (0.2 * $x_25)) + " ") + $x_24) + "]\n              |\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$75, "", "\n", "")) + "\n              |\n              |") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [id=\"") + stmtId) + "\" ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY$3, 0)) + " ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, lbl$10, true)) + " ") + group) + " \n              |label=\"") + lbl$10) + "\" tooltip=\"") + lbl$10) + "\" shape=\"diamond\" ") + $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T()) + "]\n              |\n              |true_dummy_up_") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, trueOffsetX$3, posY, 16)) + " shape=point width=0]\n              |true_dummy_down_") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, trueOffsetX$3, maxBranchY$3, 0)) + " shape=point width=0]\n              |\n              |");
     var dot$10$1 = $m_sc_StringOps$().stripMargin$extension__T__C__T(x$11, 124);
     return $ct_T2__O__O__(new $c_T2(), dot$10$1, maxBranchY$3);
   }
@@ -14862,18 +14980,20 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodeDOT__Ldev_sacode_flo
     var maxBranchY$4 = $uI($n(blockDOTs$3)._2__O());
     var this$88 = $n($as_sc_IterableOnceOps($n(blockDOTs$3)._1__O()));
     var right$2 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__rightCorridor__T__I__T__D($thiz, $f_sc_IterableOnceOps__mkString__T__T__T__T(this$88, "", "\n", ""), posX, lbl$11);
-    var $x_33 = $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id;
-    var $x_32 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 42);
-    var $x_31 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, lbl$11, true);
-    var $x_30 = $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T();
+    var $x_39 = $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id;
+    var $x_38 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 42);
+    var $x_37 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, lbl$11, true);
+    var $x_36 = $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T();
+    var $x_35 = $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id;
+    var $x_34 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 0);
+    var $x_33 = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF;
+    var $x_32 = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF;
+    var $x_31 = $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id;
+    var $x_30 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 95);
     var $x_29 = $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id;
-    var $x_28 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 0);
-    var $x_27 = $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id;
-    var $x_26 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 95);
-    var $x_25 = $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id;
-    var $x_24 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, falseX$2, posY, 42);
+    var $x_28 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, falseX$2, posY, 42);
     var this$89 = $n($as_sc_IterableOnceOps($n(blockDOTs$3)._1__O()));
-    var x$12 = (((((((((((((((((((((((((((((((((((((((((((((((((((("|" + $x_33) + " [id=\"") + stmtId) + "\" ") + $x_32) + " ") + $x_31) + " ") + group) + "\n              | label=\"") + lbl$11) + "\" tooltip=\"") + lbl$11) + "\" shape=\"hexagon\" ") + $x_30) + "]\n              |while_entry_") + $x_29) + " [") + $x_28) + " shape=circle width=0.12 height=0.12 fixedsize=true label=\"\" fillcolor=\"#FFF0DC\" color=\"#C8781E\"]\n              |true_dummy_up_") + $x_27) + " [") + $x_26) + " shape=point width=0]\n              |false_dummy_up_") + $x_25) + " [") + $x_24) + " shape=point width=0]\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$89, "", "\n", "")) + "\n              |true_dummy_down_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY$4, (-10))) + " shape=point width=0]\n              |true_dummy_down_left_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right$2, maxBranchY$4, (-10))) + " shape=point width=0]\n              |while_return_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right$2, posY, 0)) + " shape=point width=0]\n              |false_dummy_down_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, falseX$2, ((1 + maxBranchY$4) | 0), 0)) + " shape=point width=0]\n              |end_dummy_down_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, ((1 + maxBranchY$4) | 0), 0)) + " ") + group) + " shape=point width=0]\n              |");
+    var x$12 = (((((((((((((((((((((((((((((((((((((((((((((((((((((((("|" + $x_39) + " [id=\"") + stmtId) + "\" ") + $x_38) + " ") + $x_37) + " ") + group) + "\n              | label=\"") + lbl$11) + "\" tooltip=\"") + lbl$11) + "\" shape=\"hexagon\" ") + $x_36) + "]\n              |while_entry_") + $x_35) + " [") + $x_34) + " shape=circle width=") + (0.12 * $x_33)) + " height=") + (0.12 * $x_32)) + " fixedsize=true label=\"\" fillcolor=\"#FFF0DC\" color=\"#C8781E\"]\n              |true_dummy_up_") + $x_31) + " [") + $x_30) + " shape=point width=0]\n              |false_dummy_up_") + $x_29) + " [") + $x_28) + " shape=point width=0]\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$89, "", "\n", "")) + "\n              |true_dummy_down_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY$4, (-10))) + " shape=point width=0]\n              |true_dummy_down_left_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right$2, maxBranchY$4, (-10))) + " shape=point width=0]\n              |while_return_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right$2, posY, 0)) + " shape=point width=0]\n              |false_dummy_down_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, falseX$2, ((1 + maxBranchY$4) | 0), 0)) + " shape=point width=0]\n              |end_dummy_down_") + $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, ((1 + maxBranchY$4) | 0), 0)) + " ") + group) + " shape=point width=0]\n              |");
     var dot$11$1 = $m_sc_StringOps$().stripMargin$extension__T__C__T(x$12, 124);
     var _2$11 = ((1 + maxBranchY$4) | 0);
     return $ct_T2__O__O__(new $c_T2(), dot$11$1, _2$11);
@@ -15427,7 +15547,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__leftCorridor__T__I__T__D
   var ord = $m_s_math_Ordering$DeprecatedDoubleOrdering$();
   var this$21 = $n($f_sc_IterableOnceOps__minOption__s_math_Ordering__s_Option(this$20, ord));
   var bodyLeft = $uD((this$21.isEmpty__Z() ? ownLeft : this$21.get__O()));
-  return ($uD(Math.min(ownLeft, bodyLeft)) - 0.5);
+  return ($uD(Math.min(ownLeft, bodyLeft)) - (0.5 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF));
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__rightCorridor__T__I__T__D($thiz, bodyDot, x, label) {
   var position = $ct_s_util_matching_Regex__T__sci_Seq__(new $c_s_util_matching_Regex(), "pos=\"([-\\d.]+),[-\\d.]+!", $m_sci_Nil$());
@@ -15464,20 +15584,15 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__rightCorridor__T__I__T__
   var ord = $m_s_math_Ordering$DeprecatedDoubleOrdering$();
   var this$21 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$20, ord));
   var bodyRight = $uD((this$21.isEmpty__Z() ? ownRight : this$21.get__O()));
-  return ($uD(Math.max(ownRight, bodyRight)) + 0.5);
+  return ($uD(Math.max(ownRight, bodyRight)) + (0.5 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF));
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, x, y, yOff) {
-  var realY = (10000.0 - (((y * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_yIncrement) + yOff) / $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch));
+  var realY = (10000.0 - (((y * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_yIncrement) + (yOff * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_gridF)) / $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch));
   return $f_T__trim__T((((("pos=\"" + x) + ",") + realY) + "!\" "));
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, x, y, yOff) {
-  if ((x === 0)) {
-    var xPx = 0.0;
-  } else {
-    var x$1 = Math.imul(x, $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement);
-    var xPx = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__px2Inch__D__D($thiz, x$1);
-  }
-  var yPx = ((y === 0) ? 0.0 : $p_Ldev_sacode_flowrun_formatgen_DotGenerator__px2Inch__D__D($thiz, ((y * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_yIncrement) + yOff)));
+  var xPx = ((x === 0) ? 0.0 : $p_Ldev_sacode_flowrun_formatgen_DotGenerator__px2Inch__D__D($thiz, (x * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement)));
+  var yPx = (((y === 0) && (yOff === 0)) ? 0.0 : $p_Ldev_sacode_flowrun_formatgen_DotGenerator__px2Inch__D__D($thiz, ((y * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_yIncrement) + (yOff * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_gridF))));
   var realY = (10000.0 - yPx);
   return $f_T__trim__T(((((" pos=\"" + xPx) + ",") + realY) + "!\" "));
 }
@@ -15487,14 +15602,15 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__px2Inch__D__D($thiz, px)
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__ioDimensions__T__T($thiz, label) {
   var this$1 = $n(label);
   var y = ((0.125 * this$1.length) + 0.22);
-  var width = ($uD(Math.max(1.0, y)) + 0.5);
-  return (("height=0.46 width=" + width) + " fixedsize=true");
+  var width = (($uD(Math.max(1.0, y)) + 0.5) * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF);
+  return (((("height=" + (0.46 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF)) + " width=") + width) + " fixedsize=true");
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, label, luft) {
   var this$1 = $n(label);
-  var w = ((0.125 * this$1.length) + (luft ? 0.52 : 0.22));
-  var width = $uD(Math.max(w, 1.0));
-  var h = (0.46 + (luft ? 0.1 : 0.0));
+  var w = (((0.125 * this$1.length) + (luft ? 0.52 : 0.22)) * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF);
+  var that = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF;
+  var width = $uD(Math.max(w, that));
+  var h = ((0.46 + (luft ? 0.1 : 0.0)) * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF);
   return (((("height=" + h) + " width=") + width) + " fixedsize=true");
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__edgeAttrs__T__T($thiz, nextStmtId) {
@@ -15836,14 +15952,20 @@ function $c_Ldev_sacode_flowrun_formatgen_DotGenerator(function$1, flowRunTheme,
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_function = null;
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme = null;
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_style = null;
-  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement = 0;
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f = 0.0;
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF = 0.0;
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_gridF = 0.0;
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement = 0.0;
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_yIncrement = 0.0;
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch = 0;
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_function = function$1;
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme = flowRunTheme;
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_style = style;
-  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement = 120;
-  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_yIncrement = (90.0 * $n(style).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing);
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f = $n(style).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_fontScale;
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF = (1.0 + (0.45 * (this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f - 1.0)));
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_gridF = (1.0 + (0.35 * (this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f - 1.0)));
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement = (120.0 * this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_gridF);
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_yIncrement = ((90.0 * $n(style).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing) * this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_gridF);
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch = 96;
 }
 $c_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype = new $h_O();
@@ -15853,7 +15975,7 @@ function $h_Ldev_sacode_flowrun_formatgen_DotGenerator() {
 }
 $h_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype = $c_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype;
 $c_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype.generate__T = (function() {
-  var x = (((((((("\n    |digraph {\n    |  bgcolor=\"transparent\"\n    |\n    |  node [penwidth=0.5 fontsize=\"15\" shape=\"box\" style=\"filled\" fontcolor=\"white\" fontname=\"" + $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_fontName) + "\"]\n    |  edge [penwidth=2 fontsize=\"12\" color=\"#0A1931\" arrowsize=0.8 fontname=\"") + $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_fontName) + "\"]\n    |\n    |#########\n    |# NODES #\n    |#########\n    |") + $m_Ldev_sacode_flowrun_FlowRun$package$().indented__T__I__T($p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodesDOT__T(this), 2)) + "\n    |\n    |#########\n    |# EDGES #\n    |#########\n    |") + $m_Ldev_sacode_flowrun_FlowRun$package$().indented__T__I__T($p_Ldev_sacode_flowrun_formatgen_DotGenerator__edgesDOT__T(this), 2)) + "\n    |\n    |}\n    |");
+  var x = (((((((((((("\n    |digraph {\n    |  bgcolor=\"transparent\"\n    |\n    |  node [penwidth=0.5 fontsize=\"" + (15.0 * this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f)) + "\" shape=\"box\" style=\"filled\" fontcolor=\"white\" fontname=\"") + $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_fontName) + "\"]\n    |  edge [penwidth=2 fontsize=\"") + (12.0 * this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f)) + "\" color=\"#0A1931\" arrowsize=0.8 fontname=\"") + $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_fontName) + "\"]\n    |\n    |#########\n    |# NODES #\n    |#########\n    |") + $m_Ldev_sacode_flowrun_FlowRun$package$().indented__T__I__T($p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodesDOT__T(this), 2)) + "\n    |\n    |#########\n    |# EDGES #\n    |#########\n    |") + $m_Ldev_sacode_flowrun_FlowRun$package$().indented__T__I__T($p_Ldev_sacode_flowrun_formatgen_DotGenerator__edgesDOT__T(this), 2)) + "\n    |\n    |}\n    |");
   var raw = $m_sc_StringOps$().stripMargin$extension__T__C__T(x, 124);
   var this$6 = $n($ct_s_util_matching_Regex__T__sci_Seq__(new $c_s_util_matching_Regex(), "(\\w+) \\[id=\"[^\"\\n]+#(?:While|ForLoop)", $m_sci_Nil$()).findAllMatchIn__jl_CharSequence__sc_Iterator(raw));
   var f = new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((_$1) => {
@@ -15892,7 +16014,7 @@ $c_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype.generate__T = (function(
   var routed = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$16, "", "\n", "");
   matchResult1: {
     var \u03b42$;
-    var x1$1 = $m_Ldev_sacode_flowrun_formatgen_DeclareCompact$().compact__T__T2(routed);
+    var x1$1 = $m_Ldev_sacode_flowrun_formatgen_DeclareCompact$().compact__T__D__T2(routed, this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF);
     if ((x1$1 !== null)) {
       var \u03b42$ = x1$1;
       break matchResult1;
@@ -15901,7 +16023,7 @@ $c_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype.generate__T = (function(
   }
   var compacted = $as_T($n(\u03b42$)._1__O());
   var declareGroups = $as_sci_List($n(\u03b42$)._2__O());
-  var uniformed = $m_Ldev_sacode_flowrun_formatgen_ArrowSpacing$().uniform__T__sci_List__D__T(compacted, declareGroups, $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_style).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing);
+  var uniformed = $m_Ldev_sacode_flowrun_formatgen_ArrowSpacing$().uniform__T__sci_List__D__D__T(compacted, declareGroups, $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_style).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing, this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF);
   if ($n(declareGroups).isEmpty__Z()) {
     var groupsComment = "";
   } else {
@@ -63452,7 +63574,9 @@ function $c_Ldev_sacode_flowrun_formatgen_DiagramStyle$() {
   $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$();
   $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$();
   var spacing = 1.0;
-  this.Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_default = new $c_Ldev_sacode_flowrun_formatgen_DiagramStyle(spacing);
+  $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$();
+  var fontScale = 1.0;
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_default = new $c_Ldev_sacode_flowrun_formatgen_DiagramStyle(spacing, fontScale);
   this.Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MinSpacing = 0.7;
   this.Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MaxSpacing = 2.0;
 }
@@ -73949,9 +74073,11 @@ var $d_Ldev_sacode_flowrun_formatgen_DeclareCompact$Node = new $TypeData().initC
   Ljava_io_Serializable: 1
 }));
 /** @constructor */
-function $c_Ldev_sacode_flowrun_formatgen_DiagramStyle(spacing) {
+function $c_Ldev_sacode_flowrun_formatgen_DiagramStyle(spacing, fontScale) {
   this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing = 0.0;
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_fontScale = 0.0;
   this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing = spacing;
+  this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_fontScale = fontScale;
 }
 $c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype = new $h_O();
 $c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype.constructor = $c_Ldev_sacode_flowrun_formatgen_DiagramStyle;
@@ -73971,14 +74097,18 @@ $c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype.hashCode__I = (function(
   var data = $m_sr_Statics$().doubleHash__D__I(dv);
   acc = $m_sr_Statics$().mix__I__I__I(hash$1, data);
   var hash$2 = acc;
-  return $m_sr_Statics$().finalizeHash__I__I__I(hash$2, 1);
+  var dv$1 = this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_fontScale;
+  var data$1 = $m_sr_Statics$().doubleHash__D__I(dv$1);
+  acc = $m_sr_Statics$().mix__I__I__I(hash$2, data$1);
+  var hash$3 = acc;
+  return $m_sr_Statics$().finalizeHash__I__I__I(hash$3, 2);
 });
 $c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
     return true;
   } else if ((x$0 instanceof $c_Ldev_sacode_flowrun_formatgen_DiagramStyle)) {
     var x2 = $as_Ldev_sacode_flowrun_formatgen_DiagramStyle(x$0);
-    return ((this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing === $n(x2).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing) && ($n(x2), true));
+    return (((this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing === $n(x2).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing) && (this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_fontScale === $n(x2).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_fontScale)) && ($n(x2), true));
   } else {
     return false;
   }
@@ -73987,7 +74117,7 @@ $c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype.toString__T = (function(
   return $m_sr_ScalaRunTime$()._toString__s_Product__T(this);
 });
 $c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype.productArity__I = (function() {
-  return 1;
+  return 2;
 });
 $c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype.productPrefix__T = (function() {
   return "DiagramStyle";
@@ -73995,6 +74125,9 @@ $c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype.productPrefix__T = (func
 $c_Ldev_sacode_flowrun_formatgen_DiagramStyle.prototype.productElement__I__O = (function(n) {
   if ((n === 0)) {
     return this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing;
+  }
+  if ((n === 1)) {
+    return this.Ldev_sacode_flowrun_formatgen_DiagramStyle__f_fontScale;
   }
   throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n));
 });
