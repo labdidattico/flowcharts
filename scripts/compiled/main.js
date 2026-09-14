@@ -2057,6 +2057,7 @@ function $c_Ldev_sacode_flowrun_FlowRunEditor(mountElem, theme, programJson, mou
   })));
   $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowchartPresenter).Ldev_sacode_flowrun_edit_FlowchartPresenter__f_diagramStyle = new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_diagramSettings).style__Ldev_sacode_flowrun_formatgen_DiagramStyle()));
   $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_diagramSettings).init__V();
+  new $c_Ldev_sacode_flowrun_edit_VersionLabel(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).init__V();
   new $c_Ldev_sacode_flowrun_edit_Exporter(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements, this.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).init__V();
   new $c_Ldev_sacode_flowrun_edit_Help(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).init__V();
   new $c_Ldev_sacode_flowrun_edit_ViewExtras(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements, new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowchartPresenter).zoomBehavior__sjs_js_Dynamic())), new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => {
@@ -2462,8 +2463,8 @@ $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.codeText__T = (function() {
 $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.revision__I = (function() {
   return $n($n(this.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast).Ldev_sacode_flowrun_ast_Program__f_revision;
 });
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.codeText = (function() {
-  return this.codeText__T();
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.revision = (function() {
+  return this.revision__I();
 });
 Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunEditor.prototype, "flowRunElements", ({
   "get": (function() {
@@ -2471,17 +2472,17 @@ Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunEditor.prototype, "flowRunEl
   }),
   "configurable": true
 }));
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.funDOT = (function() {
-  return this.funDOT__T();
-});
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.revision = (function() {
-  return this.revision__I();
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.json = (function() {
+  return this.json__T();
 });
 $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.name = (function() {
   return this.name__T();
 });
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.json = (function() {
-  return this.json__T();
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.codeText = (function() {
+  return this.codeText__T();
+});
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.funDOT = (function() {
+  return this.funDOT__T();
 });
 function $as_Ldev_sacode_flowrun_FlowRunEditor(obj) {
   return (((obj instanceof $c_Ldev_sacode_flowrun_FlowRunEditor) || (obj === null)) ? obj : $throwClassCastException(obj, "dev.sacode.flowrun.FlowRunEditor"));
@@ -5725,7 +5726,7 @@ function $p_Ldev_sacode_flowrun_edit_DiagramSettings__open__V($thiz) {
   var d = document.createElement("dialog");
   d.className = "fr-stile-finestra";
   var cur = $thiz.style__Ldev_sacode_flowrun_formatgen_DiagramStyle();
-  var x = (((((((("<div class=\"fr-stile-corpo\">\n           |  <label>Distanza fra i blocchi\n           |    <span class=\"fr-stile-valore\">" + $p_Ldev_sacode_flowrun_edit_DiagramSettings__pct__D__T($thiz, $n(cur).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing)) + "</span>\n           |  </label>\n           |  <input type=\"range\" class=\"fr-stile-spaziatura\" min=\"") + $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$().Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MinSpacing) + "\" max=\"") + $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$().Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MaxSpacing) + "\"\n           |         step=\"0.05\" value=\"") + $n(cur).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing) + "\">\n           |  <div class=\"fr-stile-piede\">\n           |    <button type=\"button\" class=\"fr-stile-reset\">Valore predefinito</button>\n           |    <span class=\"fr-stile-versione\">versione 1.0.0</span>\n           |  </div>\n           |</div>");
+  var x = (((((((("<div class=\"fr-stile-corpo\">\n           |  <label>Distanza fra i blocchi\n           |    <span class=\"fr-stile-valore\">" + $p_Ldev_sacode_flowrun_edit_DiagramSettings__pct__D__T($thiz, $n(cur).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing)) + "</span>\n           |  </label>\n           |  <input type=\"range\" class=\"fr-stile-spaziatura\" min=\"") + $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$().Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MinSpacing) + "\" max=\"") + $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$().Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_MaxSpacing) + "\"\n           |         step=\"0.05\" value=\"") + $n(cur).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing) + "\">\n           |  <div class=\"fr-stile-piede\">\n           |    <button type=\"button\" class=\"fr-stile-reset\">Valore predefinito</button>\n           |  </div>\n           |</div>");
   d.innerHTML = ("<div class=\"fr-aiuto-testa\"><span>Dimensioni del disegno</span><button type=\"button\" class=\"fr-stile-chiudi\"><span class=\"material-icons\">close</span></button></div>" + $m_sc_StringOps$().stripMargin$extension__T__C__T(x, 124));
   var spaziatura = d.querySelector(".fr-stile-spaziatura");
   var valore = d.querySelector(".fr-stile-valore");
@@ -8441,6 +8442,28 @@ $c_Ldev_sacode_flowrun_edit_StmtPopup.prototype.hide__V = (function() {
 });
 var $d_Ldev_sacode_flowrun_edit_StmtPopup = new $TypeData().initClass($c_Ldev_sacode_flowrun_edit_StmtPopup, "dev.sacode.flowrun.edit.StmtPopup", ({
   Ldev_sacode_flowrun_edit_StmtPopup: 1
+}));
+/** @constructor */
+function $c_Ldev_sacode_flowrun_edit_VersionLabel(flowRunElements) {
+  this.Ldev_sacode_flowrun_edit_VersionLabel__f_flowRunElements = null;
+  this.Ldev_sacode_flowrun_edit_VersionLabel__f_flowRunElements = flowRunElements;
+}
+$c_Ldev_sacode_flowrun_edit_VersionLabel.prototype = new $h_O();
+$c_Ldev_sacode_flowrun_edit_VersionLabel.prototype.constructor = $c_Ldev_sacode_flowrun_edit_VersionLabel;
+/** @constructor */
+function $h_Ldev_sacode_flowrun_edit_VersionLabel() {
+}
+$h_Ldev_sacode_flowrun_edit_VersionLabel.prototype = $c_Ldev_sacode_flowrun_edit_VersionLabel.prototype;
+$c_Ldev_sacode_flowrun_edit_VersionLabel.prototype.init__V = (function() {
+  var this$1 = $n($m_s_Option$().apply__O__s_Option($n(this.Ldev_sacode_flowrun_edit_VersionLabel__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelector(".fr-versione-barra")));
+  if ((!this$1.isEmpty__Z())) {
+    var x0 = this$1.get__O();
+    x0.textContent = "1.0.0";
+    x0.title = "Versione dell'applicazione";
+  }
+});
+var $d_Ldev_sacode_flowrun_edit_VersionLabel = new $TypeData().initClass($c_Ldev_sacode_flowrun_edit_VersionLabel, "dev.sacode.flowrun.edit.VersionLabel", ({
+  Ldev_sacode_flowrun_edit_VersionLabel: 1
 }));
 function $p_Ldev_sacode_flowrun_edit_ViewExtras__initGrid__V($thiz) {
   $thiz.Ldev_sacode_flowrun_edit_ViewExtras__f_gridBtn.className = "fr-opt-btn fr-griglia-btn";

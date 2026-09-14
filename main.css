@@ -118,7 +118,11 @@ body {
     margin-left: 8px; flex: 1 1 0; min-width: 0;
     display: inline-flex; align-items: center; justify-content: flex-end; gap: 6px;
 }
-.flowrun-instance .fr-toolbar-coda .flowrun-program-name { font-size: 12px; }
+.flowrun-instance .fr-toolbar-coda .flowrun-program-name { font-size: 12px; width: auto !important; flex: 0 1 auto; }
+.flowrun-instance .fr-toolbar-coda .fr-versione-barra {
+    font-size: 11px; color: #9aa0a6; white-space: nowrap; flex: 0 0 auto;
+}
+.flowrun-instance .fr-toolbar-coda .fr-versione-barra::before { content: "\2013\00a0"; }
 
 /* ---------- colonna destra ---------- */
 .fr-pannello-titolo {
@@ -260,7 +264,7 @@ body.fr-trascinando { cursor: col-resize; user-select: none; }
 .fr-stile-valore { font-weight: 700; color: #2f6fb0; font-variant-numeric: tabular-nums; }
 .fr-stile-corpo input[type=range] { width: 100%; margin: 0 0 4px 0; }
 .fr-stile-piede {
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex; align-items: center; justify-content: flex-end;
     margin-top: 14px; padding-top: 10px; border-top: 1px solid #e4dcec;
 }
 .fr-stile-reset {
