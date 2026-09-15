@@ -2073,6 +2073,8 @@ function $c_Ldev_sacode_flowrun_FlowRunEditor(mountElem, theme, programJson, mou
   $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowchartPresenter).Ldev_sacode_flowrun_edit_FlowchartPresenter__f_diagramStyle = new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_diagramSettings).style__Ldev_sacode_flowrun_formatgen_DiagramStyle()));
   $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_diagramSettings).init__V();
   new $c_Ldev_sacode_flowrun_edit_VersionLabel(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).init__V();
+  new $c_Ldev_sacode_flowrun_edit_PanelFontSize(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).init__V();
+  new $c_Ldev_sacode_flowrun_edit_RecodingLink(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).init__V();
   new $c_Ldev_sacode_flowrun_edit_Exporter(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements, this.Ldev_sacode_flowrun_FlowRunEditor__f_programModel, new $c_sr_AbstractFunction2_$$Lambda$286cbfc6187197affcadc8465aaec93d6b7d20dc(((v1, v2) => {
     var scala = $uD(v1);
     var salva = $as_F0(v2);
@@ -2485,9 +2487,6 @@ $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.revision__I = (function() {
 $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.funDOT = (function() {
   return this.funDOT__T();
 });
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.codeText = (function() {
-  return this.codeText__T();
-});
 Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunEditor.prototype, "flowRunElements", ({
   "get": (function() {
     return this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements;
@@ -2502,6 +2501,9 @@ $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.revision = (function() {
 });
 $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.name = (function() {
   return this.name__T();
+});
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.codeText = (function() {
+  return this.codeText__T();
 });
 function $as_Ldev_sacode_flowrun_FlowRunEditor(obj) {
   return (((obj instanceof $c_Ldev_sacode_flowrun_FlowRunEditor) || (obj === null)) ? obj : $throwClassCastException(obj, "dev.sacode.flowrun.FlowRunEditor"));
@@ -7504,6 +7506,162 @@ $c_Ldev_sacode_flowrun_edit_OutputArea.prototype.evalInput__T__T__s_Option__V = 
 });
 var $d_Ldev_sacode_flowrun_edit_OutputArea = new $TypeData().initClass($c_Ldev_sacode_flowrun_edit_OutputArea, "dev.sacode.flowrun.edit.OutputArea", ({
   Ldev_sacode_flowrun_edit_OutputArea: 1
+}));
+function $p_Ldev_sacode_flowrun_edit_PanelFontSize__chiave__T__T($thiz, area) {
+  return ("fr-font:" + area);
+}
+function $p_Ldev_sacode_flowrun_edit_PanelFontSize__leggi__T__I($thiz, area) {
+  var this$1 = $n($m_s_Option$().apply__O__s_Option($as_T(window.localStorage.getItem($p_Ldev_sacode_flowrun_edit_PanelFontSize__chiave__T__T($thiz, area)))));
+  if (this$1.isEmpty__Z()) {
+    var $x_1 = $m_s_None$();
+  } else {
+    var x0 = this$1.get__O();
+    var _$1 = $as_T(x0);
+    var $x_1 = $m_sc_StringParsers$().parseInt__T__s_Option(_$1);
+  }
+  var this$4 = $n($x_1);
+  if (this$4.isEmpty__Z()) {
+    var this$13 = $m_s_None$();
+  } else {
+    var x0$1 = this$4.get__O();
+    var v = $uI(x0$1);
+    var that = $thiz.Ldev_sacode_flowrun_edit_PanelFontSize__f_Min;
+    var x = ((v > that) ? v : that);
+    var that$1 = $thiz.Ldev_sacode_flowrun_edit_PanelFontSize__f_Max;
+    var this$13 = new $c_s_Some(((x < that$1) ? x : that$1));
+  }
+  return $uI((this$13.isEmpty__Z() ? $uI($n($thiz.Ldev_sacode_flowrun_edit_PanelFontSize__f_Base).getOrElse__O__F0__O(area, new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => 13)))) : this$13.get__O()));
+}
+function $p_Ldev_sacode_flowrun_edit_PanelFontSize__applica__T__I__V($thiz, area, px) {
+  var \u03b41$ = $n($thiz.Ldev_sacode_flowrun_edit_PanelFontSize__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.style;
+  \u03b41$.setProperty(("--fr-font-" + area), (px + "px"));
+}
+function $p_Ldev_sacode_flowrun_edit_PanelFontSize__costruisci__Lorg_scalajs_dom_HTMLElement__T__V($thiz, host, area) {
+  var nome = ((area === "messaggi") ? "dei messaggi" : "delle variabili");
+  var giu = $ps_Ldev_sacode_flowrun_edit_PanelFontSize__bottone$1__T__T__T__Lorg_scalajs_dom_HTMLButtonElement("fr-font-giu", "A\u2212", ("Rimpicciolisci il testo " + nome));
+  var su = $ps_Ldev_sacode_flowrun_edit_PanelFontSize__bottone$1__T__T__T__Lorg_scalajs_dom_HTMLButtonElement("fr-font-su", "A+", ("Ingrandisci il testo " + nome));
+  host.appendChild(giu);
+  host.appendChild(su);
+  giu.onclick = ((_$2) => {
+    var x = (($p_Ldev_sacode_flowrun_edit_PanelFontSize__leggi__T__I($thiz, area) - $thiz.Ldev_sacode_flowrun_edit_PanelFontSize__f_Passo) | 0);
+    var that = $thiz.Ldev_sacode_flowrun_edit_PanelFontSize__f_Min;
+    $p_Ldev_sacode_flowrun_edit_PanelFontSize__aggiorna$1__T__Lorg_scalajs_dom_HTMLButtonElement__Lorg_scalajs_dom_HTMLButtonElement__I__V($thiz, area, giu, su, ((x > that) ? x : that));
+  });
+  su.onclick = ((_$3) => {
+    var x$1 = (($p_Ldev_sacode_flowrun_edit_PanelFontSize__leggi__T__I($thiz, area) + $thiz.Ldev_sacode_flowrun_edit_PanelFontSize__f_Passo) | 0);
+    var that$1 = $thiz.Ldev_sacode_flowrun_edit_PanelFontSize__f_Max;
+    $p_Ldev_sacode_flowrun_edit_PanelFontSize__aggiorna$1__T__Lorg_scalajs_dom_HTMLButtonElement__Lorg_scalajs_dom_HTMLButtonElement__I__V($thiz, area, giu, su, ((x$1 < that$1) ? x$1 : that$1));
+  });
+  $p_Ldev_sacode_flowrun_edit_PanelFontSize__aggiorna$1__T__Lorg_scalajs_dom_HTMLButtonElement__Lorg_scalajs_dom_HTMLButtonElement__I__V($thiz, area, giu, su, $p_Ldev_sacode_flowrun_edit_PanelFontSize__leggi__T__I($thiz, area));
+}
+function $ps_Ldev_sacode_flowrun_edit_PanelFontSize__bottone$1__T__T__T__Lorg_scalajs_dom_HTMLButtonElement(cls, testo, aiuto) {
+  var b = document.createElement("button");
+  b.className = cls;
+  b.textContent = testo;
+  b.title = aiuto;
+  b.setAttribute("type", "button");
+  return b;
+}
+function $p_Ldev_sacode_flowrun_edit_PanelFontSize__aggiorna$1__T__Lorg_scalajs_dom_HTMLButtonElement__Lorg_scalajs_dom_HTMLButtonElement__I__V($thiz, area$2, giu$1, su$1, px) {
+  $p_Ldev_sacode_flowrun_edit_PanelFontSize__applica__T__I__V($thiz, area$2, px);
+  window.localStorage.setItem($p_Ldev_sacode_flowrun_edit_PanelFontSize__chiave__T__T($thiz, area$2), ("" + px));
+  giu$1.disabled = (px <= $thiz.Ldev_sacode_flowrun_edit_PanelFontSize__f_Min);
+  su$1.disabled = (px >= $thiz.Ldev_sacode_flowrun_edit_PanelFontSize__f_Max);
+}
+/** @constructor */
+function $c_Ldev_sacode_flowrun_edit_PanelFontSize(flowRunElements) {
+  this.Ldev_sacode_flowrun_edit_PanelFontSize__f_flowRunElements = null;
+  this.Ldev_sacode_flowrun_edit_PanelFontSize__f_Passo = 0;
+  this.Ldev_sacode_flowrun_edit_PanelFontSize__f_Min = 0;
+  this.Ldev_sacode_flowrun_edit_PanelFontSize__f_Max = 0;
+  this.Ldev_sacode_flowrun_edit_PanelFontSize__f_Base = null;
+  this.Ldev_sacode_flowrun_edit_PanelFontSize__f_flowRunElements = flowRunElements;
+  this.Ldev_sacode_flowrun_edit_PanelFontSize__f_Passo = 1;
+  this.Ldev_sacode_flowrun_edit_PanelFontSize__f_Min = 10;
+  this.Ldev_sacode_flowrun_edit_PanelFontSize__f_Max = 26;
+  var this$5 = $m_sci_Map$();
+  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$ct_T2__O__O__(new $c_T2(), "messaggi", 13), $ct_T2__O__O__(new $c_T2(), "variabili", 12)]));
+  this.Ldev_sacode_flowrun_edit_PanelFontSize__f_Base = this$5.from__sc_IterableOnce__sci_Map(elems);
+}
+$c_Ldev_sacode_flowrun_edit_PanelFontSize.prototype = new $h_O();
+$c_Ldev_sacode_flowrun_edit_PanelFontSize.prototype.constructor = $c_Ldev_sacode_flowrun_edit_PanelFontSize;
+/** @constructor */
+function $h_Ldev_sacode_flowrun_edit_PanelFontSize() {
+}
+$h_Ldev_sacode_flowrun_edit_PanelFontSize.prototype = $c_Ldev_sacode_flowrun_edit_PanelFontSize.prototype;
+$c_Ldev_sacode_flowrun_edit_PanelFontSize.prototype.init__V = (function() {
+  var domList = $n(this.Ldev_sacode_flowrun_edit_PanelFontSize__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelectorAll(".fr-font-cmd");
+  var this$2 = new $c_Lorg_scalajs_dom_DOMList$DOMListSeq(domList);
+  var it = this$2.iterator__sc_Iterator();
+  while ($n(it).hasNext__Z()) {
+    var x0 = $n(it).next__O();
+    var this$3 = $n($m_s_Option$().apply__O__s_Option($as_T(x0.getAttribute("data-fr-font"))));
+    var area = $as_T((this$3.isEmpty__Z() ? "" : this$3.get__O()));
+    var this$6 = $n(area);
+    if ((!(this$6 === ""))) {
+      $p_Ldev_sacode_flowrun_edit_PanelFontSize__costruisci__Lorg_scalajs_dom_HTMLElement__T__V(this, x0, area);
+    }
+  }
+});
+var $d_Ldev_sacode_flowrun_edit_PanelFontSize = new $TypeData().initClass($c_Ldev_sacode_flowrun_edit_PanelFontSize, "dev.sacode.flowrun.edit.PanelFontSize", ({
+  Ldev_sacode_flowrun_edit_PanelFontSize: 1
+}));
+function $p_Ldev_sacode_flowrun_edit_RecodingLink__piattaforma__O($thiz) {
+  return window.rcPlatform;
+}
+function $p_Ldev_sacode_flowrun_edit_RecodingLink__spia__s_Option($thiz) {
+  var this$1 = $n($m_s_Option$().apply__O__s_Option($n($thiz.Ldev_sacode_flowrun_edit_RecodingLink__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelector(".fr-rc-spia")));
+  if (this$1.isEmpty__Z()) {
+    return $m_s_None$();
+  } else {
+    var x0 = this$1.get__O();
+    return new $c_s_Some(x0);
+  }
+}
+function $p_Ldev_sacode_flowrun_edit_RecodingLink__mostra__Z__V($thiz, ok) {
+  var this$1 = $n($p_Ldev_sacode_flowrun_edit_RecodingLink__spia__s_Option($thiz));
+  if ((!this$1.isEmpty__Z())) {
+    var x0 = this$1.get__O();
+    x0.classList.remove("fr-nascosto");
+    x0.classList.toggle("fr-rc-ok", ok);
+    x0.textContent = (ok ? "reCoding" : "reCoding non collegato");
+    x0.title = (ok ? "Collegato a reCoding: i file si possono leggere e scrivere nella tua cartella" : "Aperto dentro reCoding ma senza accesso ai file: salvataggio e apertura restano quelli del browser");
+  }
+}
+/** @constructor */
+function $c_Ldev_sacode_flowrun_edit_RecodingLink(flowRunElements) {
+  this.Ldev_sacode_flowrun_edit_RecodingLink__f_flowRunElements = null;
+  this.Ldev_sacode_flowrun_edit_RecodingLink__f_flowRunElements = flowRunElements;
+}
+$c_Ldev_sacode_flowrun_edit_RecodingLink.prototype = new $h_O();
+$c_Ldev_sacode_flowrun_edit_RecodingLink.prototype.constructor = $c_Ldev_sacode_flowrun_edit_RecodingLink;
+/** @constructor */
+function $h_Ldev_sacode_flowrun_edit_RecodingLink() {
+}
+$h_Ldev_sacode_flowrun_edit_RecodingLink.prototype = $c_Ldev_sacode_flowrun_edit_RecodingLink.prototype;
+$c_Ldev_sacode_flowrun_edit_RecodingLink.prototype.connesso__Z = (function() {
+  var x = $p_Ldev_sacode_flowrun_edit_RecodingLink__piattaforma__O(this);
+  var this$6 = ((x === (void 0)) ? $m_s_None$() : new $c_s_Some(x));
+  if ((!this$6.isEmpty__Z())) {
+    var x0 = this$6.get__O();
+    return $uZ(x0.connected);
+  } else {
+    return false;
+  }
+});
+$c_Ldev_sacode_flowrun_edit_RecodingLink.prototype.init__V = (function() {
+  var x = window.parent;
+  var y = window;
+  var ospitato = (!$m_sr_BoxesRunTime$().equals__O__O__Z(x, y));
+  if (ospitato) {
+    $p_Ldev_sacode_flowrun_edit_RecodingLink__mostra__Z__V(this, this.connesso__Z());
+    window.addEventListener("rc-connesso", ((_$2) => {
+      $p_Ldev_sacode_flowrun_edit_RecodingLink__mostra__Z__V(this, true);
+    }));
+  }
+});
+var $d_Ldev_sacode_flowrun_edit_RecodingLink = new $TypeData().initClass($c_Ldev_sacode_flowrun_edit_RecodingLink, "dev.sacode.flowrun.edit.RecodingLink", ({
+  Ldev_sacode_flowrun_edit_RecodingLink: 1
 }));
 function $p_Ldev_sacode_flowrun_edit_StatementEditor__doEdit__T__V($thiz, stmtId) {
   var stmtElem = $n($as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag())).apply__sci_Seq__Lscalatags_JsDom$TypedTag($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$n($m_Lscalatags_JsDom$all$().cls__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("flowrun-stmt-inputs", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr)])));

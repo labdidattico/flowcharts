@@ -128,6 +128,7 @@ body {
 .fr-pannello-titolo {
     font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
     color: #7a4a9c; border-bottom: 1px solid #ddd6e4; padding-bottom: 2px; margin-bottom: 4px;
+    display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
 }
 .flowrun-instance .flowrun-output { position: relative; }
 .flowrun-instance .flowrun-btn-clear-output { position: absolute; top: 2px; right: 4px; }
@@ -135,7 +136,7 @@ body {
     position: static !important; padding: 0 !important; display: block !important;
 }
 .flowrun-instance .fr-pannello-vars .flowrun-debug-vars * { background-color: transparent !important; }
-.flowrun-instance .fr-pannello-vars .flowrun-debug-vars table { width: 100%; font-size: 12px; }
+.flowrun-instance .fr-pannello-vars .flowrun-debug-vars table { width: 100%; font-size: var(--fr-font-variabili, 12px); }
 .flowrun-instance .fr-pannello-vars .flowrun-debug-vars:empty::after {
     content: "nessuna variabile in memoria";
     display: block; font-size: 11px; color: #9aa0a6; font-style: italic;
@@ -299,3 +300,30 @@ body.fr-trascinando { cursor: col-resize; user-select: none; }
     border: 1px solid #ccd2d8; border-radius: 4px; cursor: pointer; background: #f4f4f6; color: #555;
 }
 .fr-export-ok { background: #2f6fb0; border-color: #2f6fb0; color: #fff; font-weight: 600; }
+
+/* ---------- A- / A+ : misura del testo nei due pannelli di destra ---------- */
+/* Regola solo il pannello a cui appartiene: i messaggi e le variabili sono
+   indipendenti, come il docente li vuole in classe. */
+.flowrun-instance .flowrun-output .flowrun-scratchpad { font-size: var(--fr-font-messaggi, 13px); }
+.flowrun-instance .flowrun-output .flowrun-scratchpad * { font-size: inherit !important; }
+
+.fr-font-cmd { display: inline-flex; align-items: center; gap: 1px; flex: 0 0 auto; }
+.fr-font-cmd button {
+    font-family: inherit; line-height: 1; cursor: pointer;
+    background: none; border: 1px solid transparent; border-radius: 3px;
+    color: #9a7ab4; padding: 0 3px; letter-spacing: 0;
+}
+.fr-font-cmd button:hover:not(:disabled) { background: #f1ebf6; border-color: #ddd6e4; }
+.fr-font-cmd button:disabled { opacity: .3; cursor: default; }
+.fr-font-cmd .fr-font-giu { font-size: 10px; }
+.fr-font-cmd .fr-font-su { font-size: 14px; }
+
+/* ---- spia di collegamento a reCoding ---- */
+.flowrun-instance .fr-toolbar-coda .fr-rc-spia {
+    font-size: 10px; white-space: nowrap; flex: 0 0 auto;
+    padding: 1px 6px; border-radius: 8px;
+    background: #fdf0e3; color: #b06a2f; border: 1px solid #f0d9bf;
+}
+.flowrun-instance .fr-toolbar-coda .fr-rc-spia.fr-rc-ok {
+    background: #e8f5ec; color: #2f7a4a; border-color: #c9e6d4;
+}
