@@ -1,0 +1,149 @@
+{
+  "functions": [],
+  "name": "Esempio completo - tutti i blocchi",
+  "main": {
+    "rawId": "main",
+    "tpe": "Void",
+    "name": "main",
+    "parameters": [],
+    "statements": [
+      {
+        "@type": "Begin",
+        "id": "inizio"
+      },
+      {
+        "@type": "Declare",
+        "id": "dic_n",
+        "name": "n",
+        "tpe": "Integer",
+        "initValue": "0",
+        "lengthValue": -1,
+        "lengthValue1": "5",
+        "lengthValue2": "5"
+      },
+      {
+        "@type": "Declare",
+        "id": "dic_somma",
+        "name": "somma",
+        "tpe": "Integer",
+        "initValue": "0",
+        "lengthValue": -1,
+        "lengthValue1": "5",
+        "lengthValue2": "5"
+      },
+      {
+        "@type": "Input",
+        "id": "leggi_n",
+        "name": "n",
+        "prompt": "Quanti numeri"
+      },
+      {
+        "@type": "If",
+        "id": "se_positivo",
+        "condition": "n > 0",
+        "trueBlock": {
+          "id": "ramo_vero",
+          "statements": [
+            {
+              "@type": "Output",
+              "id": "out_vero",
+              "value": "\"Inizio elaborazione\"",
+              "newline": true
+            }
+          ]
+        },
+        "falseBlock": {
+          "id": "ramo_falso",
+          "statements": [
+            {
+              "@type": "Assign",
+              "id": "ass_n",
+              "name": "n",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ForLoop",
+        "id": "ciclo_for",
+        "varName": "i",
+        "start": "1",
+        "incr": "1",
+        "end": "n",
+        "body": {
+          "id": "corpo_for",
+          "statements": [
+            {
+              "@type": "Assign",
+              "id": "acc",
+              "name": "somma",
+              "value": "somma + i"
+            },
+            {
+              "@type": "Output",
+              "id": "out_for",
+              "value": "i",
+              "newline": true
+            }
+          ]
+        }
+      },
+      {
+        "@type": "While",
+        "id": "ciclo_while",
+        "condition": "somma > 10",
+        "body": {
+          "id": "corpo_while",
+          "statements": [
+            {
+              "@type": "Assign",
+              "id": "dim",
+              "name": "somma",
+              "value": "somma - 10"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "DoWhile",
+        "id": "ciclo_dowhile",
+        "condition": "somma < 3",
+        "body": {
+          "id": "corpo_dowhile",
+          "statements": [
+            {
+              "@type": "Assign",
+              "id": "inc",
+              "name": "somma",
+              "value": "somma + 1"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Output",
+        "id": "out_fine",
+        "value": "somma",
+        "newline": true
+      },
+      {
+        "@type": "Return",
+        "id": "fine",
+        "maybeValue": null
+      }
+    ]
+  },
+  "id": "esempio_completo",
+  "config": {
+    "showDebugVars": true,
+    "useInputPrompt": false,
+    "echoEnteredValue": false,
+    "showIoBtns": true,
+    "showFunctions": false,
+    "lang": "java",
+    "showGenCode": false
+  },
+  "version": "0.3",
+  "revision": 1
+}
