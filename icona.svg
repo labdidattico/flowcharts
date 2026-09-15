@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#ffffff"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="11" fill="none" stroke="#e0d8ea" stroke-width="2"/>
+  <!-- freccia in entrata -->
+  <path d="M32 7 L32 17" stroke="#2f6fb0" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M32 20 L27.6 13.5 L36.4 13.5 Z" fill="#2f6fb0"/>
+  <!-- rombo della scelta -->
+  <path d="M32 21 L49 32 L32 43 L15 32 Z" fill="#f4e7c9" stroke="#b07d2f" stroke-width="3" stroke-linejoin="round"/>
+  <!-- rami true / false -->
+  <path d="M49 32 L56 32 L56 52" stroke="#2f7a4a" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M56 57 L51.6 50.5 L60.4 50.5 Z" fill="#2f7a4a"/>
+  <path d="M15 32 L8 32 L8 52" stroke="#c0392b" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 57 L3.6 50.5 L12.4 50.5 Z" fill="#c0392b"/>
+</svg>

@@ -14,7 +14,11 @@ const ASSETS = [
   'vendor/prism.css',
   'vendor/prism.js',
   'vendor/toastify-js.js',
-  'vendor/toastify.min.css'
+  'vendor/toastify.min.css',
+  'favicon.ico',
+  'icona.svg',
+  'icona-192.png',
+  'manifest.webmanifest'
 ];
 
 self.addEventListener('install', (e) => {
