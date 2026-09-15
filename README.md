@@ -24,6 +24,5 @@ students.
 
 ## License
 
-Apache License 2.0. Derived from
-[FlowRun](https://github.com/sacode387/FlowRun) by sacode387. The source
-code of this build lives in a private repository.
+Apache License 2.0 (see `LICENSE`). Derived from
+[FlowRun](https://github.com/sacode387/FlowRun) by sacode387.
