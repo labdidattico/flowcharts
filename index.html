@@ -20,9 +20,12 @@
          auth token until the iframe says 'rc-ready', so a late handshake means
          the token is never delivered. Outside reCoding nobody answers and the
          app keeps its normal download/upload behaviour. */
-      window.rcPlatform = { connected: false, token: null, apiBase: null, origin: null, pendingFile: null };
+      window.rcPlatform = { hosted: false, connected: false, token: null, apiBase: null, origin: null, pendingFile: null };
       (function () {
-        if (window === window.parent) return;          // non siamo ospitati: niente da fare
+        var ospitato = false;
+        try { ospitato = window.parent && window.parent !== window; } catch (err) { ospitato = true; }
+        if (!ospitato) return;                         // non siamo ospitati: niente da fare
+        window.rcPlatform.hosted = true;
         window.addEventListener('message', function (e) {
           var d = e.data;
           if (!d || typeof d !== 'object') return;

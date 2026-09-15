@@ -7650,9 +7650,14 @@ $c_Ldev_sacode_flowrun_edit_RecodingLink.prototype.connesso__Z = (function() {
   }
 });
 $c_Ldev_sacode_flowrun_edit_RecodingLink.prototype.init__V = (function() {
-  var x = window.parent;
-  var y = window;
-  var ospitato = (!$m_sr_BoxesRunTime$().equals__O__O__Z(x, y));
+  var x = $p_Ldev_sacode_flowrun_edit_RecodingLink__piattaforma__O(this);
+  var this$6 = ((x === (void 0)) ? $m_s_None$() : new $c_s_Some(x));
+  if ((!this$6.isEmpty__Z())) {
+    var x0 = this$6.get__O();
+    var ospitato = $uZ(x0.hosted);
+  } else {
+    var ospitato = false;
+  }
   if (ospitato) {
     $p_Ldev_sacode_flowrun_edit_RecodingLink__mostra__Z__V(this, this.connesso__Z());
     window.addEventListener("rc-connesso", ((_$2) => {
