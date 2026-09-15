@@ -25,4 +25,5 @@ students.
 ## License
 
 Apache License 2.0 (see `LICENSE`). Derived from
-[FlowRun](https://github.com/sacode387/FlowRun) by sacode387.
+[FlowRun](https://github.com/sacode387/FlowRun) by sacode387; see `NOTICE`.
+Bundled third-party components are listed in `THIRD_PARTY.md`.
