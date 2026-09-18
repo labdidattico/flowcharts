@@ -1,5 +1,5 @@
 /* Service worker: tiene una copia locale dell'applicazione cosi' apra anche senza rete. */
-const CACHE = 'flowcharts-v1.1.0';
+const CACHE = 'flowcharts-v1.2.0';
 const ASSETS = [
   './',
   'index.html',
@@ -15,6 +15,7 @@ const ASSETS = [
   'vendor/prism.js',
   'vendor/toastify-js.js',
   'vendor/toastify.min.css',
+  'vendor/recoding-file-picker.js',
   'favicon.ico',
   'icona.svg',
   'icona-192.png',

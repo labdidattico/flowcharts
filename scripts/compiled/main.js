@@ -1606,7 +1606,7 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__attachRunAndCopyListeners__V($thi
     $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_loadButton.remove();
   }
   var x$3 = $thiz.Ldev_sacode_flowrun_FlowRunEditor__f_mode;
-  var x$4 = $s_Ldev_sacode_flowrun_EditMode$__ReadOnly__Ldev_sacode_flowrun_EditMode();
+  var x$4 = $s_Ldev_sacode_flowrun_EditMode$__Edit__Ldev_sacode_flowrun_EditMode();
   if ((x$3 === null)) {
     var $x_8 = (x$4 === null);
   } else {
@@ -1614,76 +1614,127 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__attachRunAndCopyListeners__V($thi
     var $x_8 = (this$27 === x$4);
   }
   if ($x_8) {
+    new $c_Ldev_sacode_flowrun_edit_RecodingFiles($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements, $thiz.Ldev_sacode_flowrun_FlowRunEditor__f_recodingLink, new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => $thiz.json__T())), new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((testo) => {
+      var testo$1 = $as_T(testo);
+      try {
+        var \u03b44$ = $as_Ldev_sacode_flowrun_ast_Program($m_Lba_sake_tupson_package$package$().parseJson__T__Lba_sake_tupson_JsonRW__O(testo$1, $m_Ldev_sacode_flowrun_ast_Program$().derived$JsonRW__Lba_sake_tupson_JsonRW()));
+        $n(\u03b44$);
+        var id$1 = $m_Ldev_sacode_flowrun_ast_AST$().newId__T();
+        var this$28 = $n(\u03b44$);
+        var name$2 = this$28.Ldev_sacode_flowrun_ast_Program__f_name;
+        var this$29 = $n(\u03b44$);
+        var config$1 = this$29.Ldev_sacode_flowrun_ast_Program__f_config;
+        var this$30 = $n(\u03b44$);
+        var main$1 = this$30.Ldev_sacode_flowrun_ast_Program__f_main;
+        var this$31 = $n(\u03b44$);
+        var functions$1 = this$31.Ldev_sacode_flowrun_ast_Program__f_functions;
+        var this$32 = $n(\u03b44$);
+        var version$1 = this$32.Ldev_sacode_flowrun_ast_Program__f_version;
+        var this$33 = $n(\u03b44$);
+        var revision$1 = this$33.Ldev_sacode_flowrun_ast_Program__f_revision;
+        var loadedProgram$1 = new $c_Ldev_sacode_flowrun_ast_Program(id$1, name$2, config$1, main$1, functions$1, version$1, revision$1);
+        $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast = loadedProgram$1;
+        $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_programNameInput.value = loadedProgram$1.Ldev_sacode_flowrun_ast_Program__f_name;
+        var this$35 = $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowrunChannel);
+        var value$1 = $s_Ldev_sacode_flowrun_FlowRun$Event$__FunctionSelected__Ldev_sacode_flowrun_FlowRun$Event();
+        var previous$1 = $m_s_None$();
+        var reactions$1 = $n(this$35.reactions__Lreactify_reaction_Reactions()).Lreactify_reaction_Reactions__f_list;
+        $f_Lreactify_Reactive__fire__O__s_Option__sci_List__Lreactify_reaction_ReactionStatus(this$35, value$1, previous$1, reactions$1);
+        return true;
+      } catch (e$1) {
+        var e$2$1 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
+        var x36 = $m_s_util_control_NonFatal$().unapply__jl_Throwable__s_Option(e$2$1);
+        if ((!$n(x36).isEmpty__Z())) {
+          $as_jl_Throwable($n(x36).get__O());
+          return false;
+        }
+        throw ((e$2$1 instanceof $c_sjs_js_JavaScriptException) ? e$2$1.sjs_js_JavaScriptException__f_exception : e$2$1);
+      }
+    })), new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => $n($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast).Ldev_sacode_flowrun_ast_Program__f_name)), new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((n$1) => {
+      var n$2 = $as_T(n$1);
+      $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).setName__T__V(n$2);
+      $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_programNameInput.value = n$2;
+    }))).init__V();
+  }
+  var x$5 = $thiz.Ldev_sacode_flowrun_FlowRunEditor__f_mode;
+  var x$6 = $s_Ldev_sacode_flowrun_EditMode$__ReadOnly__Ldev_sacode_flowrun_EditMode();
+  if ((x$5 === null)) {
+    var $x_9 = (x$6 === null);
+  } else {
+    var this$36 = $n(x$5);
+    var $x_9 = (this$36 === x$6);
+  }
+  if ($x_9) {
     $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_copySourceButton.remove();
   } else {
     $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_copySourceButton.onclick = ((_$14) => {
       window.navigator.clipboard.writeText($thiz.json__T());
-      var $x_10 = Toastify;
-      var this$28 = $m_Ldev_sacode_flowrun_ToastifyOptions$();
+      var $x_11 = Toastify;
+      var this$37 = $m_Ldev_sacode_flowrun_ToastifyOptions$();
       var color$1 = $m_Ldev_sacode_flowrun_Color$().Ldev_sacode_flowrun_Color$__f_green;
-      var $x_9 = $x_10(this$28.apply__T__T__T__Ldev_sacode_flowrun_Color__Ldev_sacode_flowrun_ToastifyOptions("Copied program source to clipboard.", "bottom", "center", color$1));
-      $x_9.showToast();
+      var $x_10 = $x_11(this$37.apply__T__T__T__Ldev_sacode_flowrun_Color__Ldev_sacode_flowrun_ToastifyOptions("Copied program source to clipboard.", "bottom", "center", color$1));
+      $x_10.showToast();
     });
   }
   $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_copyDotButton.onclick = ((_$15) => {
     window.navigator.clipboard.writeText($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowchartPresenter).funDOT__T());
-    var $x_12 = Toastify;
-    var this$29 = $m_Ldev_sacode_flowrun_ToastifyOptions$();
+    var $x_13 = Toastify;
+    var this$38 = $m_Ldev_sacode_flowrun_ToastifyOptions$();
     var color$2 = $m_Ldev_sacode_flowrun_Color$().Ldev_sacode_flowrun_Color$__f_green;
-    var $x_11 = $x_12(this$29.apply__T__T__T__Ldev_sacode_flowrun_Color__Ldev_sacode_flowrun_ToastifyOptions("Copied DOT to clipboard.", "bottom", "center", color$2));
-    $x_11.showToast();
+    var $x_12 = $x_13(this$38.apply__T__T__T__Ldev_sacode_flowrun_Color__Ldev_sacode_flowrun_ToastifyOptions("Copied DOT to clipboard.", "bottom", "center", color$2));
+    $x_12.showToast();
   });
   $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_copyGencodeButton.onclick = ((_$16) => {
     window.navigator.clipboard.writeText($thiz.codeText__T());
-    var $x_14 = Toastify;
-    var this$30 = $m_Ldev_sacode_flowrun_ToastifyOptions$();
+    var $x_15 = Toastify;
+    var this$39 = $m_Ldev_sacode_flowrun_ToastifyOptions$();
     var color$3 = $m_Ldev_sacode_flowrun_Color$().Ldev_sacode_flowrun_Color$__f_green;
-    var $x_13 = $x_14(this$30.apply__T__T__T__Ldev_sacode_flowrun_Color__Ldev_sacode_flowrun_ToastifyOptions("Copied generated code to clipboard.", "bottom", "center", color$3));
-    $x_13.showToast();
+    var $x_14 = $x_15(this$39.apply__T__T__T__Ldev_sacode_flowrun_Color__Ldev_sacode_flowrun_ToastifyOptions("Copied generated code to clipboard.", "bottom", "center", color$3));
+    $x_14.showToast();
   });
-  var x$5 = $thiz.Ldev_sacode_flowrun_FlowRunEditor__f_mode;
-  var x$6 = $s_Ldev_sacode_flowrun_EditMode$__Edit__Ldev_sacode_flowrun_EditMode();
-  if ((x$5 === null)) {
-    var $x_15 = (x$6 === null);
+  var x$7 = $thiz.Ldev_sacode_flowrun_FlowRunEditor__f_mode;
+  var x$8 = $s_Ldev_sacode_flowrun_EditMode$__Edit__Ldev_sacode_flowrun_EditMode();
+  if ((x$7 === null)) {
+    var $x_16 = (x$8 === null);
   } else {
-    var this$31 = $n(x$5);
-    var $x_15 = (this$31 === x$6);
+    var this$40 = $n(x$7);
+    var $x_16 = (this$40 === x$8);
   }
-  if ($x_15) {
+  if ($x_16) {
     $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_pasteSourceButton.onclick = ((_$17) => {
-      var \u03b44$ = window.navigator.clipboard.readText();
-      return \u03b44$.then(((copiedText) => {
+      var \u03b45$ = window.navigator.clipboard.readText();
+      return \u03b45$.then(((copiedText) => {
         var copiedText$1 = $as_T(copiedText);
         try {
-          var \u03b45$ = $as_Ldev_sacode_flowrun_ast_Program($m_Lba_sake_tupson_package$package$().parseJson__T__Lba_sake_tupson_JsonRW__O(copiedText$1, $m_Ldev_sacode_flowrun_ast_Program$().derived$JsonRW__Lba_sake_tupson_JsonRW()));
-          $n(\u03b45$);
-          var id$1 = $m_Ldev_sacode_flowrun_ast_AST$().newId__T();
-          var this$32 = $n(\u03b45$);
-          var name$2 = this$32.Ldev_sacode_flowrun_ast_Program__f_name;
-          var this$33 = $n(\u03b45$);
-          var config$1 = this$33.Ldev_sacode_flowrun_ast_Program__f_config;
-          var this$34 = $n(\u03b45$);
-          var main$1 = this$34.Ldev_sacode_flowrun_ast_Program__f_main;
-          var this$35 = $n(\u03b45$);
-          var functions$1 = this$35.Ldev_sacode_flowrun_ast_Program__f_functions;
-          var this$36 = $n(\u03b45$);
-          var version$1 = this$36.Ldev_sacode_flowrun_ast_Program__f_version;
-          var this$37 = $n(\u03b45$);
-          var revision$1 = this$37.Ldev_sacode_flowrun_ast_Program__f_revision;
-          var loadedProgram$1 = new $c_Ldev_sacode_flowrun_ast_Program(id$1, name$2, config$1, main$1, functions$1, version$1, revision$1);
-          $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast = loadedProgram$1;
-          var this$39 = $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowrunChannel);
-          var value$1 = $s_Ldev_sacode_flowrun_FlowRun$Event$__FunctionSelected__Ldev_sacode_flowrun_FlowRun$Event();
-          var previous$1 = $m_s_None$();
-          var reactions$1 = $n(this$39.reactions__Lreactify_reaction_Reactions()).Lreactify_reaction_Reactions__f_list;
-          $f_Lreactify_Reactive__fire__O__s_Option__sci_List__Lreactify_reaction_ReactionStatus(this$39, value$1, previous$1, reactions$1);
+          var \u03b46$ = $as_Ldev_sacode_flowrun_ast_Program($m_Lba_sake_tupson_package$package$().parseJson__T__Lba_sake_tupson_JsonRW__O(copiedText$1, $m_Ldev_sacode_flowrun_ast_Program$().derived$JsonRW__Lba_sake_tupson_JsonRW()));
+          $n(\u03b46$);
+          var id$2 = $m_Ldev_sacode_flowrun_ast_AST$().newId__T();
+          var this$41 = $n(\u03b46$);
+          var name$3 = this$41.Ldev_sacode_flowrun_ast_Program__f_name;
+          var this$42 = $n(\u03b46$);
+          var config$2 = this$42.Ldev_sacode_flowrun_ast_Program__f_config;
+          var this$43 = $n(\u03b46$);
+          var main$2 = this$43.Ldev_sacode_flowrun_ast_Program__f_main;
+          var this$44 = $n(\u03b46$);
+          var functions$2 = this$44.Ldev_sacode_flowrun_ast_Program__f_functions;
+          var this$45 = $n(\u03b46$);
+          var version$2 = this$45.Ldev_sacode_flowrun_ast_Program__f_version;
+          var this$46 = $n(\u03b46$);
+          var revision$2 = this$46.Ldev_sacode_flowrun_ast_Program__f_revision;
+          var loadedProgram$2 = new $c_Ldev_sacode_flowrun_ast_Program(id$2, name$3, config$2, main$2, functions$2, version$2, revision$2);
+          $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast = loadedProgram$2;
+          var this$48 = $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowrunChannel);
+          var value$2 = $s_Ldev_sacode_flowrun_FlowRun$Event$__FunctionSelected__Ldev_sacode_flowrun_FlowRun$Event();
+          var previous$2 = $m_s_None$();
+          var reactions$2 = $n(this$48.reactions__Lreactify_reaction_Reactions()).Lreactify_reaction_Reactions__f_list;
+          $f_Lreactify_Reactive__fire__O__s_Option__sci_List__Lreactify_reaction_ReactionStatus(this$48, value$2, previous$2, reactions$2);
           return (void 0);
-        } catch (e$1) {
-          var $x_17 = Toastify;
-          var this$40 = $m_Ldev_sacode_flowrun_ToastifyOptions$();
+        } catch (e$3) {
+          var $x_18 = Toastify;
+          var this$49 = $m_Ldev_sacode_flowrun_ToastifyOptions$();
           var color$4 = $m_Ldev_sacode_flowrun_Color$().Ldev_sacode_flowrun_Color$__f_yellow;
-          var $x_16 = $x_17(this$40.apply__T__T__T__Ldev_sacode_flowrun_Color__Ldev_sacode_flowrun_ToastifyOptions("Not a valid program", "bottom", "center", color$4));
-          $x_16.showToast();
+          var $x_17 = $x_18(this$49.apply__T__T__T__Ldev_sacode_flowrun_Color__Ldev_sacode_flowrun_ToastifyOptions("Not a valid program", "bottom", "center", color$4));
+          $x_17.showToast();
           return (void 0);
         }
       }));
@@ -1773,40 +1824,40 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__attachEditListeners__V($thiz) {
     $p_Ldev_sacode_flowrun_FlowRunEditor__setLayout__V($thiz);
   });
   $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_useInputPromptCheckbox.oninput = ((_$30) => {
-    var \u03b46$ = $n($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast).Ldev_sacode_flowrun_ast_Program__f_config;
+    var \u03b47$ = $n($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast).Ldev_sacode_flowrun_ast_Program__f_config;
     var useInputPrompt$1 = $uZ($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_useInputPromptCheckbox.checked);
-    var this$10 = $n(\u03b46$);
+    var this$10 = $n(\u03b47$);
     var lang$1 = this$10.Ldev_sacode_flowrun_ast_FlowRunConfig__f_lang;
-    var this$11 = $n(\u03b46$);
+    var this$11 = $n(\u03b47$);
     var showFunctions$1 = this$11.Ldev_sacode_flowrun_ast_FlowRunConfig__f_showFunctions;
-    var this$12 = $n(\u03b46$);
+    var this$12 = $n(\u03b47$);
     var showGenCode$1 = this$12.Ldev_sacode_flowrun_ast_FlowRunConfig__f_showGenCode;
-    var this$13 = $n(\u03b46$);
+    var this$13 = $n(\u03b47$);
     var showDebugVars$1 = this$13.Ldev_sacode_flowrun_ast_FlowRunConfig__f_showDebugVars;
-    var this$14 = $n(\u03b46$);
+    var this$14 = $n(\u03b47$);
     var showIoBtns$1 = this$14.Ldev_sacode_flowrun_ast_FlowRunConfig__f_showIoBtns;
-    var this$15 = $n(\u03b46$);
+    var this$15 = $n(\u03b47$);
     var echoEnteredValue$1 = this$15.Ldev_sacode_flowrun_ast_FlowRunConfig__f_echoEnteredValue;
-    $n(\u03b46$);
+    $n(\u03b47$);
     var newConfig = new $c_Ldev_sacode_flowrun_ast_FlowRunConfig(lang$1, showFunctions$1, showGenCode$1, showDebugVars$1, showIoBtns$1, useInputPrompt$1, echoEnteredValue$1);
     $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).setConfig__Ldev_sacode_flowrun_ast_FlowRunConfig__V(newConfig);
   });
   $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_echoEnteredValueCheckbox.oninput = ((_$31) => {
-    var \u03b47$ = $n($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast).Ldev_sacode_flowrun_ast_Program__f_config;
+    var \u03b48$ = $n($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast).Ldev_sacode_flowrun_ast_Program__f_config;
     var echoEnteredValue$2 = $uZ($n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_echoEnteredValueCheckbox.checked);
-    var this$17 = $n(\u03b47$);
+    var this$17 = $n(\u03b48$);
     var lang$2 = this$17.Ldev_sacode_flowrun_ast_FlowRunConfig__f_lang;
-    var this$18 = $n(\u03b47$);
+    var this$18 = $n(\u03b48$);
     var showFunctions$2 = this$18.Ldev_sacode_flowrun_ast_FlowRunConfig__f_showFunctions;
-    var this$19 = $n(\u03b47$);
+    var this$19 = $n(\u03b48$);
     var showGenCode$2 = this$19.Ldev_sacode_flowrun_ast_FlowRunConfig__f_showGenCode;
-    var this$20 = $n(\u03b47$);
+    var this$20 = $n(\u03b48$);
     var showDebugVars$2 = this$20.Ldev_sacode_flowrun_ast_FlowRunConfig__f_showDebugVars;
-    var this$21 = $n(\u03b47$);
+    var this$21 = $n(\u03b48$);
     var showIoBtns$2 = this$21.Ldev_sacode_flowrun_ast_FlowRunConfig__f_showIoBtns;
-    var this$22 = $n(\u03b47$);
+    var this$22 = $n(\u03b48$);
     var useInputPrompt$2 = this$22.Ldev_sacode_flowrun_ast_FlowRunConfig__f_useInputPrompt;
-    $n(\u03b47$);
+    $n(\u03b48$);
     var newConfig$1 = new $c_Ldev_sacode_flowrun_ast_FlowRunConfig(lang$2, showFunctions$2, showGenCode$2, showDebugVars$2, showIoBtns$2, useInputPrompt$2, echoEnteredValue$2);
     $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).setConfig__Ldev_sacode_flowrun_ast_FlowRunConfig__V(newConfig$1);
   });
@@ -1925,21 +1976,21 @@ function $p_Ldev_sacode_flowrun_FlowRunEditor__downloadAs$1__T__V($thiz, name) {
 }
 function $p_Ldev_sacode_flowrun_FlowRunEditor__showContextMenu$1__Lorg_scalajs_dom_MouseEvent__V($thiz, event) {
   event.preventDefault();
-  matchResult5: {
-    var x35 = $m_Ldev_sacode_flowrun_DomUtils$().getNearestSvgNode__Lorg_scalajs_dom_MouseEvent__T2(event);
-    if ((x35 !== null)) {
-      var x38 = $as_T($n(x35)._1__O());
-      var x39 = $n(x35)._2__O();
-      if ((x38 === "NODE")) {
-        var idParts = $f_T__split__T__I__AT($n($as_T(x39.id)), "#", (-1));
+  matchResult6: {
+    var x39 = $m_Ldev_sacode_flowrun_DomUtils$().getNearestSvgNode__Lorg_scalajs_dom_MouseEvent__T2(event);
+    if ((x39 !== null)) {
+      var x42 = $as_T($n(x39)._1__O());
+      var x43 = $n(x39)._2__O();
+      if ((x42 === "NODE")) {
+        var idParts = $f_T__split__T__I__AT($n($as_T(x43.id)), "#", (-1));
         var nodeId = $n(idParts).get(0);
         var tpe = $n(idParts).get(1);
         $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_ctxMenu).handleNodeRightClick__Lorg_scalajs_dom_MouseEvent__T__T__V(event, nodeId, tpe);
-        break matchResult5;
+        break matchResult6;
       }
-      if ((x38 === "EDGE")) {
-        $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_ctxMenu).handleEdgeRightClick__Lorg_scalajs_dom_MouseEvent__Lorg_scalajs_dom_SVGElement__V(event, x39);
-        break matchResult5;
+      if ((x42 === "EDGE")) {
+        $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_ctxMenu).handleEdgeRightClick__Lorg_scalajs_dom_MouseEvent__Lorg_scalajs_dom_SVGElement__V(event, x43);
+        break matchResult6;
       }
     }
     var this$1 = $n($thiz.Ldev_sacode_flowrun_FlowRunEditor__f_flowrunChannel);
@@ -1969,6 +2020,7 @@ function $c_Ldev_sacode_flowrun_FlowRunEditor(mountElem, theme, programJson, mou
   this.Ldev_sacode_flowrun_FlowRunEditor__f_history = null;
   this.Ldev_sacode_flowrun_FlowRunEditor__f_autoRun = null;
   this.Ldev_sacode_flowrun_FlowRunEditor__f_diagramSettings = null;
+  this.Ldev_sacode_flowrun_FlowRunEditor__f_recodingLink = null;
   this.Ldev_sacode_flowrun_FlowRunEditor__f_insertPoints = null;
   this.Ldev_sacode_flowrun_FlowRunEditor__f_arrowMerge = null;
   this.Ldev_sacode_flowrun_FlowRunEditor__f_declareGroupEditor = null;
@@ -2076,7 +2128,8 @@ function $c_Ldev_sacode_flowrun_FlowRunEditor(mountElem, theme, programJson, mou
   $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_diagramSettings).init__V();
   new $c_Ldev_sacode_flowrun_edit_VersionLabel(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).init__V();
   new $c_Ldev_sacode_flowrun_edit_PanelFontSize(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).init__V();
-  new $c_Ldev_sacode_flowrun_edit_RecodingLink(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements).init__V();
+  this.Ldev_sacode_flowrun_FlowRunEditor__f_recodingLink = new $c_Ldev_sacode_flowrun_edit_RecodingLink(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements);
+  $n(this.Ldev_sacode_flowrun_FlowRunEditor__f_recodingLink).init__V();
   new $c_Ldev_sacode_flowrun_edit_Exporter(this.Ldev_sacode_flowrun_FlowRunEditor__f_flowRunElements, this.Ldev_sacode_flowrun_FlowRunEditor__f_programModel, new $c_sr_AbstractFunction2_$$Lambda$286cbfc6187197affcadc8465aaec93d6b7d20dc(((v1, v2) => {
     var scala = $uD(v1);
     var salva = $as_F0(v2);
@@ -2492,8 +2545,20 @@ $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.codeText__T = (function() {
 $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.revision__I = (function() {
   return $n($n(this.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast).Ldev_sacode_flowrun_ast_Program__f_revision;
 });
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.name = (function() {
+  return this.name__T();
+});
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.funDOT = (function() {
+  return this.funDOT__T();
+});
 $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.revision = (function() {
   return this.revision__I();
+});
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.json = (function() {
+  return this.json__T();
+});
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.codeText = (function() {
+  return this.codeText__T();
 });
 Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunEditor.prototype, "flowRunElements", ({
   "get": (function() {
@@ -2501,18 +2566,6 @@ Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunEditor.prototype, "flowRunEl
   }),
   "configurable": true
 }));
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.json = (function() {
-  return this.json__T();
-});
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.funDOT = (function() {
-  return this.funDOT__T();
-});
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.name = (function() {
-  return this.name__T();
-});
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.codeText = (function() {
-  return this.codeText__T();
-});
 function $as_Ldev_sacode_flowrun_FlowRunEditor(obj) {
   return (((obj instanceof $c_Ldev_sacode_flowrun_FlowRunEditor) || (obj === null)) ? obj : $throwClassCastException(obj, "dev.sacode.flowrun.FlowRunEditor"));
 }
@@ -8228,6 +8281,353 @@ $c_Ldev_sacode_flowrun_edit_PanelFontSize.prototype.init__V = (function() {
 var $d_Ldev_sacode_flowrun_edit_PanelFontSize = new $TypeData().initClass($c_Ldev_sacode_flowrun_edit_PanelFontSize, "dev.sacode.flowrun.edit.PanelFontSize", ({
   Ldev_sacode_flowrun_edit_PanelFontSize: 1
 }));
+function $p_Ldev_sacode_flowrun_edit_RecodingFiles__picker__sjs_js_Dynamic($thiz) {
+  return window.RecodingFilePicker;
+}
+function $p_Ldev_sacode_flowrun_edit_RecodingFiles__rcFetch__T__sjs_js_Object__sjs_js_Promise($thiz, path, opts) {
+  return window.rcFetch(path, opts);
+}
+function $p_Ldev_sacode_flowrun_edit_RecodingFiles__rcFetch$default$2__sjs_js_Object($thiz) {
+  var fields = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
+  return $m_sjs_js_special_package$().objectLiteral__sci_Seq__sjs_js_Object(fields);
+}
+function $p_Ldev_sacode_flowrun_edit_RecodingFiles__avviso__T__Ldev_sacode_flowrun_Color__V($thiz, testo, colore) {
+  var $x_2 = Toastify;
+  var this$1 = $m_Ldev_sacode_flowrun_ToastifyOptions$();
+  var $x_1 = $x_2(this$1.apply__T__T__T__Ldev_sacode_flowrun_Color__Ldev_sacode_flowrun_ToastifyOptions(testo, "bottom", "center", colore));
+  $x_1.showToast();
+}
+function $p_Ldev_sacode_flowrun_edit_RecodingFiles__attiva__V($thiz) {
+  $n($thiz.Ldev_sacode_flowrun_edit_RecodingFiles__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_loadButton.onclick = ((_$2) => {
+    $p_Ldev_sacode_flowrun_edit_RecodingFiles__apri__V($thiz);
+  });
+  $n($thiz.Ldev_sacode_flowrun_edit_RecodingFiles__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_downloadButton.onclick = ((_$3) => {
+    $p_Ldev_sacode_flowrun_edit_RecodingFiles__salva__V($thiz);
+  });
+  $n($thiz.Ldev_sacode_flowrun_edit_RecodingFiles__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_loadButton.title = "Apri un diagramma dalla tua cartella reCoding";
+  $n($thiz.Ldev_sacode_flowrun_edit_RecodingFiles__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_downloadButton.title = "Salva il diagramma nella tua cartella reCoding";
+  var p = window.rcPlatform;
+  var daUrl = $as_T(new URLSearchParams($as_T(window.location.search)).get("file"));
+  var x = p.pendingFile;
+  var this$8 = ((x === (void 0)) ? $m_s_None$() : new $c_s_Some(x));
+  if (this$8.isEmpty__Z()) {
+    var $x_1 = true;
+  } else {
+    var x0 = this$8.get__O();
+    var _$4 = $as_T(x0);
+    var $x_1 = (_$4 !== null);
+  }
+  if ($x_1) {
+    var pendente = this$8;
+  } else {
+    var pendente = $m_s_None$();
+  }
+  if (pendente.isEmpty__Z()) {
+    var this$9 = $n($m_s_Option$().apply__O__s_Option(daUrl));
+    if (this$9.isEmpty__Z()) {
+      var $x_2 = true;
+    } else {
+      var x0$1 = this$9.get__O();
+      var _$5 = $as_T(x0$1);
+      var this$12 = $n(_$5);
+      var $x_2 = (!(this$12 === ""));
+    }
+    if ($x_2) {
+      var this$13 = this$9;
+    } else {
+      var this$13 = $m_s_None$();
+    }
+  } else {
+    var this$13 = pendente;
+  }
+  if ((!this$13.isEmpty__Z())) {
+    var x0$2 = this$13.get__O();
+    var path = $as_T(x0$2);
+    $p_Ldev_sacode_flowrun_edit_RecodingFiles__leggi__T__V($thiz, path);
+  }
+  window.addEventListener("rc-file-da-aprire", ((e) => {
+    $p_Ldev_sacode_flowrun_edit_RecodingFiles__leggi__T__V($thiz, $as_T(e.detail));
+  }));
+}
+function $p_Ldev_sacode_flowrun_edit_RecodingFiles__cartellaDi__T__T($thiz, path) {
+  var this$1 = $n(path);
+  if (($uI(this$1.indexOf("/")) !== (-1))) {
+    var this$3 = $n(path);
+    var this$2 = $n(path);
+    var endIndex = $uI(this$2.lastIndexOf("/"));
+    if ((endIndex > this$3.length)) {
+      $charAt(this$3, endIndex);
+    }
+    if ((endIndex < 0)) {
+      $charAt(this$3, (-1));
+    }
+    return $as_T(this$3.substring(0, endIndex));
+  } else {
+    return "";
+  }
+}
+function $p_Ldev_sacode_flowrun_edit_RecodingFiles__apri__V($thiz) {
+  var $x_3 = $m_sr_ScalaRunTime$();
+  var $x_2 = $ct_T2__O__O__(new $c_T2(), "title", "Apri diagramma");
+  var this$3 = $n($thiz.Ldev_sacode_flowrun_edit_RecodingFiles__f_percorsoCorrente);
+  if (this$3.isEmpty__Z()) {
+    var this$4 = $m_s_None$();
+  } else {
+    var x0 = this$3.get__O();
+    var path = $as_T(x0);
+    var this$4 = new $c_s_Some($p_Ldev_sacode_flowrun_edit_RecodingFiles__cartellaDi__T__T($thiz, path));
+  }
+  var s = $as_T((this$4.isEmpty__Z() ? "" : this$4.get__O()));
+  var $x_1 = $ct_T2__O__O__(new $c_T2(), "defaultDir", s);
+  var _2 = [$thiz.Ldev_sacode_flowrun_edit_RecodingFiles__f_Ext];
+  var fields = $x_3.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$x_2, $x_1, $ct_T2__O__O__(new $c_T2(), "extensions", _2)]));
+  var opts = $m_sjs_js_special_package$().objectLiteral__sci_Seq__sjs_js_Object(fields);
+  var p = $p_Ldev_sacode_flowrun_edit_RecodingFiles__picker__sjs_js_Dynamic($thiz).open(opts);
+  $n($m_sjs_js_Thenable$ThenableOps$().toFuture$extension__sjs_js_Thenable__s_concurrent_Future(p)).onComplete__F1__s_concurrent_ExecutionContext__V(new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((x$1) => {
+    var x$1$1 = $as_s_util_Try(x$1);
+    matchResult1: {
+      if ((x$1$1 instanceof $c_s_util_Success)) {
+        var x6 = $as_s_util_Success(x$1$1);
+        var r = $n(x6).s_util_Success__f_value;
+        if ((r !== null)) {
+          $p_Ldev_sacode_flowrun_edit_RecodingFiles__leggi__T__V($thiz, $as_T(r.path));
+          break matchResult1;
+        }
+        break matchResult1;
+      }
+      if ((x$1$1 instanceof $c_s_util_Failure)) {
+        var x2 = $as_s_util_Failure(x$1$1);
+        var e = $n(x2).s_util_Failure__f_exception;
+        $p_Ldev_sacode_flowrun_edit_RecodingFiles__avviso__T__Ldev_sacode_flowrun_Color__V($thiz, ("Impossibile aprire: " + $n(e).getMessage__T()), $m_Ldev_sacode_flowrun_Color$().Ldev_sacode_flowrun_Color$__f_yellow);
+        break matchResult1;
+      }
+      throw new $c_s_MatchError(x$1$1);
+    }
+  })), $m_s_concurrent_ExecutionContext$().global__s_concurrent_ExecutionContextExecutor());
+}
+function $p_Ldev_sacode_flowrun_edit_RecodingFiles__leggi__T__V($thiz, path) {
+  var p = $p_Ldev_sacode_flowrun_edit_RecodingFiles__rcFetch__T__sjs_js_Object__sjs_js_Promise($thiz, ("/api/files/read?path=" + $as_T(encodeURIComponent(path))), $p_Ldev_sacode_flowrun_edit_RecodingFiles__rcFetch$default$2__sjs_js_Object($thiz));
+  $n($n($m_sjs_js_Thenable$ThenableOps$().toFuture$extension__sjs_js_Thenable__s_concurrent_Future(p)).flatMap__F1__s_concurrent_ExecutionContext__s_concurrent_Future(new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((r) => {
+    if ($uZ(r.ok)) {
+      var p$1 = r.json();
+      return $n($m_sjs_js_Thenable$ThenableOps$().toFuture$extension__sjs_js_Thenable__s_concurrent_Future(p$1)).map__F1__s_concurrent_ExecutionContext__s_concurrent_Future(new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((j) => $as_T(j.content))), $m_s_concurrent_ExecutionContext$().global__s_concurrent_ExecutionContextExecutor());
+    } else {
+      return $m_s_concurrent_Future$().failed__jl_Throwable__s_concurrent_Future($ct_jl_Exception__T__(new $c_jl_Exception(), (("lettura fallita (" + $uI(r.status)) + ")")));
+    }
+  })), $m_s_concurrent_ExecutionContext$().global__s_concurrent_ExecutionContextExecutor())).onComplete__F1__s_concurrent_ExecutionContext__V(new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((x$1) => {
+    var x$1$1 = $as_s_util_Try(x$1);
+    matchResult2: {
+      if ((x$1$1 instanceof $c_s_util_Success)) {
+        var x11 = $as_s_util_Success(x$1$1);
+        var testo = $as_T($n(x11).s_util_Success__f_value);
+        if ($uZ($n($thiz.Ldev_sacode_flowrun_edit_RecodingFiles__f_loadJson).apply__O__O(testo))) {
+          $thiz.Ldev_sacode_flowrun_edit_RecodingFiles__f_percorsoCorrente = new $c_s_Some(path);
+          $p_Ldev_sacode_flowrun_edit_RecodingFiles__avviso__T__Ldev_sacode_flowrun_Color__V($thiz, ("Aperto " + path), $m_Ldev_sacode_flowrun_Color$().Ldev_sacode_flowrun_Color$__f_green);
+          break matchResult2;
+        } else {
+          $p_Ldev_sacode_flowrun_edit_RecodingFiles__avviso__T__Ldev_sacode_flowrun_Color__V($thiz, "Il file non \u00e8 un diagramma valido", $m_Ldev_sacode_flowrun_Color$().Ldev_sacode_flowrun_Color$__f_yellow);
+          break matchResult2;
+        }
+      }
+      if ((x$1$1 instanceof $c_s_util_Failure)) {
+        var x9 = $as_s_util_Failure(x$1$1);
+        var e = $n(x9).s_util_Failure__f_exception;
+        $p_Ldev_sacode_flowrun_edit_RecodingFiles__avviso__T__Ldev_sacode_flowrun_Color__V($thiz, ((("Impossibile aprire " + path) + ": ") + $n(e).getMessage__T()), $m_Ldev_sacode_flowrun_Color$().Ldev_sacode_flowrun_Color$__f_yellow);
+        break matchResult2;
+      }
+      throw new $c_s_MatchError(x$1$1);
+    }
+  })), $m_s_concurrent_ExecutionContext$().global__s_concurrent_ExecutionContextExecutor());
+}
+function $p_Ldev_sacode_flowrun_edit_RecodingFiles__salva__V($thiz) {
+  var this$1 = $n($m_s_Option$().apply__O__s_Option($n($thiz.Ldev_sacode_flowrun_edit_RecodingFiles__f_currentName).apply__O()));
+  if (this$1.isEmpty__Z()) {
+    var this$2 = $m_s_None$();
+  } else {
+    var x0 = this$1.get__O();
+    var _$6 = $as_T(x0);
+    var this$2 = new $c_s_Some($f_T__trim__T($n(_$6)));
+  }
+  if (this$2.isEmpty__Z()) {
+    var $x_1 = true;
+  } else {
+    var x0$1 = this$2.get__O();
+    var n = $as_T(x0$1);
+    var this$5 = $n(n);
+    if ((!(this$5 === ""))) {
+      var $x_1 = (n !== "New Program");
+    } else {
+      var $x_1 = false;
+    }
+  }
+  if ($x_1) {
+    var this$6 = this$2;
+  } else {
+    var this$6 = $m_s_None$();
+  }
+  var nome = $as_T((this$6.isEmpty__Z() ? "progetto" : this$6.get__O()));
+  var $x_5 = $m_sr_ScalaRunTime$();
+  var $x_4 = $ct_T2__O__O__(new $c_T2(), "title", "Salva diagramma");
+  var this$9 = $n($thiz.Ldev_sacode_flowrun_edit_RecodingFiles__f_percorsoCorrente);
+  if (this$9.isEmpty__Z()) {
+    var this$10 = $m_s_None$();
+  } else {
+    var x0$2 = this$9.get__O();
+    var path = $as_T(x0$2);
+    var this$10 = new $c_s_Some($p_Ldev_sacode_flowrun_edit_RecodingFiles__cartellaDi__T__T($thiz, path));
+  }
+  var s = $as_T((this$10.isEmpty__Z() ? "" : this$10.get__O()));
+  var $x_3 = $ct_T2__O__O__(new $c_T2(), "defaultDir", s);
+  var s$1 = ((nome + ".") + $thiz.Ldev_sacode_flowrun_edit_RecodingFiles__f_Ext);
+  var $x_2 = $ct_T2__O__O__(new $c_T2(), "defaultName", s$1);
+  var s$2 = $thiz.Ldev_sacode_flowrun_edit_RecodingFiles__f_Ext;
+  var fields = $x_5.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$x_4, $x_3, $x_2, $ct_T2__O__O__(new $c_T2(), "forceExtension", s$2)]));
+  var opts = $m_sjs_js_special_package$().objectLiteral__sci_Seq__sjs_js_Object(fields);
+  var p = $p_Ldev_sacode_flowrun_edit_RecodingFiles__picker__sjs_js_Dynamic($thiz).saveAs(opts);
+  $n($m_sjs_js_Thenable$ThenableOps$().toFuture$extension__sjs_js_Thenable__s_concurrent_Future(p)).onComplete__F1__s_concurrent_ExecutionContext__V(new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((x$1) => {
+    var x$1$1 = $as_s_util_Try(x$1);
+    matchResult3: {
+      if ((x$1$1 instanceof $c_s_util_Success)) {
+        var x18 = $as_s_util_Success(x$1$1);
+        var r = $n(x18).s_util_Success__f_value;
+        if ((r !== null)) {
+          var path$1 = $as_T(r.path);
+          var dir = $as_T(r.dir);
+          var name = $as_T(r.name);
+          $n($p_Ldev_sacode_flowrun_edit_RecodingFiles__esiste__T__T__s_concurrent_Future($thiz, dir, name)).foreach__F1__s_concurrent_ExecutionContext__V(new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((v1) => {
+            var c = $uZ(v1);
+            if (c) {
+              $m_Ldev_sacode_flowrun_edit_Dialogs$().confirm__T__T__F0__V("File gi\u00e0 presente", (("\u00ab" + name) + "\u00bb esiste gi\u00e0 in questa cartella. Sovrascriverlo?"), new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => {
+                $p_Ldev_sacode_flowrun_edit_RecodingFiles__scrivi__T__T__V($thiz, path$1, name);
+              })));
+            } else {
+              $p_Ldev_sacode_flowrun_edit_RecodingFiles__scrivi__T__T__V($thiz, path$1, name);
+            }
+          })), $m_s_concurrent_ExecutionContext$().global__s_concurrent_ExecutionContextExecutor());
+          break matchResult3;
+        }
+        break matchResult3;
+      }
+      if ((x$1$1 instanceof $c_s_util_Failure)) {
+        var x14 = $as_s_util_Failure(x$1$1);
+        var e = $n(x14).s_util_Failure__f_exception;
+        $p_Ldev_sacode_flowrun_edit_RecodingFiles__avviso__T__Ldev_sacode_flowrun_Color__V($thiz, ("Impossibile salvare: " + $n(e).getMessage__T()), $m_Ldev_sacode_flowrun_Color$().Ldev_sacode_flowrun_Color$__f_yellow);
+        break matchResult3;
+      }
+      throw new $c_s_MatchError(x$1$1);
+    }
+  })), $m_s_concurrent_ExecutionContext$().global__s_concurrent_ExecutionContextExecutor());
+}
+function $p_Ldev_sacode_flowrun_edit_RecodingFiles__esiste__T__T__s_concurrent_Future($thiz, dir, name) {
+  var p = $p_Ldev_sacode_flowrun_edit_RecodingFiles__rcFetch__T__sjs_js_Object__sjs_js_Promise($thiz, ("/api/files/list?path=" + $as_T(encodeURIComponent(dir))), $p_Ldev_sacode_flowrun_edit_RecodingFiles__rcFetch$default$2__sjs_js_Object($thiz));
+  return $n($n($m_sjs_js_Thenable$ThenableOps$().toFuture$extension__sjs_js_Thenable__s_concurrent_Future(p)).flatMap__F1__s_concurrent_ExecutionContext__s_concurrent_Future(new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((r) => {
+    if ($uZ(r.ok)) {
+      var p$1 = r.json();
+      return $n($m_sjs_js_Thenable$ThenableOps$().toFuture$extension__sjs_js_Thenable__s_concurrent_Future(p$1)).map__F1__s_concurrent_ExecutionContext__s_concurrent_Future(new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((j) => {
+        _return: {
+          var len = $uI(j.length);
+          var i = 0;
+          while ((i < len)) {
+            var x0 = j[i];
+            if (($as_T(x0.name) === name)) {
+              var $x_1 = i;
+              break _return;
+            }
+            i = ((1 + i) | 0);
+          }
+          var $x_1 = (-1);
+        }
+        return ($x_1 >= 0);
+      })), $m_s_concurrent_ExecutionContext$().global__s_concurrent_ExecutionContextExecutor());
+    } else {
+      return $m_s_concurrent_Future$().successful__O__s_concurrent_Future(false);
+    }
+  })), $m_s_concurrent_ExecutionContext$().global__s_concurrent_ExecutionContextExecutor())).recover__s_PartialFunction__s_concurrent_ExecutionContext__s_concurrent_Future(new $c_Ldev_sacode_flowrun_edit_RecodingFiles$$anon$1(), $m_s_concurrent_ExecutionContext$().global__s_concurrent_ExecutionContextExecutor());
+}
+function $p_Ldev_sacode_flowrun_edit_RecodingFiles__scrivi__T__T__V($thiz, path, name) {
+  var base = $m_sc_StringOps$().stripSuffix$extension__T__T__T(name, ("." + $thiz.Ldev_sacode_flowrun_edit_RecodingFiles__f_Ext));
+  $n($thiz.Ldev_sacode_flowrun_edit_RecodingFiles__f_setName).apply__O__O(base);
+  var $x_4 = JSON;
+  var $x_3 = $m_sr_ScalaRunTime$();
+  var $x_2 = $ct_T2__O__O__(new $c_T2(), "path", path);
+  var s = $as_T($n($thiz.Ldev_sacode_flowrun_edit_RecodingFiles__f_jsonOf).apply__O());
+  var fields = $x_3.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$x_2, $ct_T2__O__O__(new $c_T2(), "content", s)]));
+  var $x_1 = $x_4.stringify($m_sjs_js_special_package$().objectLiteral__sci_Seq__sjs_js_Object(fields));
+  var body = $as_T($x_1);
+  var $x_6 = $m_sr_ScalaRunTime$();
+  var $x_5 = $ct_T2__O__O__(new $c_T2(), "method", "POST");
+  var fields$1 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$ct_T2__O__O__(new $c_T2(), "Content-Type", "application/json")]));
+  var _2 = $m_sjs_js_special_package$().objectLiteral__sci_Seq__sjs_js_Object(fields$1);
+  var fields$2 = $x_6.wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$x_5, $ct_T2__O__O__(new $c_T2(), "headers", _2), $ct_T2__O__O__(new $c_T2(), "body", body)]));
+  var opts = $m_sjs_js_special_package$().objectLiteral__sci_Seq__sjs_js_Object(fields$2);
+  var p = $p_Ldev_sacode_flowrun_edit_RecodingFiles__rcFetch__T__sjs_js_Object__sjs_js_Promise($thiz, "/api/files/write", opts);
+  $n($m_sjs_js_Thenable$ThenableOps$().toFuture$extension__sjs_js_Thenable__s_concurrent_Future(p)).onComplete__F1__s_concurrent_ExecutionContext__V(new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((x$1) => {
+    var x$1$1 = $as_s_util_Try(x$1);
+    matchResult6: {
+      if ((x$1$1 instanceof $c_s_util_Success)) {
+        var x27 = $as_s_util_Success(x$1$1);
+        var x28 = $n(x27).s_util_Success__f_value;
+        if ($uZ(x28.ok)) {
+          $thiz.Ldev_sacode_flowrun_edit_RecodingFiles__f_percorsoCorrente = new $c_s_Some(path);
+          try {
+            var \u03b41$ = window.parent;
+            var fields$3 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$ct_T2__O__O__(new $c_T2(), "type", "filesChanged")]));
+            \u03b41$.postMessage($m_sjs_js_special_package$().objectLiteral__sci_Seq__sjs_js_Object(fields$3), "*");
+          } catch (e) {
+          }
+          $p_Ldev_sacode_flowrun_edit_RecodingFiles__avviso__T__Ldev_sacode_flowrun_Color__V($thiz, ("Salvato " + path), $m_Ldev_sacode_flowrun_Color$().Ldev_sacode_flowrun_Color$__f_green);
+          break matchResult6;
+        }
+        $p_Ldev_sacode_flowrun_edit_RecodingFiles__avviso__T__Ldev_sacode_flowrun_Color__V($thiz, (("Salvataggio fallito (" + $uI(x28.status)) + ")"), $m_Ldev_sacode_flowrun_Color$().Ldev_sacode_flowrun_Color$__f_yellow);
+        break matchResult6;
+      }
+      if ((x$1$1 instanceof $c_s_util_Failure)) {
+        var x23 = $as_s_util_Failure(x$1$1);
+        var e$3 = $n(x23).s_util_Failure__f_exception;
+        $p_Ldev_sacode_flowrun_edit_RecodingFiles__avviso__T__Ldev_sacode_flowrun_Color__V($thiz, ("Salvataggio fallito: " + $n(e$3).getMessage__T()), $m_Ldev_sacode_flowrun_Color$().Ldev_sacode_flowrun_Color$__f_yellow);
+        break matchResult6;
+      }
+      throw new $c_s_MatchError(x$1$1);
+    }
+  })), $m_s_concurrent_ExecutionContext$().global__s_concurrent_ExecutionContextExecutor());
+}
+/** @constructor */
+function $c_Ldev_sacode_flowrun_edit_RecodingFiles(flowRunElements, link, jsonOf, loadJson, currentName, setName) {
+  this.Ldev_sacode_flowrun_edit_RecodingFiles__f_flowRunElements = null;
+  this.Ldev_sacode_flowrun_edit_RecodingFiles__f_link = null;
+  this.Ldev_sacode_flowrun_edit_RecodingFiles__f_jsonOf = null;
+  this.Ldev_sacode_flowrun_edit_RecodingFiles__f_loadJson = null;
+  this.Ldev_sacode_flowrun_edit_RecodingFiles__f_currentName = null;
+  this.Ldev_sacode_flowrun_edit_RecodingFiles__f_setName = null;
+  this.Ldev_sacode_flowrun_edit_RecodingFiles__f_Ext = null;
+  this.Ldev_sacode_flowrun_edit_RecodingFiles__f_percorsoCorrente = null;
+  this.Ldev_sacode_flowrun_edit_RecodingFiles__f_flowRunElements = flowRunElements;
+  this.Ldev_sacode_flowrun_edit_RecodingFiles__f_link = link;
+  this.Ldev_sacode_flowrun_edit_RecodingFiles__f_jsonOf = jsonOf;
+  this.Ldev_sacode_flowrun_edit_RecodingFiles__f_loadJson = loadJson;
+  this.Ldev_sacode_flowrun_edit_RecodingFiles__f_currentName = currentName;
+  this.Ldev_sacode_flowrun_edit_RecodingFiles__f_setName = setName;
+  this.Ldev_sacode_flowrun_edit_RecodingFiles__f_Ext = "flowrun";
+  this.Ldev_sacode_flowrun_edit_RecodingFiles__f_percorsoCorrente = $m_s_None$();
+}
+$c_Ldev_sacode_flowrun_edit_RecodingFiles.prototype = new $h_O();
+$c_Ldev_sacode_flowrun_edit_RecodingFiles.prototype.constructor = $c_Ldev_sacode_flowrun_edit_RecodingFiles;
+/** @constructor */
+function $h_Ldev_sacode_flowrun_edit_RecodingFiles() {
+}
+$h_Ldev_sacode_flowrun_edit_RecodingFiles.prototype = $c_Ldev_sacode_flowrun_edit_RecodingFiles.prototype;
+$c_Ldev_sacode_flowrun_edit_RecodingFiles.prototype.init__V = (function() {
+  if ($n(this.Ldev_sacode_flowrun_edit_RecodingFiles__f_link).connesso__Z()) {
+    $p_Ldev_sacode_flowrun_edit_RecodingFiles__attiva__V(this);
+  } else {
+    window.addEventListener("rc-connesso", ((_$1) => {
+      $p_Ldev_sacode_flowrun_edit_RecodingFiles__attiva__V(this);
+    }));
+  }
+});
+var $d_Ldev_sacode_flowrun_edit_RecodingFiles = new $TypeData().initClass($c_Ldev_sacode_flowrun_edit_RecodingFiles, "dev.sacode.flowrun.edit.RecodingFiles", ({
+  Ldev_sacode_flowrun_edit_RecodingFiles: 1
+}));
 function $p_Ldev_sacode_flowrun_edit_RecodingLink__piattaforma__O($thiz) {
   return window.rcPlatform;
 }
@@ -9356,7 +9756,7 @@ $c_Ldev_sacode_flowrun_edit_VersionLabel.prototype.init__V = (function() {
   var this$1 = $n($m_s_Option$().apply__O__s_Option($n(this.Ldev_sacode_flowrun_edit_VersionLabel__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelector(".fr-versione-barra")));
   if ((!this$1.isEmpty__Z())) {
     var x0 = this$1.get__O();
-    x0.textContent = "1.1.0";
+    x0.textContent = "1.2.0";
     x0.title = "Versione dell'applicazione";
   }
 });
@@ -35247,6 +35647,57 @@ function $m_sjs_concurrent_QueueExecutionContext$() {
     $n_sjs_concurrent_QueueExecutionContext$ = new $c_sjs_concurrent_QueueExecutionContext$();
   }
   return $n_sjs_concurrent_QueueExecutionContext$;
+}
+/** @constructor */
+function $c_sjs_js_Thenable$ThenableOps$() {
+}
+$c_sjs_js_Thenable$ThenableOps$.prototype = new $h_O();
+$c_sjs_js_Thenable$ThenableOps$.prototype.constructor = $c_sjs_js_Thenable$ThenableOps$;
+/** @constructor */
+function $h_sjs_js_Thenable$ThenableOps$() {
+}
+$h_sjs_js_Thenable$ThenableOps$.prototype = $c_sjs_js_Thenable$ThenableOps$.prototype;
+$c_sjs_js_Thenable$ThenableOps$.prototype.toFuture$extension__sjs_js_Thenable__s_concurrent_Future = (function(this$) {
+  var p2 = $ct_s_concurrent_impl_Promise$DefaultPromise__(new $c_s_concurrent_impl_Promise$DefaultPromise());
+  this$.then(((arg1$2) => {
+    $f_s_concurrent_Promise__success__O__s_concurrent_Promise(p2, arg1$2);
+  }), $m_sjs_js_defined$().apply__O__sjs_js_$bar(((arg1$2$1) => {
+    var cause = ((arg1$2$1 instanceof $c_jl_Throwable) ? arg1$2$1 : new $c_sjs_js_JavaScriptException(arg1$2$1));
+    $f_s_concurrent_Promise__failure__jl_Throwable__s_concurrent_Promise(p2, cause);
+  })));
+  return p2;
+});
+var $d_sjs_js_Thenable$ThenableOps$ = new $TypeData().initClass($c_sjs_js_Thenable$ThenableOps$, "scala.scalajs.js.Thenable$ThenableOps$", ({
+  sjs_js_Thenable$ThenableOps$: 1
+}));
+var $n_sjs_js_Thenable$ThenableOps$;
+function $m_sjs_js_Thenable$ThenableOps$() {
+  if ((!$n_sjs_js_Thenable$ThenableOps$)) {
+    $n_sjs_js_Thenable$ThenableOps$ = new $c_sjs_js_Thenable$ThenableOps$();
+  }
+  return $n_sjs_js_Thenable$ThenableOps$;
+}
+/** @constructor */
+function $c_sjs_js_defined$() {
+}
+$c_sjs_js_defined$.prototype = new $h_O();
+$c_sjs_js_defined$.prototype.constructor = $c_sjs_js_defined$;
+/** @constructor */
+function $h_sjs_js_defined$() {
+}
+$h_sjs_js_defined$.prototype = $c_sjs_js_defined$.prototype;
+$c_sjs_js_defined$.prototype.apply__O__sjs_js_$bar = (function(a) {
+  return a;
+});
+var $d_sjs_js_defined$ = new $TypeData().initClass($c_sjs_js_defined$, "scala.scalajs.js.defined$", ({
+  sjs_js_defined$: 1
+}));
+var $n_sjs_js_defined$;
+function $m_sjs_js_defined$() {
+  if ((!$n_sjs_js_defined$)) {
+    $n_sjs_js_defined$ = new $c_sjs_js_defined$();
+  }
+  return $n_sjs_js_defined$;
 }
 /** @constructor */
 function $c_sjs_js_special_package$() {
@@ -64771,6 +65222,10 @@ var $d_jl_Error = new $TypeData().initClass($c_jl_Error, "java.lang.Error", ({
   jl_Throwable: 1,
   Ljava_io_Serializable: 1
 }));
+function $ct_jl_Exception__T__($thiz, s) {
+  $ct_jl_Throwable__T__jl_Throwable__Z__Z__($thiz, s, null, true, true);
+  return $thiz;
+}
 class $c_jl_Exception extends $c_jl_Throwable {
 }
 function $as_jl_Exception(obj) {
@@ -64782,6 +65237,11 @@ function $isArrayOf_jl_Exception(obj, depth) {
 function $asArrayOf_jl_Exception(obj, depth) {
   return (($isArrayOf_jl_Exception(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Ljava.lang.Exception;", depth));
 }
+var $d_jl_Exception = new $TypeData().initClass($c_jl_Exception, "java.lang.Exception", ({
+  jl_Exception: 1,
+  jl_Throwable: 1,
+  Ljava_io_Serializable: 1
+}));
 function $ct_Ljava_nio_charset_ISO\uff3f8859\uff3f1\uff3fAnd\uff3fUS\uff3fASCII\uff3fCommon__T__AT__I__($thiz, name, aliases, maxValue) {
   $ct_Ljava_nio_charset_Charset__T__AT__($thiz, name, aliases);
   return $thiz;
@@ -83479,6 +83939,34 @@ $c_Ldev_sacode_flowrun_edit_DeclareGroupEditor$$anon$1.prototype.applyOrElse__O_
 });
 var $d_Ldev_sacode_flowrun_edit_DeclareGroupEditor$$anon$1 = new $TypeData().initClass($c_Ldev_sacode_flowrun_edit_DeclareGroupEditor$$anon$1, "dev.sacode.flowrun.edit.DeclareGroupEditor$$anon$1", ({
   Ldev_sacode_flowrun_edit_DeclareGroupEditor$$anon$1: 1,
+  sr_AbstractPartialFunction: 1,
+  F1: 1,
+  s_PartialFunction: 1,
+  Ljava_io_Serializable: 1
+}));
+/** @constructor */
+function $c_Ldev_sacode_flowrun_edit_RecodingFiles$$anon$1() {
+}
+$c_Ldev_sacode_flowrun_edit_RecodingFiles$$anon$1.prototype = new $h_sr_AbstractPartialFunction();
+$c_Ldev_sacode_flowrun_edit_RecodingFiles$$anon$1.prototype.constructor = $c_Ldev_sacode_flowrun_edit_RecodingFiles$$anon$1;
+/** @constructor */
+function $h_Ldev_sacode_flowrun_edit_RecodingFiles$$anon$1() {
+}
+$h_Ldev_sacode_flowrun_edit_RecodingFiles$$anon$1.prototype = $c_Ldev_sacode_flowrun_edit_RecodingFiles$$anon$1.prototype;
+$c_Ldev_sacode_flowrun_edit_RecodingFiles$$anon$1.prototype.isDefinedAt__jl_Throwable__Z = (function(x) {
+  return true;
+});
+$c_Ldev_sacode_flowrun_edit_RecodingFiles$$anon$1.prototype.applyOrElse__jl_Throwable__F1__O = (function(x, default$1) {
+  return false;
+});
+$c_Ldev_sacode_flowrun_edit_RecodingFiles$$anon$1.prototype.isDefinedAt__O__Z = (function(x) {
+  return this.isDefinedAt__jl_Throwable__Z($as_jl_Throwable(x));
+});
+$c_Ldev_sacode_flowrun_edit_RecodingFiles$$anon$1.prototype.applyOrElse__O__F1__O = (function(x, default$1) {
+  return this.applyOrElse__jl_Throwable__F1__O($as_jl_Throwable(x), default$1);
+});
+var $d_Ldev_sacode_flowrun_edit_RecodingFiles$$anon$1 = new $TypeData().initClass($c_Ldev_sacode_flowrun_edit_RecodingFiles$$anon$1, "dev.sacode.flowrun.edit.RecodingFiles$$anon$1", ({
+  Ldev_sacode_flowrun_edit_RecodingFiles$$anon$1: 1,
   sr_AbstractPartialFunction: 1,
   F1: 1,
   s_PartialFunction: 1,
