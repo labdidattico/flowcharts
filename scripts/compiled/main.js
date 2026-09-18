@@ -9785,7 +9785,7 @@ $c_Ldev_sacode_flowrun_edit_VersionLabel.prototype.init__V = (function() {
   var this$1 = $n($m_s_Option$().apply__O__s_Option($n(this.Ldev_sacode_flowrun_edit_VersionLabel__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelector(".fr-versione-barra")));
   if ((!this$1.isEmpty__Z())) {
     var x0 = this$1.get__O();
-    x0.textContent = "1.2.2";
+    x0.textContent = "1.2.3";
     x0.title = "Versione dell'applicazione";
   }
 });
@@ -16930,7 +16930,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthFalse__Ldev_sacode_
     var ord$1 = $m_s_math_Ordering$Int$();
     var this$7 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$6, ord$1));
     var wrMax = $uI((this$7.isEmpty__Z() ? 0 : this$7.get__O()));
-    return ((((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x107)) | 0) + ((depth === 0) ? wrMax : ((wlMax + wrMax) | 0))) | 0);
+    return ((((2 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x107)) | 0) + ((depth === 0) ? wrMax : ((wlMax + wrMax) | 0))) | 0);
   } else if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$While)) {
     var x106 = $as_Ldev_sacode_flowrun_ast_Statement$While(stmt);
     var this$8 = $n($n($n(x106).Ldev_sacode_flowrun_ast_Statement$While__f_body).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
@@ -16957,7 +16957,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthFalse__Ldev_sacode_
     var ord$2 = $m_s_math_Ordering$Int$();
     var this$10 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$9, ord$2));
     var innerLeft = $uI((this$10.isEmpty__Z() ? 0 : this$10.get__O()));
-    return ((((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x106)) | 0) + innerLeft) | 0);
+    return ((((2 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x106)) | 0) + innerLeft) | 0);
   } else if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$DoWhile)) {
     var x105 = $as_Ldev_sacode_flowrun_ast_Statement$DoWhile(stmt);
     return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x105);
@@ -16987,7 +16987,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthFalse__Ldev_sacode_
     var ord$3 = $m_s_math_Ordering$Int$();
     var this$13 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$12, ord$3));
     var innerLeft$2 = $uI((this$13.isEmpty__Z() ? 0 : this$13.get__O()));
-    return ((((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x104)) | 0) + innerLeft$2) | 0);
+    return ((((2 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x104)) | 0) + innerLeft$2) | 0);
   } else {
     return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, stmt);
   }
@@ -17043,7 +17043,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthTrue__Ldev_sacode_f
     var ord$1 = $m_s_math_Ordering$Int$();
     var this$7 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$6, ord$1));
     var wrMax = $uI((this$7.isEmpty__Z() ? 0 : this$7.get__O()));
-    return ((((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x112)) | 0) + ((depth === 0) ? wlMax : ((wlMax + wrMax) | 0))) | 0);
+    return ((((2 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x112)) | 0) + ((depth === 0) ? wlMax : ((wlMax + wrMax) | 0))) | 0);
   } else if ((statement instanceof $c_Ldev_sacode_flowrun_ast_Statement$While)) {
     var x111 = $as_Ldev_sacode_flowrun_ast_Statement$While(statement);
     var this$8 = $n($n($n(x111).Ldev_sacode_flowrun_ast_Statement$While__f_body).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
@@ -17094,7 +17094,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthTrue__Ldev_sacode_f
     var ord$3 = $m_s_math_Ordering$Int$();
     var this$13 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$12, ord$3));
     var wrMax$2 = $uI((this$13.isEmpty__Z() ? 0 : this$13.get__O()));
-    return ((((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x111)) | 0) + ((depth === 0) ? wlMax$2 : ((wlMax$2 + wrMax$2) | 0))) | 0);
+    return ((((2 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x111)) | 0) + ((depth === 0) ? wlMax$2 : ((wlMax$2 + wrMax$2) | 0))) | 0);
   } else if ((statement instanceof $c_Ldev_sacode_flowrun_ast_Statement$DoWhile)) {
     var x110 = $as_Ldev_sacode_flowrun_ast_Statement$DoWhile(statement);
     var this$14 = $n($n($n(x110).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_body).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
@@ -17145,7 +17145,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthTrue__Ldev_sacode_f
     var ord$5 = $m_s_math_Ordering$Int$();
     var this$19 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$18, ord$5));
     var wrMax$3 = $uI((this$19.isEmpty__Z() ? 0 : this$19.get__O()));
-    return ((((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x110)) | 0) + ((depth === 0) ? wrMax$3 : ((wlMax$3 + wrMax$3) | 0))) | 0);
+    return ((((2 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x110)) | 0) + ((depth === 0) ? wrMax$3 : ((wlMax$3 + wrMax$3) | 0))) | 0);
   } else if ((statement instanceof $c_Ldev_sacode_flowrun_ast_Statement$ForLoop)) {
     var x109 = $as_Ldev_sacode_flowrun_ast_Statement$ForLoop(statement);
     var this$20 = $n($n($n(x109).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_body).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
@@ -17196,17 +17196,17 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthTrue__Ldev_sacode_f
     var ord$7 = $m_s_math_Ordering$Int$();
     var this$25 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$24, ord$7));
     var wrMax$4 = $uI((this$25.isEmpty__Z() ? 0 : this$25.get__O()));
-    return ((((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x109)) | 0) + ((depth === 0) ? wlMax$4 : ((wlMax$4 + wrMax$4) | 0))) | 0);
+    return ((((2 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x109)) | 0) + ((depth === 0) ? wlMax$4 : ((wlMax$4 + wrMax$4) | 0))) | 0);
   } else {
     return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, statement);
   }
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, stmt) {
-  var columnInch = ($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement / $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch);
+  var unitInch = ($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement / $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch);
   var marginInch = (10.0 / $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch);
   var half = (($p_Ldev_sacode_flowrun_formatgen_DotGenerator__symbolWidth__Ldev_sacode_flowrun_ast_Statement__D($thiz, stmt) / 2.0) + marginInch);
-  var x = (half / columnInch);
-  var y = (((-1) + $doubleToInt($uD(Math.ceil(x)))) | 0);
+  var x = (half / unitInch);
+  var y = (((-2) + $doubleToInt($uD(Math.ceil(x)))) | 0);
   return ((y < 0) ? 0 : y);
 }
 /** @constructor */
@@ -17226,7 +17226,7 @@ function $c_Ldev_sacode_flowrun_formatgen_DotGenerator(function$1, flowRunTheme,
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f = $n(style).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_fontScale;
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF = (1.0 + (0.45 * (this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f - 1.0)));
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_gridF = (1.0 + (0.35 * (this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f - 1.0)));
-  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement = (120.0 * this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_gridF);
+  this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement = (60.0 * this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_gridF);
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_yIncrement = ((90.0 * $n(style).Ldev_sacode_flowrun_formatgen_DiagramStyle__f_spacing) * this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_gridF);
   this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch = 96;
 }
