@@ -86,7 +86,7 @@ body {
 
 /* ---------- barra dei comandi: una fila, a gruppi, un colore per gruppo ---------- */
 .flowrun-instance .fr-toolbar {
-    display: flex; align-items: center; gap: 3px;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 3px;
     padding: 3px 8px; width: 100%; box-sizing: border-box; min-width: 0;
     background: linear-gradient(#fdfdfd, #eceaf0);
     border-bottom: 1px solid #c9c2cf;
@@ -114,11 +114,16 @@ body {
 .flowrun-instance .fr-toolbar .fr-opt-btn.fr-opt-attiva .material-icons { color: #b07a1f; }
 .flowrun-instance .fr-toolbar .flowrun-btn-config .material-icons { color: #4a4a4a; }
 .fr-sep { display: inline-block; width: 1px; height: 20px; background: #c3bac9; margin: 0 6px; }
+/* la coda (nome, versione, spia) si mette in fila; se non c'e' posto va a capo
+   su una seconda riga invece di sovrapporsi ai comandi */
 .flowrun-instance .fr-toolbar-coda {
-    margin-left: 8px; flex: 1 1 0; min-width: 0;
+    margin-left: 8px; flex: 1 1 0; min-width: 24px; container-type: inline-size;
     display: inline-flex; align-items: center; justify-content: flex-end; gap: 6px;
 }
-.flowrun-instance .fr-toolbar-coda .flowrun-program-name { font-size: 12px; width: auto !important; flex: 0 1 auto; }
+.flowrun-instance .fr-toolbar-coda .flowrun-program-name {
+    font-size: 12px; width: auto !important; flex: 0 1 auto; min-width: 40px; overflow: hidden; text-overflow: ellipsis;
+}
+.flowrun-instance .fr-toolbar-coda { overflow: hidden; }
 .flowrun-instance .fr-toolbar-coda .fr-versione-barra {
     font-size: 11px; color: #9aa0a6; white-space: nowrap; flex: 0 0 auto;
 }
@@ -326,5 +331,15 @@ body.fr-trascinando { cursor: col-resize; user-select: none; }
 }
 .flowrun-instance .fr-toolbar-coda .fr-rc-spia.fr-rc-ok {
     background: #e8f5ec; color: #2f7a4a; border-color: #c9e6d4;
+}
+/* poco spazio in coda (es. finestra stretta dentro reCoding): la versione
+   sparisce e la spia diventa un pallino; il testo resta nel title */
+@container (max-width: 200px) {
+    .fr-versione-barra { display: none; }
+    .fr-rc-spia {
+        font-size: 0 !important; width: 10px; height: 10px; padding: 0 !important; border-radius: 50% !important;
+        background: #e8a04a !important; border-color: #c97f2a !important;
+    }
+    .fr-rc-spia.fr-rc-ok { background: #3fa860 !important; border-color: #2f7a4a !important; }
 }
 

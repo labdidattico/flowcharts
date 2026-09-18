@@ -508,6 +508,7 @@
       </div>
       <div class="rc-fp-footer">
         <div class="rc-fp-buttons">
+          <button type="button" class="rc-fp-btn secondary rc-fp-local" style="display:none;">Dal computer</button>
           <button type="button" class="rc-fp-btn cancel rc-fp-cancel">Annulla</button>
           <button type="button" class="rc-fp-btn primary rc-fp-confirm" disabled>Apri</button>
         </div>
@@ -519,6 +520,12 @@
     const browserMount = modal.querySelector(".rc-fp-mount-browser");
     const cancelBtn = modal.querySelector(".rc-fp-cancel");
     const confirmBtn = modal.querySelector(".rc-fp-confirm");
+    // Local change: optional "from this computer" button (browser file dialog).
+    const localBtn = modal.querySelector(".rc-fp-local");
+    if (typeof opts.onLocal === "function") {
+      localBtn.style.display = "";
+      localBtn.addEventListener("click", () => { close(null); opts.onLocal(); });
+    }
 
     let selected = null;
 
