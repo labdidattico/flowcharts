@@ -9785,7 +9785,7 @@ $c_Ldev_sacode_flowrun_edit_VersionLabel.prototype.init__V = (function() {
   var this$1 = $n($m_s_Option$().apply__O__s_Option($n(this.Ldev_sacode_flowrun_edit_VersionLabel__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelector(".fr-versione-barra")));
   if ((!this$1.isEmpty__Z())) {
     var x0 = this$1.get__O();
-    x0.textContent = "1.3.2";
+    x0.textContent = "1.3.3";
     x0.title = "Versione dell'applicazione";
   }
 });
@@ -17122,12 +17122,12 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__symbolWidth__Ldev_sacode
     }
     return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__ioWidth__T__D($thiz, lbl);
   }
+  if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$If)) {
+    $as_Ldev_sacode_flowrun_ast_Statement$If(stmt);
+    return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__diamondWidth__T__D($thiz, lbl);
+  }
   matchAlts1: {
     matchAlts2: {
-      if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$If)) {
-        $as_Ldev_sacode_flowrun_ast_Statement$If(stmt);
-        break matchAlts2;
-      }
       if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$While)) {
         $as_Ldev_sacode_flowrun_ast_Statement$While(stmt);
         break matchAlts2;
@@ -17145,6 +17145,19 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__symbolWidth__Ldev_sacode
     return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__boxWidth__T__Z__D($thiz, lbl, true);
   }
   return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__boxWidth__T__Z__D($thiz, lbl, false);
+}
+function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__diamondWidth__T__D($thiz, label) {
+  var charW = (0.125 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f);
+  var this$1 = $n(label);
+  var textW = ((this$1.length * charW) + (0.05 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f));
+  var textH = (0.3 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f);
+  var x = (0.52 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF);
+  var that = (2.3 * textH);
+  var h = $uD(Math.max(x, that));
+  var x$1 = (1.0 - (textH / h));
+  var wNeeded = ((textW / $uD(Math.max(x$1, 0.35))) + (0.22 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF));
+  var that$1 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__boxWidth__T__Z__D($thiz, label, true);
+  return $uD(Math.max(wNeeded, that$1));
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__edgeAttrs__T__T($thiz, nextStmtId) {
   var this$1 = $n(nextStmtId);
@@ -17204,7 +17217,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthFalse__Ldev_sacode_
     var ord$1 = $m_s_math_Ordering$Int$();
     var this$7 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$6, ord$1));
     var wrMax = $uI((this$7.isEmpty__Z() ? 0 : this$7.get__O()));
-    return ((((2 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x107)) | 0) + ((depth === 0) ? wrMax : ((wlMax + wrMax) | 0))) | 0);
+    return ((((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfDiamondColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x107)) | 0) + ((depth === 0) ? wrMax : ((wlMax + wrMax) | 0))) | 0);
   } else if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$While)) {
     var x106 = $as_Ldev_sacode_flowrun_ast_Statement$While(stmt);
     var this$8 = $n($n($n(x106).Ldev_sacode_flowrun_ast_Statement$While__f_body).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
@@ -17317,7 +17330,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthTrue__Ldev_sacode_f
     var ord$1 = $m_s_math_Ordering$Int$();
     var this$7 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$6, ord$1));
     var wrMax = $uI((this$7.isEmpty__Z() ? 0 : this$7.get__O()));
-    return ((((2 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x112)) | 0) + ((depth === 0) ? wlMax : ((wlMax + wrMax) | 0))) | 0);
+    return ((((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfDiamondColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x112)) | 0) + ((depth === 0) ? wlMax : ((wlMax + wrMax) | 0))) | 0);
   } else if ((statement instanceof $c_Ldev_sacode_flowrun_ast_Statement$While)) {
     var x111 = $as_Ldev_sacode_flowrun_ast_Statement$While(statement);
     var this$8 = $n($n($n(x111).Ldev_sacode_flowrun_ast_Statement$While__f_body).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
@@ -17474,6 +17487,13 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthTrue__Ldev_sacode_f
   } else {
     return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, statement);
   }
+}
+function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfDiamondColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, stmt) {
+  var unitInch = ($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement / $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch);
+  var half = ($p_Ldev_sacode_flowrun_formatgen_DotGenerator__symbolWidth__Ldev_sacode_flowrun_ast_Statement__D($thiz, stmt) / 2.0);
+  var x = (half / unitInch);
+  var y = ((1 + $doubleToInt($uD(Math.ceil(x)))) | 0);
+  return ((y < 2) ? 2 : y);
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, stmt) {
   var unitInch = ($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement / $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch);
