@@ -9785,7 +9785,7 @@ $c_Ldev_sacode_flowrun_edit_VersionLabel.prototype.init__V = (function() {
   var this$1 = $n($m_s_Option$().apply__O__s_Option($n(this.Ldev_sacode_flowrun_edit_VersionLabel__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelector(".fr-versione-barra")));
   if ((!this$1.isEmpty__Z())) {
     var x0 = this$1.get__O();
-    x0.textContent = "1.3.3";
+    x0.textContent = "1.3.4";
     x0.title = "Versione dell'applicazione";
   }
 });
@@ -17217,7 +17217,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthFalse__Ldev_sacode_
     var ord$1 = $m_s_math_Ordering$Int$();
     var this$7 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$6, ord$1));
     var wrMax = $uI((this$7.isEmpty__Z() ? 0 : this$7.get__O()));
-    return ((((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfDiamondColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x107)) | 0) + ((depth === 0) ? wrMax : ((wlMax + wrMax) | 0))) | 0);
+    return ((((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfDiamondColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x107)) | 0) + ((depth === 0) ? 0 : ((wlMax + wrMax) | 0))) | 0);
   } else if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$While)) {
     var x106 = $as_Ldev_sacode_flowrun_ast_Statement$While(stmt);
     var this$8 = $n($n($n(x106).Ldev_sacode_flowrun_ast_Statement$While__f_body).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
@@ -17330,7 +17330,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthTrue__Ldev_sacode_f
     var ord$1 = $m_s_math_Ordering$Int$();
     var this$7 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$6, ord$1));
     var wrMax = $uI((this$7.isEmpty__Z() ? 0 : this$7.get__O()));
-    return ((((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfDiamondColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x112)) | 0) + ((depth === 0) ? wlMax : ((wlMax + wrMax) | 0))) | 0);
+    return ((((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfDiamondColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x112)) | 0) + ((depth === 0) ? 0 : ((wlMax + wrMax) | 0))) | 0);
   } else if ((statement instanceof $c_Ldev_sacode_flowrun_ast_Statement$While)) {
     var x111 = $as_Ldev_sacode_flowrun_ast_Statement$While(statement);
     var this$8 = $n($n($n(x111).Ldev_sacode_flowrun_ast_Statement$While__f_body).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
