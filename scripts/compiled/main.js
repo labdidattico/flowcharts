@@ -9785,7 +9785,7 @@ $c_Ldev_sacode_flowrun_edit_VersionLabel.prototype.init__V = (function() {
   var this$1 = $n($m_s_Option$().apply__O__s_Option($n(this.Ldev_sacode_flowrun_edit_VersionLabel__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelector(".fr-versione-barra")));
   if ((!this$1.isEmpty__Z())) {
     var x0 = this$1.get__O();
-    x0.textContent = "1.3.1";
+    x0.textContent = "1.3.2";
     x0.title = "Versione dell'applicazione";
   }
 });
@@ -17089,10 +17089,10 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__boxWidth__T__Z__D($thiz,
   return $uD(Math.max(w, that));
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__diamondDimensions__T__T($thiz, label) {
-  var charW = (0.091 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF);
+  var charW = (0.125 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f);
   var this$1 = $n(label);
-  var textW = ((this$1.length * charW) + (0.05 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF));
-  var textH = (0.24 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF);
+  var textW = ((this$1.length * charW) + (0.05 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f));
+  var textH = (0.3 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f);
   var x = (0.52 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF);
   var that = (2.3 * textH);
   var h = $uD(Math.max(x, that));
