@@ -16026,7 +16026,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodeDOT__Ldev_sacode_flo
     var ifEndId = ("end_" + $n(x52).Ldev_sacode_flowrun_ast_Statement$If__f_id);
     var $x_10 = $n(x52).Ldev_sacode_flowrun_ast_Statement$If__f_id;
     var $x_9 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 0);
-    var $x_8 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, lbl$8, true);
+    var $x_8 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__diamondDimensions__T__T($thiz, lbl$8);
     var $x_7 = $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T();
     var $x_6 = $n(x52).Ldev_sacode_flowrun_ast_Statement$If__f_id;
     var $x_5 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, trueOffsetX, posY, 0);
@@ -16088,7 +16088,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodeDOT__Ldev_sacode_flo
     var right = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__rightCorridor__T__I__T__D($thiz, $f_sc_IterableOnceOps__mkString__T__T__T__T(this$61, "", "\n", ""), posX, lbl$9);
     var $x_22 = $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id;
     var $x_21 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 42);
-    var $x_20 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, lbl$9, true);
+    var $x_20 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__diamondDimensions__T__T($thiz, lbl$9);
     var $x_19 = $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T();
     var $x_18 = $n(x51).Ldev_sacode_flowrun_ast_Statement$While__f_id;
     var $x_17 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 0);
@@ -16146,7 +16146,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodeDOT__Ldev_sacode_flo
     var $x_25 = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF;
     var $x_24 = $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T();
     var this$76 = $n($as_sc_IterableOnceOps(dots$4___1));
-    var x$11 = (((((((((((((((((((((((((((((((((((((((("|" + doWhileEndId) + " [id=\"") + doWhileEndId) + "#DoWhileEndId\" class=\"flowrun-not-selectable\" ") + $x_27) + " ") + group) + " \n              |  label=\"\" tooltip=\" \" shape=\"circle\" fixedsize=true width=") + (0.2 * $x_26)) + " height=") + (0.2 * $x_25)) + " ") + $x_24) + "]\n              |\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$76, "", "\n", "")) + "\n              |\n              |") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [id=\"") + stmtId) + "\" ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY$3, 0)) + " ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, lbl$10, true)) + " ") + group) + " \n              |label=\"") + lbl$10) + "\" tooltip=\"") + lbl$10) + "\" shape=\"diamond\" ") + $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T()) + "]\n              |\n              |true_dummy_up_") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right$2, posY, 16)) + " shape=point width=0]\n              |true_dummy_down_") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right$2, maxBranchY$3, 0)) + " shape=point width=0]\n              |\n              |");
+    var x$11 = (((((((((((((((((((((((((((((((((((((((("|" + doWhileEndId) + " [id=\"") + doWhileEndId) + "#DoWhileEndId\" class=\"flowrun-not-selectable\" ") + $x_27) + " ") + group) + " \n              |  label=\"\" tooltip=\" \" shape=\"circle\" fixedsize=true width=") + (0.2 * $x_26)) + " height=") + (0.2 * $x_25)) + " ") + $x_24) + "]\n              |\n              |") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$76, "", "\n", "")) + "\n              |\n              |") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [id=\"") + stmtId) + "\" ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, maxBranchY$3, 0)) + " ") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__diamondDimensions__T__T($thiz, lbl$10)) + " ") + group) + " \n              |label=\"") + lbl$10) + "\" tooltip=\"") + lbl$10) + "\" shape=\"diamond\" ") + $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T()) + "]\n              |\n              |true_dummy_up_") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right$2, posY, 16)) + " shape=point width=0]\n              |true_dummy_down_") + $n(x50).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_id) + " [") + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, right$2, maxBranchY$3, 0)) + " shape=point width=0]\n              |\n              |");
     var dot$10$1 = $m_sc_StringOps$().stripMargin$extension__T__C__T(x$11, 124);
     return $ct_T2__O__O__(new $c_T2(), dot$10$1, maxBranchY$3);
   }
@@ -16197,7 +16197,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodeDOT__Ldev_sacode_flo
     var right$3 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__rightCorridor__T__I__T__D($thiz, $f_sc_IterableOnceOps__mkString__T__T__T__T(this$89, "", "\n", ""), posX, lbl$11);
     var $x_39 = $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id;
     var $x_38 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 42);
-    var $x_37 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, lbl$11, true);
+    var $x_37 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__diamondDimensions__T__T($thiz, lbl$11);
     var $x_36 = $n($n($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_loopNode).graphvizColors__T();
     var $x_35 = $n(x49).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_id;
     var $x_34 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__pos__I__I__I__T($thiz, posX, posY, 0);
@@ -16827,6 +16827,20 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__boxWidth__T__Z__D($thiz,
   var w = (((0.125 * this$1.length) + (luft ? 0.52 : 0.22)) * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF);
   var that = $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF;
   return $uD(Math.max(w, that));
+}
+function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__diamondDimensions__T__T($thiz, label) {
+  var charW = (0.091 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF);
+  var this$1 = $n(label);
+  var textW = ((this$1.length * charW) + (0.05 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF));
+  var textH = (0.24 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF);
+  var x = (0.52 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF);
+  var that = (2.3 * textH);
+  var h = $uD(Math.max(x, that));
+  var x$1 = (1.0 - (textH / h));
+  var wNeeded = ((textW / $uD(Math.max(x$1, 0.35))) + (0.22 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF));
+  var that$1 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__boxWidth__T__Z__D($thiz, label, true);
+  var width = $uD(Math.max(wNeeded, that$1));
+  return (((("height=" + h) + " width=") + width) + " fixedsize=true");
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, label, luft) {
   var h = ((0.46 + (luft ? 0.1 : 0.0)) * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF);
