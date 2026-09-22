@@ -9785,7 +9785,7 @@ $c_Ldev_sacode_flowrun_edit_VersionLabel.prototype.init__V = (function() {
   var this$1 = $n($m_s_Option$().apply__O__s_Option($n(this.Ldev_sacode_flowrun_edit_VersionLabel__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelector(".fr-versione-barra")));
   if ((!this$1.isEmpty__Z())) {
     var x0 = this$1.get__O();
-    x0.textContent = "1.3.4";
+    x0.textContent = "1.3.5";
     x0.title = "Versione dell'applicazione";
   }
 });
@@ -16990,75 +16990,73 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__edgeDOT__Ldev_sacode_flo
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__leftCorridor__T__I__T__D($thiz, bodyDot, x, label) {
   var position = $ct_s_util_matching_Regex__T__sci_Seq__(new $c_s_util_matching_Regex(), "pos=\"([-\\d.]+),[-\\d.]+!", $m_sci_Nil$());
   var widthAttr = $ct_s_util_matching_Regex__T__sci_Seq__(new $c_s_util_matching_Regex(), "\\bwidth=([\\d.]+)", $m_sci_Nil$());
-  var x$1 = $f_s_util_matching_Regex$MatchData__group__I__T($n($as_s_util_matching_Regex$MatchData($n(widthAttr.findFirstMatchIn__jl_CharSequence__s_Option($p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, label, true))).get__O())), 1);
-  var ownHalf = ($m_jl_Double$().parseDouble__T__D(x$1) / 2.0);
+  var ownHalf = ($p_Ldev_sacode_flowrun_formatgen_DotGenerator__diamondWidth__T__D($thiz, label) / 2.0);
   var ownLeft = (((x * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement) / $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch) - ownHalf);
-  var this$19 = new $c_sc_StringOps$$anon$1(bodyDot, true);
+  var this$17 = new $c_sc_StringOps$$anon$1(bodyDot, true);
   var f = new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((line) => {
     var line$1 = $as_T(line);
-    var this$10 = $n(position.findFirstMatchIn__jl_CharSequence__s_Option(line$1));
-    if (this$10.isEmpty__Z()) {
+    var this$8 = $n(position.findFirstMatchIn__jl_CharSequence__s_Option(line$1));
+    if (this$8.isEmpty__Z()) {
       return $m_s_None$();
     } else {
-      var x0 = this$10.get__O();
+      var x0 = this$8.get__O();
       var m = $as_s_util_matching_Regex$Match(x0);
-      var this$11 = $n(widthAttr.findFirstMatchIn__jl_CharSequence__s_Option(line$1));
-      if (this$11.isEmpty__Z()) {
-        var this$15 = $m_s_None$();
+      var this$9 = $n(widthAttr.findFirstMatchIn__jl_CharSequence__s_Option(line$1));
+      if (this$9.isEmpty__Z()) {
+        var this$13 = $m_s_None$();
       } else {
-        var x0$1 = this$11.get__O();
+        var x0$1 = this$9.get__O();
         var _$18 = $as_s_util_matching_Regex$Match(x0$1);
-        var this$12 = $n(_$18);
-        var x$2 = $f_s_util_matching_Regex$MatchData__group__I__T(this$12, 1);
-        var this$15 = new $c_s_Some(($m_jl_Double$().parseDouble__T__D(x$2) / 2.0));
+        var this$10 = $n(_$18);
+        var x$1 = $f_s_util_matching_Regex$MatchData__group__I__T(this$10, 1);
+        var this$13 = new $c_s_Some(($m_jl_Double$().parseDouble__T__D(x$1) / 2.0));
       }
-      var half = $uD((this$15.isEmpty__Z() ? 0.0 : this$15.get__O()));
-      var this$16 = $n(m);
-      var x$3 = $f_s_util_matching_Regex$MatchData__group__I__T(this$16, 1);
-      return new $c_s_Some(($m_jl_Double$().parseDouble__T__D(x$3) - half));
+      var half = $uD((this$13.isEmpty__Z() ? 0.0 : this$13.get__O()));
+      var this$14 = $n(m);
+      var x$2 = $f_s_util_matching_Regex$MatchData__group__I__T(this$14, 1);
+      return new $c_s_Some(($m_jl_Double$().parseDouble__T__D(x$2) - half));
     }
   }));
-  var this$20 = new $c_sc_Iterator$$anon$10(this$19, f);
+  var this$18 = new $c_sc_Iterator$$anon$10(this$17, f);
   var ord = $m_s_math_Ordering$DeprecatedDoubleOrdering$();
-  var this$21 = $n($f_sc_IterableOnceOps__minOption__s_math_Ordering__s_Option(this$20, ord));
-  var bodyLeft = $uD((this$21.isEmpty__Z() ? ownLeft : this$21.get__O()));
+  var this$19 = $n($f_sc_IterableOnceOps__minOption__s_math_Ordering__s_Option(this$18, ord));
+  var bodyLeft = $uD((this$19.isEmpty__Z() ? ownLeft : this$19.get__O()));
   return ($uD(Math.min(ownLeft, bodyLeft)) - (0.5 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF));
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__rightCorridor__T__I__T__D($thiz, bodyDot, x, label) {
   var position = $ct_s_util_matching_Regex__T__sci_Seq__(new $c_s_util_matching_Regex(), "pos=\"([-\\d.]+),[-\\d.]+!", $m_sci_Nil$());
   var widthAttr = $ct_s_util_matching_Regex__T__sci_Seq__(new $c_s_util_matching_Regex(), "\\bwidth=([\\d.]+)", $m_sci_Nil$());
-  var x$1 = $f_s_util_matching_Regex$MatchData__group__I__T($n($as_s_util_matching_Regex$MatchData($n(widthAttr.findFirstMatchIn__jl_CharSequence__s_Option($p_Ldev_sacode_flowrun_formatgen_DotGenerator__dimensions__T__Z__T($thiz, label, true))).get__O())), 1);
-  var ownHalf = ($m_jl_Double$().parseDouble__T__D(x$1) / 2.0);
+  var ownHalf = ($p_Ldev_sacode_flowrun_formatgen_DotGenerator__diamondWidth__T__D($thiz, label) / 2.0);
   var ownRight = (((x * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement) / $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch) + ownHalf);
-  var this$19 = new $c_sc_StringOps$$anon$1(bodyDot, true);
+  var this$17 = new $c_sc_StringOps$$anon$1(bodyDot, true);
   var f = new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((line) => {
     var line$1 = $as_T(line);
-    var this$10 = $n(position.findFirstMatchIn__jl_CharSequence__s_Option(line$1));
-    if (this$10.isEmpty__Z()) {
+    var this$8 = $n(position.findFirstMatchIn__jl_CharSequence__s_Option(line$1));
+    if (this$8.isEmpty__Z()) {
       return $m_s_None$();
     } else {
-      var x0 = this$10.get__O();
+      var x0 = this$8.get__O();
       var m = $as_s_util_matching_Regex$Match(x0);
-      var this$11 = $n(widthAttr.findFirstMatchIn__jl_CharSequence__s_Option(line$1));
-      if (this$11.isEmpty__Z()) {
-        var this$15 = $m_s_None$();
+      var this$9 = $n(widthAttr.findFirstMatchIn__jl_CharSequence__s_Option(line$1));
+      if (this$9.isEmpty__Z()) {
+        var this$13 = $m_s_None$();
       } else {
-        var x0$1 = this$11.get__O();
+        var x0$1 = this$9.get__O();
         var _$19 = $as_s_util_matching_Regex$Match(x0$1);
-        var this$12 = $n(_$19);
-        var x$2 = $f_s_util_matching_Regex$MatchData__group__I__T(this$12, 1);
-        var this$15 = new $c_s_Some(($m_jl_Double$().parseDouble__T__D(x$2) / 2.0));
+        var this$10 = $n(_$19);
+        var x$1 = $f_s_util_matching_Regex$MatchData__group__I__T(this$10, 1);
+        var this$13 = new $c_s_Some(($m_jl_Double$().parseDouble__T__D(x$1) / 2.0));
       }
-      var half = $uD((this$15.isEmpty__Z() ? 0.0 : this$15.get__O()));
-      var this$16 = $n(m);
-      var x$3 = $f_s_util_matching_Regex$MatchData__group__I__T(this$16, 1);
-      return new $c_s_Some(($m_jl_Double$().parseDouble__T__D(x$3) + half));
+      var half = $uD((this$13.isEmpty__Z() ? 0.0 : this$13.get__O()));
+      var this$14 = $n(m);
+      var x$2 = $f_s_util_matching_Regex$MatchData__group__I__T(this$14, 1);
+      return new $c_s_Some(($m_jl_Double$().parseDouble__T__D(x$2) + half));
     }
   }));
-  var this$20 = new $c_sc_Iterator$$anon$10(this$19, f);
+  var this$18 = new $c_sc_Iterator$$anon$10(this$17, f);
   var ord = $m_s_math_Ordering$DeprecatedDoubleOrdering$();
-  var this$21 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$20, ord));
-  var bodyRight = $uD((this$21.isEmpty__Z() ? ownRight : this$21.get__O()));
+  var this$19 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$18, ord));
+  var bodyRight = $uD((this$19.isEmpty__Z() ? ownRight : this$19.get__O()));
   return ($uD(Math.max(ownRight, bodyRight)) + (0.5 * $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_symF));
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__posAtX__D__I__I__T($thiz, x, y, yOff) {
@@ -17122,12 +17120,12 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__symbolWidth__Ldev_sacode
     }
     return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__ioWidth__T__D($thiz, lbl);
   }
-  if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$If)) {
-    $as_Ldev_sacode_flowrun_ast_Statement$If(stmt);
-    return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__diamondWidth__T__D($thiz, lbl);
-  }
   matchAlts1: {
     matchAlts2: {
+      if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$If)) {
+        $as_Ldev_sacode_flowrun_ast_Statement$If(stmt);
+        break matchAlts2;
+      }
       if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$While)) {
         $as_Ldev_sacode_flowrun_ast_Statement$While(stmt);
         break matchAlts2;
@@ -17142,7 +17140,7 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__symbolWidth__Ldev_sacode
       }
       break matchAlts1;
     }
-    return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__boxWidth__T__Z__D($thiz, lbl, true);
+    return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__diamondWidth__T__D($thiz, lbl);
   }
   return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__boxWidth__T__Z__D($thiz, lbl, false);
 }
@@ -37366,18 +37364,6 @@ function $f_s_util_matching_Regex$MatchData__matched__T($thiz) {
 }
 function $f_s_util_matching_Regex$MatchData__group__I__T($thiz, i) {
   return (($thiz.start__I__I(i) >= 0) ? $dp_toString__T($n($dp_subSequence__I__I__jl_CharSequence($n($thiz.source__jl_CharSequence()), $thiz.start__I__I(i), $thiz.end__I__I(i)))) : null);
-}
-function $is_s_util_matching_Regex$MatchData(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.s_util_matching_Regex$MatchData)));
-}
-function $as_s_util_matching_Regex$MatchData(obj) {
-  return (($is_s_util_matching_Regex$MatchData(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.util.matching.Regex$MatchData"));
-}
-function $isArrayOf_s_util_matching_Regex$MatchData(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.s_util_matching_Regex$MatchData)));
-}
-function $asArrayOf_s_util_matching_Regex$MatchData(obj, depth) {
-  return (($isArrayOf_s_util_matching_Regex$MatchData(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.util.matching.Regex$MatchData;", depth));
 }
 function $f_s_util_matching_Regex$Replacement__replaced__T($thiz) {
   var newsb = $ct_jl_StringBuffer__jl_CharSequence__(new $c_jl_StringBuffer(), $thiz.s_util_matching_Regex$MatchIterator$$anon$4__f_scala$util$matching$Regex$Replacement$$sb);
