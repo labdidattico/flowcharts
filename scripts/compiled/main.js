@@ -9785,7 +9785,7 @@ $c_Ldev_sacode_flowrun_edit_VersionLabel.prototype.init__V = (function() {
   var this$1 = $n($m_s_Option$().apply__O__s_Option($n(this.Ldev_sacode_flowrun_edit_VersionLabel__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelector(".fr-versione-barra")));
   if ((!this$1.isEmpty__Z())) {
     var x0 = this$1.get__O();
-    x0.textContent = "1.3.5";
+    x0.textContent = "1.3.6";
     x0.title = "Versione dell'applicazione";
   }
 });
@@ -17164,326 +17164,161 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__edgeAttrs__T__T($thiz, n
   var maybeNoArrow = $as_T((this$3.isEmpty__Z() ? "" : this$3.get__O()));
   return $f_T__trim__T(((" tailtooltip=\" \" edgetooltip=\" \" " + maybeNoArrow) + " "));
 }
-function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthFalse__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, stmt, depth) {
+function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, stmt) {
+  var unitInch = ($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement / $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch);
+  var marginInch = (10.0 / $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch);
+  var x = ((($p_Ldev_sacode_flowrun_formatgen_DotGenerator__symbolWidth__Ldev_sacode_flowrun_ast_Statement__D($thiz, stmt) / 2.0) + marginInch) / unitInch);
+  var y = $doubleToInt($uD(Math.ceil(x)));
+  return ((y < 1) ? 1 : y);
+}
+function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__extentLeft__Ldev_sacode_flowrun_ast_Statement__I($thiz, stmt) {
   if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$If)) {
     var x107 = $as_Ldev_sacode_flowrun_ast_Statement$If(stmt);
-    var this$2 = $n($n($n(x107).Ldev_sacode_flowrun_ast_Statement$If__f_falseBlock).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
-    var f = ((s) => {
-      var s$1 = $as_Ldev_sacode_flowrun_ast_Statement(s);
-      return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthFalse__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, s$1, ((1 + depth) | 0));
-    });
-    if ((this$2 === $m_sci_Nil$())) {
-      var this$3 = $m_sci_Nil$();
-    } else {
-      var x0 = this$2.head__O();
-      var h = new $c_sci_$colon$colon(f(x0), $m_sci_Nil$());
-      var t = h;
-      var rest = $as_sci_List(this$2.tail__O());
-      while ((rest !== $m_sci_Nil$())) {
-        var x0$1 = $n(rest).head__O();
-        var nx = new $c_sci_$colon$colon(f(x0$1), $m_sci_Nil$());
-        $n(t).sci_$colon$colon__f_next = nx;
-        t = nx;
-        rest = $as_sci_List($n(rest).tail__O());
-      }
-      var this$3 = h;
-    }
-    var ord = $m_s_math_Ordering$Int$();
-    var this$4 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$3, ord));
-    var wlMax = $uI((this$4.isEmpty__Z() ? 0 : this$4.get__O()));
-    var this$5 = $n($n($n(x107).Ldev_sacode_flowrun_ast_Statement$If__f_falseBlock).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
-    var f$1 = ((s$2) => {
-      var s$3 = $as_Ldev_sacode_flowrun_ast_Statement(s$2);
-      return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthTrue__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, s$3, ((1 + depth) | 0));
-    });
-    if ((this$5 === $m_sci_Nil$())) {
-      var this$6 = $m_sci_Nil$();
-    } else {
-      var x0$2 = this$5.head__O();
-      var h$1 = new $c_sci_$colon$colon(f$1(x0$2), $m_sci_Nil$());
-      var t$1 = h$1;
-      var rest$1 = $as_sci_List(this$5.tail__O());
-      while ((rest$1 !== $m_sci_Nil$())) {
-        var x0$3 = $n(rest$1).head__O();
-        var nx$1 = new $c_sci_$colon$colon(f$1(x0$3), $m_sci_Nil$());
-        $n(t$1).sci_$colon$colon__f_next = nx$1;
-        t$1 = nx$1;
-        rest$1 = $as_sci_List($n(rest$1).tail__O());
-      }
-      var this$6 = h$1;
-    }
-    var ord$1 = $m_s_math_Ordering$Int$();
-    var this$7 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$6, ord$1));
-    var wrMax = $uI((this$7.isEmpty__Z() ? 0 : this$7.get__O()));
-    return ((((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfDiamondColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x107)) | 0) + ((depth === 0) ? 0 : ((wlMax + wrMax) | 0))) | 0);
+    var x = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x107);
+    var y = (($p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthFalse__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, x107, 0) + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentLeft__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, $n(x107).Ldev_sacode_flowrun_ast_Statement$If__f_falseBlock)) | 0);
+    return ((x > y) ? x : y);
   } else if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$While)) {
     var x106 = $as_Ldev_sacode_flowrun_ast_Statement$While(stmt);
-    var this$8 = $n($n($n(x106).Ldev_sacode_flowrun_ast_Statement$While__f_body).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
-    var f$2 = ((s$3$1) => {
-      var s$4 = $as_Ldev_sacode_flowrun_ast_Statement(s$3$1);
-      return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthFalse__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, s$4, ((1 + depth) | 0));
-    });
-    if ((this$8 === $m_sci_Nil$())) {
-      var this$9 = $m_sci_Nil$();
-    } else {
-      var x0$4 = this$8.head__O();
-      var h$2 = new $c_sci_$colon$colon(f$2(x0$4), $m_sci_Nil$());
-      var t$2 = h$2;
-      var rest$2 = $as_sci_List(this$8.tail__O());
-      while ((rest$2 !== $m_sci_Nil$())) {
-        var x0$5 = $n(rest$2).head__O();
-        var nx$2 = new $c_sci_$colon$colon(f$2(x0$5), $m_sci_Nil$());
-        $n(t$2).sci_$colon$colon__f_next = nx$2;
-        t$2 = nx$2;
-        rest$2 = $as_sci_List($n(rest$2).tail__O());
-      }
-      var this$9 = h$2;
-    }
-    var ord$2 = $m_s_math_Ordering$Int$();
-    var this$10 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$9, ord$2));
-    var innerLeft = $uI((this$10.isEmpty__Z() ? 0 : this$10.get__O()));
-    return ((((2 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x106)) | 0) + innerLeft) | 0);
-  } else if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$DoWhile)) {
-    var x105 = $as_Ldev_sacode_flowrun_ast_Statement$DoWhile(stmt);
-    return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x105);
+    var x$1 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x106);
+    var y$1 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentLeft__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, $n(x106).Ldev_sacode_flowrun_ast_Statement$While__f_body);
+    return ((2 + ((x$1 > y$1) ? x$1 : y$1)) | 0);
   } else if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$ForLoop)) {
-    var x104 = $as_Ldev_sacode_flowrun_ast_Statement$ForLoop(stmt);
-    var this$11 = $n($n($n(x104).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_body).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
-    var f$3 = ((s$4$1) => {
-      var s$5 = $as_Ldev_sacode_flowrun_ast_Statement(s$4$1);
-      return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthFalse__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, s$5, ((1 + depth) | 0));
-    });
-    if ((this$11 === $m_sci_Nil$())) {
-      var this$12 = $m_sci_Nil$();
-    } else {
-      var x0$6 = this$11.head__O();
-      var h$3 = new $c_sci_$colon$colon(f$3(x0$6), $m_sci_Nil$());
-      var t$3 = h$3;
-      var rest$3 = $as_sci_List(this$11.tail__O());
-      while ((rest$3 !== $m_sci_Nil$())) {
-        var x0$7 = $n(rest$3).head__O();
-        var nx$3 = new $c_sci_$colon$colon(f$3(x0$7), $m_sci_Nil$());
-        $n(t$3).sci_$colon$colon__f_next = nx$3;
-        t$3 = nx$3;
-        rest$3 = $as_sci_List($n(rest$3).tail__O());
-      }
-      var this$12 = h$3;
-    }
-    var ord$3 = $m_s_math_Ordering$Int$();
-    var this$13 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$12, ord$3));
-    var innerLeft$2 = $uI((this$13.isEmpty__Z() ? 0 : this$13.get__O()));
-    return ((((2 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x104)) | 0) + innerLeft$2) | 0);
+    var x105 = $as_Ldev_sacode_flowrun_ast_Statement$ForLoop(stmt);
+    var x$2 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x105);
+    var y$2 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentLeft__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, $n(x105).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_body);
+    return ((2 + ((x$2 > y$2) ? x$2 : y$2)) | 0);
+  } else if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$DoWhile)) {
+    var x104 = $as_Ldev_sacode_flowrun_ast_Statement$DoWhile(stmt);
+    var x$3 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x104);
+    var y$3 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentLeft__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, $n(x104).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_body);
+    return ((2 + ((x$3 > y$3) ? x$3 : y$3)) | 0);
   } else {
-    return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, stmt);
+    return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, stmt);
+  }
+}
+function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__extentRight__Ldev_sacode_flowrun_ast_Statement__I($thiz, stmt) {
+  if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$If)) {
+    var x112 = $as_Ldev_sacode_flowrun_ast_Statement$If(stmt);
+    var x = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x112);
+    var y = (($p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthTrue__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, x112, 0) + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentRight__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, $n(x112).Ldev_sacode_flowrun_ast_Statement$If__f_trueBlock)) | 0);
+    return ((x > y) ? x : y);
+  } else if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$While)) {
+    var x111 = $as_Ldev_sacode_flowrun_ast_Statement$While(stmt);
+    var x$1 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x111);
+    var y$1 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentRight__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, $n(x111).Ldev_sacode_flowrun_ast_Statement$While__f_body);
+    return ((2 + ((x$1 > y$1) ? x$1 : y$1)) | 0);
+  } else if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$ForLoop)) {
+    var x110 = $as_Ldev_sacode_flowrun_ast_Statement$ForLoop(stmt);
+    var x$2 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x110);
+    var y$2 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentRight__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, $n(x110).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_body);
+    return ((2 + ((x$2 > y$2) ? x$2 : y$2)) | 0);
+  } else if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$DoWhile)) {
+    var x109 = $as_Ldev_sacode_flowrun_ast_Statement$DoWhile(stmt);
+    var x$3 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x109);
+    var y$3 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentRight__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, $n(x109).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_body);
+    return ((2 + ((x$3 > y$3) ? x$3 : y$3)) | 0);
+  } else {
+    return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, stmt);
+  }
+}
+function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentLeft__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, block) {
+  var this$2 = $n($n(block).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
+  var f = ((stmt) => {
+    var stmt$1 = $as_Ldev_sacode_flowrun_ast_Statement(stmt);
+    return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__extentLeft__Ldev_sacode_flowrun_ast_Statement__I($thiz, stmt$1);
+  });
+  if ((this$2 === $m_sci_Nil$())) {
+    var this$3 = $m_sci_Nil$();
+  } else {
+    var x0 = this$2.head__O();
+    var h = new $c_sci_$colon$colon(f(x0), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$2.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var x0$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(x0$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O());
+    }
+    var this$3 = h;
+  }
+  var ord = $m_s_math_Ordering$Int$();
+  var this$4 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$3, ord));
+  return $uI((this$4.isEmpty__Z() ? 0 : this$4.get__O()));
+}
+function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentRight__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, block) {
+  var this$2 = $n($n(block).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
+  var f = ((stmt) => {
+    var stmt$1 = $as_Ldev_sacode_flowrun_ast_Statement(stmt);
+    return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__extentRight__Ldev_sacode_flowrun_ast_Statement__I($thiz, stmt$1);
+  });
+  if ((this$2 === $m_sci_Nil$())) {
+    var this$3 = $m_sci_Nil$();
+  } else {
+    var x0 = this$2.head__O();
+    var h = new $c_sci_$colon$colon(f(x0), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$2.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var x0$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(x0$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O());
+    }
+    var this$3 = h;
+  }
+  var ord = $m_s_math_Ordering$Int$();
+  var this$4 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$3, ord));
+  return $uI((this$4.isEmpty__Z() ? 0 : this$4.get__O()));
+}
+function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthFalse__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, stmt, depth) {
+  if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$If)) {
+    var x117 = $as_Ldev_sacode_flowrun_ast_Statement$If(stmt);
+    var x = ((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfDiamondColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x117)) | 0);
+    var y = ((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentRight__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, $n(x117).Ldev_sacode_flowrun_ast_Statement$If__f_falseBlock)) | 0);
+    return ((x > y) ? x : y);
+  } else if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$While)) {
+    var x116 = $as_Ldev_sacode_flowrun_ast_Statement$While(stmt);
+    var x$1 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x116);
+    var y$1 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentLeft__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, $n(x116).Ldev_sacode_flowrun_ast_Statement$While__f_body);
+    return ((2 + ((x$1 > y$1) ? x$1 : y$1)) | 0);
+  } else if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$DoWhile)) {
+    var x115 = $as_Ldev_sacode_flowrun_ast_Statement$DoWhile(stmt);
+    return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x115);
+  } else if ((stmt instanceof $c_Ldev_sacode_flowrun_ast_Statement$ForLoop)) {
+    var x114 = $as_Ldev_sacode_flowrun_ast_Statement$ForLoop(stmt);
+    var x$2 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x114);
+    var y$2 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentLeft__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, $n(x114).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_body);
+    return ((2 + ((x$2 > y$2) ? x$2 : y$2)) | 0);
+  } else {
+    return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, stmt);
   }
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthTrue__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, statement, depth) {
   if ((statement instanceof $c_Ldev_sacode_flowrun_ast_Statement$If)) {
-    var x112 = $as_Ldev_sacode_flowrun_ast_Statement$If(statement);
-    var this$2 = $n($n($n(x112).Ldev_sacode_flowrun_ast_Statement$If__f_trueBlock).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
-    var f = ((s) => {
-      var s$1 = $as_Ldev_sacode_flowrun_ast_Statement(s);
-      return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthFalse__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, s$1, ((1 + depth) | 0));
-    });
-    if ((this$2 === $m_sci_Nil$())) {
-      var this$3 = $m_sci_Nil$();
-    } else {
-      var x0 = this$2.head__O();
-      var h = new $c_sci_$colon$colon(f(x0), $m_sci_Nil$());
-      var t = h;
-      var rest = $as_sci_List(this$2.tail__O());
-      while ((rest !== $m_sci_Nil$())) {
-        var x0$1 = $n(rest).head__O();
-        var nx = new $c_sci_$colon$colon(f(x0$1), $m_sci_Nil$());
-        $n(t).sci_$colon$colon__f_next = nx;
-        t = nx;
-        rest = $as_sci_List($n(rest).tail__O());
-      }
-      var this$3 = h;
-    }
-    var ord = $m_s_math_Ordering$Int$();
-    var this$4 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$3, ord));
-    var wlMax = $uI((this$4.isEmpty__Z() ? 0 : this$4.get__O()));
-    var this$5 = $n($n($n(x112).Ldev_sacode_flowrun_ast_Statement$If__f_trueBlock).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
-    var f$1 = ((s$2) => {
-      var s$3 = $as_Ldev_sacode_flowrun_ast_Statement(s$2);
-      return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthTrue__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, s$3, ((1 + depth) | 0));
-    });
-    if ((this$5 === $m_sci_Nil$())) {
-      var this$6 = $m_sci_Nil$();
-    } else {
-      var x0$2 = this$5.head__O();
-      var h$1 = new $c_sci_$colon$colon(f$1(x0$2), $m_sci_Nil$());
-      var t$1 = h$1;
-      var rest$1 = $as_sci_List(this$5.tail__O());
-      while ((rest$1 !== $m_sci_Nil$())) {
-        var x0$3 = $n(rest$1).head__O();
-        var nx$1 = new $c_sci_$colon$colon(f$1(x0$3), $m_sci_Nil$());
-        $n(t$1).sci_$colon$colon__f_next = nx$1;
-        t$1 = nx$1;
-        rest$1 = $as_sci_List($n(rest$1).tail__O());
-      }
-      var this$6 = h$1;
-    }
-    var ord$1 = $m_s_math_Ordering$Int$();
-    var this$7 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$6, ord$1));
-    var wrMax = $uI((this$7.isEmpty__Z() ? 0 : this$7.get__O()));
-    return ((((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfDiamondColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x112)) | 0) + ((depth === 0) ? 0 : ((wlMax + wrMax) | 0))) | 0);
+    var x122 = $as_Ldev_sacode_flowrun_ast_Statement$If(statement);
+    var x = ((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfDiamondColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x122)) | 0);
+    var y = ((1 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentLeft__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, $n(x122).Ldev_sacode_flowrun_ast_Statement$If__f_trueBlock)) | 0);
+    return ((x > y) ? x : y);
   } else if ((statement instanceof $c_Ldev_sacode_flowrun_ast_Statement$While)) {
-    var x111 = $as_Ldev_sacode_flowrun_ast_Statement$While(statement);
-    var this$8 = $n($n($n(x111).Ldev_sacode_flowrun_ast_Statement$While__f_body).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
-    var f$2 = ((s$3$1) => {
-      var s$4 = $as_Ldev_sacode_flowrun_ast_Statement(s$3$1);
-      return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthFalse__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, s$4, ((1 + depth) | 0));
-    });
-    if ((this$8 === $m_sci_Nil$())) {
-      var this$9 = $m_sci_Nil$();
-    } else {
-      var x0$4 = this$8.head__O();
-      var h$2 = new $c_sci_$colon$colon(f$2(x0$4), $m_sci_Nil$());
-      var t$2 = h$2;
-      var rest$2 = $as_sci_List(this$8.tail__O());
-      while ((rest$2 !== $m_sci_Nil$())) {
-        var x0$5 = $n(rest$2).head__O();
-        var nx$2 = new $c_sci_$colon$colon(f$2(x0$5), $m_sci_Nil$());
-        $n(t$2).sci_$colon$colon__f_next = nx$2;
-        t$2 = nx$2;
-        rest$2 = $as_sci_List($n(rest$2).tail__O());
-      }
-      var this$9 = h$2;
-    }
-    var ord$2 = $m_s_math_Ordering$Int$();
-    var this$10 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$9, ord$2));
-    var wlMax$2 = $uI((this$10.isEmpty__Z() ? 0 : this$10.get__O()));
-    var this$11 = $n($n($n(x111).Ldev_sacode_flowrun_ast_Statement$While__f_body).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
-    var f$3 = ((s$4$1) => {
-      var s$5 = $as_Ldev_sacode_flowrun_ast_Statement(s$4$1);
-      return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthTrue__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, s$5, ((1 + depth) | 0));
-    });
-    if ((this$11 === $m_sci_Nil$())) {
-      var this$12 = $m_sci_Nil$();
-    } else {
-      var x0$6 = this$11.head__O();
-      var h$3 = new $c_sci_$colon$colon(f$3(x0$6), $m_sci_Nil$());
-      var t$3 = h$3;
-      var rest$3 = $as_sci_List(this$11.tail__O());
-      while ((rest$3 !== $m_sci_Nil$())) {
-        var x0$7 = $n(rest$3).head__O();
-        var nx$3 = new $c_sci_$colon$colon(f$3(x0$7), $m_sci_Nil$());
-        $n(t$3).sci_$colon$colon__f_next = nx$3;
-        t$3 = nx$3;
-        rest$3 = $as_sci_List($n(rest$3).tail__O());
-      }
-      var this$12 = h$3;
-    }
-    var ord$3 = $m_s_math_Ordering$Int$();
-    var this$13 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$12, ord$3));
-    var wrMax$2 = $uI((this$13.isEmpty__Z() ? 0 : this$13.get__O()));
-    return ((((2 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x111)) | 0) + ((depth === 0) ? wlMax$2 : ((wlMax$2 + wrMax$2) | 0))) | 0);
+    var x121 = $as_Ldev_sacode_flowrun_ast_Statement$While(statement);
+    var x$1 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x121);
+    var y$1 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentRight__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, $n(x121).Ldev_sacode_flowrun_ast_Statement$While__f_body);
+    return ((2 + ((x$1 > y$1) ? x$1 : y$1)) | 0);
   } else if ((statement instanceof $c_Ldev_sacode_flowrun_ast_Statement$DoWhile)) {
-    var x110 = $as_Ldev_sacode_flowrun_ast_Statement$DoWhile(statement);
-    var this$14 = $n($n($n(x110).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_body).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
-    var f$4 = ((s$5$1) => {
-      var s$6 = $as_Ldev_sacode_flowrun_ast_Statement(s$5$1);
-      return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthFalse__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, s$6, ((1 + depth) | 0));
-    });
-    if ((this$14 === $m_sci_Nil$())) {
-      var this$15 = $m_sci_Nil$();
-    } else {
-      var x0$8 = this$14.head__O();
-      var h$4 = new $c_sci_$colon$colon(f$4(x0$8), $m_sci_Nil$());
-      var t$4 = h$4;
-      var rest$4 = $as_sci_List(this$14.tail__O());
-      while ((rest$4 !== $m_sci_Nil$())) {
-        var x0$9 = $n(rest$4).head__O();
-        var nx$4 = new $c_sci_$colon$colon(f$4(x0$9), $m_sci_Nil$());
-        $n(t$4).sci_$colon$colon__f_next = nx$4;
-        t$4 = nx$4;
-        rest$4 = $as_sci_List($n(rest$4).tail__O());
-      }
-      var this$15 = h$4;
-    }
-    var ord$4 = $m_s_math_Ordering$Int$();
-    var this$16 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$15, ord$4));
-    var wlMax$3 = $uI((this$16.isEmpty__Z() ? 0 : this$16.get__O()));
-    var this$17 = $n($n($n(x110).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_body).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
-    var f$5 = ((s$6$1) => {
-      var s$7 = $as_Ldev_sacode_flowrun_ast_Statement(s$6$1);
-      return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthTrue__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, s$7, ((1 + depth) | 0));
-    });
-    if ((this$17 === $m_sci_Nil$())) {
-      var this$18 = $m_sci_Nil$();
-    } else {
-      var x0$10 = this$17.head__O();
-      var h$5 = new $c_sci_$colon$colon(f$5(x0$10), $m_sci_Nil$());
-      var t$5 = h$5;
-      var rest$5 = $as_sci_List(this$17.tail__O());
-      while ((rest$5 !== $m_sci_Nil$())) {
-        var x0$11 = $n(rest$5).head__O();
-        var nx$5 = new $c_sci_$colon$colon(f$5(x0$11), $m_sci_Nil$());
-        $n(t$5).sci_$colon$colon__f_next = nx$5;
-        t$5 = nx$5;
-        rest$5 = $as_sci_List($n(rest$5).tail__O());
-      }
-      var this$18 = h$5;
-    }
-    var ord$5 = $m_s_math_Ordering$Int$();
-    var this$19 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$18, ord$5));
-    var wrMax$3 = $uI((this$19.isEmpty__Z() ? 0 : this$19.get__O()));
-    return ((((2 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x110)) | 0) + ((depth === 0) ? wrMax$3 : ((wlMax$3 + wrMax$3) | 0))) | 0);
+    var x120 = $as_Ldev_sacode_flowrun_ast_Statement$DoWhile(statement);
+    var x$2 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x120);
+    var y$2 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentRight__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, $n(x120).Ldev_sacode_flowrun_ast_Statement$DoWhile__f_body);
+    return ((2 + ((x$2 > y$2) ? x$2 : y$2)) | 0);
   } else if ((statement instanceof $c_Ldev_sacode_flowrun_ast_Statement$ForLoop)) {
-    var x109 = $as_Ldev_sacode_flowrun_ast_Statement$ForLoop(statement);
-    var this$20 = $n($n($n(x109).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_body).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
-    var f$6 = ((s$7$1) => {
-      var s$8 = $as_Ldev_sacode_flowrun_ast_Statement(s$7$1);
-      return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthFalse__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, s$8, ((1 + depth) | 0));
-    });
-    if ((this$20 === $m_sci_Nil$())) {
-      var this$21 = $m_sci_Nil$();
-    } else {
-      var x0$12 = this$20.head__O();
-      var h$6 = new $c_sci_$colon$colon(f$6(x0$12), $m_sci_Nil$());
-      var t$6 = h$6;
-      var rest$6 = $as_sci_List(this$20.tail__O());
-      while ((rest$6 !== $m_sci_Nil$())) {
-        var x0$13 = $n(rest$6).head__O();
-        var nx$6 = new $c_sci_$colon$colon(f$6(x0$13), $m_sci_Nil$());
-        $n(t$6).sci_$colon$colon__f_next = nx$6;
-        t$6 = nx$6;
-        rest$6 = $as_sci_List($n(rest$6).tail__O());
-      }
-      var this$21 = h$6;
-    }
-    var ord$6 = $m_s_math_Ordering$Int$();
-    var this$22 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$21, ord$6));
-    var wlMax$4 = $uI((this$22.isEmpty__Z() ? 0 : this$22.get__O()));
-    var this$23 = $n($n($n(x109).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_body).Ldev_sacode_flowrun_ast_Statement$Block__f_statements);
-    var f$7 = ((s$8$1) => {
-      var s$9 = $as_Ldev_sacode_flowrun_ast_Statement(s$8$1);
-      return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__widthTrue__Ldev_sacode_flowrun_ast_Statement__I__I($thiz, s$9, ((1 + depth) | 0));
-    });
-    if ((this$23 === $m_sci_Nil$())) {
-      var this$24 = $m_sci_Nil$();
-    } else {
-      var x0$14 = this$23.head__O();
-      var h$7 = new $c_sci_$colon$colon(f$7(x0$14), $m_sci_Nil$());
-      var t$7 = h$7;
-      var rest$7 = $as_sci_List(this$23.tail__O());
-      while ((rest$7 !== $m_sci_Nil$())) {
-        var x0$15 = $n(rest$7).head__O();
-        var nx$7 = new $c_sci_$colon$colon(f$7(x0$15), $m_sci_Nil$());
-        $n(t$7).sci_$colon$colon__f_next = nx$7;
-        t$7 = nx$7;
-        rest$7 = $as_sci_List($n(rest$7).tail__O());
-      }
-      var this$24 = h$7;
-    }
-    var ord$7 = $m_s_math_Ordering$Int$();
-    var this$25 = $n($f_sc_IterableOnceOps__maxOption__s_math_Ordering__s_Option(this$24, ord$7));
-    var wrMax$4 = $uI((this$25.isEmpty__Z() ? 0 : this$25.get__O()));
-    return ((((2 + $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, x109)) | 0) + ((depth === 0) ? wlMax$4 : ((wlMax$4 + wrMax$4) | 0))) | 0);
+    var x119 = $as_Ldev_sacode_flowrun_ast_Statement$ForLoop(statement);
+    var x$3 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, x119);
+    var y$3 = $p_Ldev_sacode_flowrun_formatgen_DotGenerator__blockExtentRight__Ldev_sacode_flowrun_ast_Statement$Block__I($thiz, $n(x119).Ldev_sacode_flowrun_ast_Statement$ForLoop__f_body);
+    return ((2 + ((x$3 > y$3) ? x$3 : y$3)) | 0);
   } else {
-    return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, statement);
+    return $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, statement);
   }
 }
 function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfDiamondColumns__Ldev_sacode_flowrun_ast_Statement__I($thiz, stmt) {
@@ -17492,14 +17327,6 @@ function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__halfDiamondColumns__Ldev
   var x = (half / unitInch);
   var y = ((1 + $doubleToInt($uD(Math.ceil(x)))) | 0);
   return ((y < 2) ? 2 : y);
-}
-function $p_Ldev_sacode_flowrun_formatgen_DotGenerator__width__Ldev_sacode_flowrun_ast_Statement__I($thiz, stmt) {
-  var unitInch = ($thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_xIncrement / $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch);
-  var marginInch = (10.0 / $thiz.Ldev_sacode_flowrun_formatgen_DotGenerator__f_PxInInch);
-  var half = (($p_Ldev_sacode_flowrun_formatgen_DotGenerator__symbolWidth__Ldev_sacode_flowrun_ast_Statement__D($thiz, stmt) / 2.0) + marginInch);
-  var x = (half / unitInch);
-  var y = (((-2) + $doubleToInt($uD(Math.ceil(x)))) | 0);
-  return ((y < 0) ? 0 : y);
 }
 /** @constructor */
 function $c_Ldev_sacode_flowrun_formatgen_DotGenerator(function$1, flowRunTheme, style) {
