@@ -123,11 +123,15 @@
               document.getElementById('viewer-nome').textContent = nome;
               avviso.style.display = 'flex';
             }
-            var fr = new FlowRunEditor({
-              theme: FlowRunThemeObj.default.withFontName('Courier Prime'),
-              mountElem: mount,
-              programJson: json
-            });
+            // I parametri delle classi esportate da Scala.js sono POSIZIONALI:
+            // (mountElem, theme, programJson, mountCallback, changeCallback).
+            // Passare un oggetto faceva finire l'oggetto stesso in mountElem
+            // -> "mountElem.classList is undefined".
+            var fr = new FlowRunEditor(
+              mount,
+              FlowRunThemeObj.default.withFontName('Courier Prime'),
+              json
+            );
             mount.classList.remove('flowrun--hidden');
             // il diagramma è dentro: adatta lo zoom al contenitore
             setTimeout(function () {
