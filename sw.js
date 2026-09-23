@@ -1,5 +1,5 @@
 /* Service worker: tiene una copia locale dell'applicazione cosi' apra anche senza rete. */
-const CACHE = 'flowcharts-v1.3.1';
+const CACHE = 'flowcharts-v1.3.8';
 const ASSETS = [
   './',
   'index.html',
