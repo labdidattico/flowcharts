@@ -195,6 +195,37 @@
     <!-- blank editor instance -->
     <div class="flowrun-instance"></div>
 
+    <script>
+      /* Modalita' SOLA LETTURA su richiesta esterna (usata dall'anteprima di
+         una consegna dentro un iframe):
+             index.html#<base64url del JSON .flowrun>
+         Il diagramma viaggia nel fragment, che NON viene inviato al server.
+
+         Non serve una pagina separata: l'avvio automatico (main.scala) monta
+         l'editor su ogni .flowrun-instance e, se non gli si passa il
+         programma, lo legge dal testo del div stesso, mostrandolo solo a
+         montaggio avvenuto. Qui non facciamo altro che riempire quel testo.
+
+         Senza fragment questo blocco non fa NULLA: l'app resta quella di
+         sempre per gli studenti. */
+      (function () {
+        var grezzo = (window.location.hash || '').slice(1);
+        if (!grezzo) return;                       // uso normale: nessun cambiamento
+        var div = document.querySelector('.flowrun-instance');
+        if (!div) return;
+        try {
+          var b64 = decodeURIComponent(grezzo).replace(/-/g, '+').replace(/_/g, '/');
+          while (b64.length % 4) b64 += '=';
+          var json = decodeURIComponent(escape(atob(b64)));
+          JSON.parse(json);                        // se non e' un diagramma, si va al catch
+          div.textContent = json;                  // letto da FlowRunEditor
+          div.classList.add('flowrun-readonly', 'flowrun--hidden');
+        } catch (e) {
+          div.textContent = '';                    // diagramma illeggibile: editor vuoto
+        }
+      })();
+    </script>
+
     <!-- graphviz -->
     <script src="vendor/graphviz.umd.js"></script>
     <script src="vendor/d3.min.js"></script>
