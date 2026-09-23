@@ -6646,7 +6646,7 @@ function $p_Ldev_sacode_flowrun_edit_FlowchartPresenter__decorateDeclareGroups__
         rest = $as_sci_List($n(rest).tail__O());
       }
       var nodes = ((h === null) ? $m_sci_Nil$() : h);
-      if ((($n(nodes).length__I() === $n(ids).length__I()) && ($n(nodes).head__O().querySelector(".fr-dic-cornice") === null))) {
+      if ((($n(nodes).length__I() === $n(ids).length__I()) && ($n(nodes).head__O().querySelector(".fr-dic-sfondo") === null))) {
         var first = $n(nodes).head__O();
         var this$24 = $n(nodes);
         var f = ((_$7) => _$7.getBBox());
@@ -6753,19 +6753,15 @@ function $p_Ldev_sacode_flowrun_edit_FlowchartPresenter__decorateDeclareGroups__
           }
           these = $as_sci_List($n(these).tail__O());
         }
-        var frame = window.document.createElementNS("http://www.w3.org/2000/svg", "rect");
-        frame.setAttribute("class", "fr-dic-cornice");
-        frame.setAttribute("x", ("" + x$1));
-        frame.setAttribute("y", ("" + y));
-        var this$32 = (right - x$1);
-        frame.setAttribute("width", ("" + this$32));
-        var this$34 = (bottom - y);
-        frame.setAttribute("height", ("" + this$34));
-        frame.setAttribute("fill", "#E1EBFA");
+        var background = $ps_Ldev_sacode_flowrun_edit_FlowchartPresenter__rect$1__T__D__D__D__D__T__Lorg_scalajs_dom_Element("http://www.w3.org/2000/svg", x$1, y, right, bottom, "fr-dic-sfondo");
+        background.setAttribute("fill", "#E1EBFA");
+        background.setAttribute("stroke", "none");
+        first.insertBefore(background, first.firstChild);
+        var frame = $ps_Ldev_sacode_flowrun_edit_FlowchartPresenter__rect$1__T__D__D__D__D__T__Lorg_scalajs_dom_Element("http://www.w3.org/2000/svg", x$1, y, right, bottom, "fr-dic-cornice");
+        frame.setAttribute("fill", "none");
         frame.setAttribute("stroke", "#325AA0");
-        frame.setAttribute("stroke-width", "0.5");
-        frame.setAttribute("pointer-events", "none");
-        first.insertBefore(frame, first.firstChild);
+        frame.setAttribute("stroke-width", "1");
+        $n(nodes).last__O().appendChild(frame);
       }
     });
     var len = $n(xs$2).u.length;
@@ -6964,7 +6960,7 @@ function $p_Ldev_sacode_flowrun_edit_FlowchartPresenter__decorateCalls__V($thiz)
         var this$41 = $n($m_s_Option$().apply__O__s_Option($as_T(x0.getAttribute("stroke"))));
         var stroke = $as_T((this$41.isEmpty__Z() ? "#000" : this$41.get__O()));
         var this$42 = $n($m_s_Option$().apply__O__s_Option($as_T(x0.getAttribute("stroke-width"))));
-        var width = $as_T((this$42.isEmpty__Z() ? "0.5" : this$42.get__O()));
+        var width = $as_T((this$42.isEmpty__Z() ? "1" : this$42.get__O()));
         var this$43 = new $c_sci_$colon$colon((minX + 6.0), new $c_sci_$colon$colon((maxX - 6.0), $m_sci_Nil$()));
         var these = this$43;
         while ((!$n(these).isEmpty__Z())) {
@@ -6984,6 +6980,18 @@ function $p_Ldev_sacode_flowrun_edit_FlowchartPresenter__decorateCalls__V($thiz)
       }
     }
   }
+}
+function $ps_Ldev_sacode_flowrun_edit_FlowchartPresenter__rect$1__T__D__D__D__D__T__Lorg_scalajs_dom_Element(SvgNs$3, x$1, y$1, right$1, bottom$1, cls) {
+  var r = window.document.createElementNS(SvgNs$3, "rect");
+  r.setAttribute("class", cls);
+  r.setAttribute("x", ("" + x$1));
+  r.setAttribute("y", ("" + y$1));
+  var this$3 = (right$1 - x$1);
+  r.setAttribute("width", ("" + this$3));
+  var this$5 = (bottom$1 - y$1);
+  r.setAttribute("height", ("" + this$5));
+  r.setAttribute("pointer-events", "none");
+  return r;
 }
 /** @constructor */
 function $c_Ldev_sacode_flowrun_edit_FlowchartPresenter(programModel, flowRunElements, flowRunTheme, flowrunChannel) {
@@ -7089,7 +7097,7 @@ $c_Ldev_sacode_flowrun_edit_FlowchartPresenter.prototype.highlightExecuting__s_O
 });
 $c_Ldev_sacode_flowrun_edit_FlowchartPresenter.prototype.loadCurrentFunction__s_concurrent_Future = (function() {
   var p = $ct_s_concurrent_impl_Promise$DefaultPromise__(new $c_s_concurrent_impl_Promise$DefaultPromise());
-  var domList = $n(this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_drawArea.querySelectorAll(".fr-call-bar, .fr-dic-cornice, .fr-punto-inserimento, .fr-freccia-unita");
+  var domList = $n(this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_drawArea.querySelectorAll(".fr-call-bar, .fr-dic-sfondo, .fr-dic-cornice, .fr-punto-inserimento, .fr-freccia-unita");
   var this$3 = new $c_Lorg_scalajs_dom_DOMList$DOMListSeq(domList);
   var it = this$3.iterator__sc_Iterator();
   while ($n(it).hasNext__Z()) {
@@ -9843,7 +9851,7 @@ $c_Ldev_sacode_flowrun_edit_VersionLabel.prototype.init__V = (function() {
   var this$1 = $n($m_s_Option$().apply__O__s_Option($n(this.Ldev_sacode_flowrun_edit_VersionLabel__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelector(".fr-versione-barra")));
   if ((!this$1.isEmpty__Z())) {
     var x0 = this$1.get__O();
-    x0.textContent = "1.3.7";
+    x0.textContent = "1.3.8";
     x0.title = "Versione dell'applicazione";
   }
 });
@@ -17426,7 +17434,7 @@ function $h_Ldev_sacode_flowrun_formatgen_DotGenerator() {
 }
 $h_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype = $c_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype;
 $c_Ldev_sacode_flowrun_formatgen_DotGenerator.prototype.generate__T = (function() {
-  var x = (((((((((((("\n    |digraph {\n    |  bgcolor=\"transparent\"\n    |\n    |  node [penwidth=0.5 fontsize=\"" + (15.0 * this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f)) + "\" shape=\"box\" style=\"filled\" fontcolor=\"white\" fontname=\"") + $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_fontName) + "\"]\n    |  edge [penwidth=2 fontsize=\"") + (12.0 * this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f)) + "\" color=\"#0A1931\" arrowsize=0.8 fontname=\"") + $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_fontName) + "\"]\n    |\n    |#########\n    |# NODES #\n    |#########\n    |") + $m_Ldev_sacode_flowrun_FlowRun$package$().indented__T__I__T($p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodesDOT__T(this), 2)) + "\n    |\n    |#########\n    |# EDGES #\n    |#########\n    |") + $m_Ldev_sacode_flowrun_FlowRun$package$().indented__T__I__T($p_Ldev_sacode_flowrun_formatgen_DotGenerator__edgesDOT__T(this), 2)) + "\n    |\n    |}\n    |");
+  var x = (((((((((((("\n    |digraph {\n    |  bgcolor=\"transparent\"\n    |\n    |  node [penwidth=1 fontsize=\"" + (15.0 * this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f)) + "\" shape=\"box\" style=\"filled\" fontcolor=\"white\" fontname=\"") + $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_fontName) + "\"]\n    |  edge [penwidth=2 fontsize=\"") + (12.0 * this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_f)) + "\" color=\"#0A1931\" arrowsize=0.8 fontname=\"") + $n(this.Ldev_sacode_flowrun_formatgen_DotGenerator__f_flowRunTheme).Ldev_sacode_flowrun_FlowRunTheme__f_fontName) + "\"]\n    |\n    |#########\n    |# NODES #\n    |#########\n    |") + $m_Ldev_sacode_flowrun_FlowRun$package$().indented__T__I__T($p_Ldev_sacode_flowrun_formatgen_DotGenerator__nodesDOT__T(this), 2)) + "\n    |\n    |#########\n    |# EDGES #\n    |#########\n    |") + $m_Ldev_sacode_flowrun_FlowRun$package$().indented__T__I__T($p_Ldev_sacode_flowrun_formatgen_DotGenerator__edgesDOT__T(this), 2)) + "\n    |\n    |}\n    |");
   var raw = $m_sc_StringOps$().stripMargin$extension__T__C__T(x, 124);
   var this$6 = $n($ct_s_util_matching_Regex__T__sci_Seq__(new $c_s_util_matching_Regex(), "(\\w+) \\[id=\"[^\"\\n]+#(?:While|ForLoop)", $m_sci_Nil$()).findAllMatchIn__jl_CharSequence__sc_Iterator(raw));
   var f = new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((_$1) => {
