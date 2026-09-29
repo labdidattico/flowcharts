@@ -2553,14 +2553,11 @@ $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.codeText__T = (function() {
 $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.revision__I = (function() {
   return $n($n(this.Ldev_sacode_flowrun_FlowRunEditor__f_programModel).Ldev_sacode_flowrun_ProgramModel__f_ast).Ldev_sacode_flowrun_ast_Program__f_revision;
 });
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.funDOT = (function() {
-  return this.funDOT__T();
-});
 $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.codeText = (function() {
   return this.codeText__T();
 });
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.name = (function() {
-  return this.name__T();
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.json = (function() {
+  return this.json__T();
 });
 Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunEditor.prototype, "flowRunElements", ({
   "get": (function() {
@@ -2568,8 +2565,11 @@ Object.defineProperty($c_Ldev_sacode_flowrun_FlowRunEditor.prototype, "flowRunEl
   }),
   "configurable": true
 }));
-$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.json = (function() {
-  return this.json__T();
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.name = (function() {
+  return this.name__T();
+});
+$c_Ldev_sacode_flowrun_FlowRunEditor.prototype.funDOT = (function() {
+  return this.funDOT__T();
 });
 $c_Ldev_sacode_flowrun_FlowRunEditor.prototype.revision = (function() {
   return this.revision__I();
@@ -9697,8 +9697,8 @@ function $p_Ldev_sacode_flowrun_edit_StmtPopup__kindOf__Lorg_scalajs_dom_Element
         var this$4 = $m_s_None$();
       } else {
         var x0 = this$2.get__O();
-        var _$4 = $as_T(x0);
-        var this$3 = $n(_$4);
+        var _$5 = $as_T(x0);
+        var this$3 = $n(_$5);
         var this$4 = new $c_s_Some($as_T(this$3.toLowerCase()));
       }
       var x5 = $as_T((this$4.isEmpty__Z() ? "" : this$4.get__O()));
@@ -9774,6 +9774,16 @@ function $c_Ldev_sacode_flowrun_edit_StmtPopup(flowRunElements) {
         }), 80.0));
       }
     }
+    if (($as_T(ev.key) === "Escape")) {
+      ev.preventDefault();
+      var this$4 = $n($m_s_Option$().apply__O__s_Option(document.activeElement));
+      if ((!this$4.isEmpty__Z())) {
+        var x0 = this$4.get__O();
+        x0.blur();
+      }
+      this.hide__V();
+      return (void 0);
+    }
   }));
   document.body.appendChild(c);
   this.Ldev_sacode_flowrun_edit_StmtPopup__f_container = c;
@@ -9801,7 +9811,7 @@ $c_Ldev_sacode_flowrun_edit_StmtPopup.prototype.init__V = (function() {
       }
     }
   }), true);
-  window.addEventListener("resize", ((_$2) => {
+  window.addEventListener("resize", ((_$3) => {
     this.hide__V();
   }));
 });
@@ -9851,7 +9861,7 @@ $c_Ldev_sacode_flowrun_edit_VersionLabel.prototype.init__V = (function() {
   var this$1 = $n($m_s_Option$().apply__O__s_Option($n(this.Ldev_sacode_flowrun_edit_VersionLabel__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelector(".fr-versione-barra")));
   if ((!this$1.isEmpty__Z())) {
     var x0 = this$1.get__O();
-    x0.textContent = "1.3.8";
+    x0.textContent = "1.3.10";
     x0.title = "Versione dell'applicazione";
   }
 });
@@ -18777,16 +18787,23 @@ $c_Ldev_sacode_flowrun_parse_Lexer.prototype.lex__sci_List = (function() {
                 var this$113 = $n(x$15);
                 var c$3 = $charAt(this$113, i$16);
                 var this$116 = $m_jl_Character$();
-                var $x_25 = this$116.isLetterOrDigit__I__Z(c$3);
+                if (this$116.isLetterOrDigit__I__Z(c$3)) {
+                  var $x_25 = true;
+                } else {
+                  var x$16 = this.Ldev_sacode_flowrun_parse_Lexer__f_input;
+                  var i$17 = i;
+                  var this$119 = $n(x$16);
+                  var $x_25 = ($charAt(this$119, i$17) === 95);
+                }
               } else {
                 var $x_25 = false;
               }
               if ($x_25) {
                 var $x_24 = text$2$1;
-                var x$16 = this.Ldev_sacode_flowrun_parse_Lexer__f_input;
-                var i$17 = i;
-                var this$119 = $n(x$16);
-                text$2$1 = ($x_24 + $cToS($charAt(this$119, i$17)));
+                var x$17 = this.Ldev_sacode_flowrun_parse_Lexer__f_input;
+                var i$18 = i;
+                var this$122 = $n(x$17);
+                text$2$1 = ($x_24 + $cToS($charAt(this$122, i$18)));
                 i = ((1 + i) | 0);
               } else {
                 break;
@@ -18811,37 +18828,37 @@ $c_Ldev_sacode_flowrun_parse_Lexer.prototype.lex__sci_List = (function() {
             }
             tokens.addOne__O__scm_ArrayBuffer(token);
           } else {
-            var x$17 = this.Ldev_sacode_flowrun_parse_Lexer__f_input;
-            var i$18 = i;
-            var this$125 = $n(x$17);
-            if (($charAt(this$125, i$18) === 34)) {
+            var x$18 = this.Ldev_sacode_flowrun_parse_Lexer__f_input;
+            var i$19 = i;
+            var this$128 = $n(x$18);
+            if (($charAt(this$128, i$19) === 34)) {
               i = ((1 + i) | 0);
               var text$3$1 = "";
               while (true) {
                 var $x_29 = i;
-                var this$126 = $n(this.Ldev_sacode_flowrun_parse_Lexer__f_input);
-                if (($x_29 < this$126.length)) {
-                  var x$18 = this.Ldev_sacode_flowrun_parse_Lexer__f_input;
-                  var i$19 = i;
-                  var this$129 = $n(x$18);
-                  var $x_28 = ($charAt(this$129, i$19) !== 34);
+                var this$129 = $n(this.Ldev_sacode_flowrun_parse_Lexer__f_input);
+                if (($x_29 < this$129.length)) {
+                  var x$19 = this.Ldev_sacode_flowrun_parse_Lexer__f_input;
+                  var i$20 = i;
+                  var this$132 = $n(x$19);
+                  var $x_28 = ($charAt(this$132, i$20) !== 34);
                 } else {
                   var $x_28 = false;
                 }
                 if ($x_28) {
                   var $x_27 = text$3$1;
-                  var x$19 = this.Ldev_sacode_flowrun_parse_Lexer__f_input;
-                  var i$20 = i;
-                  var this$132 = $n(x$19);
-                  text$3$1 = ($x_27 + $cToS($charAt(this$132, i$20)));
+                  var x$20 = this.Ldev_sacode_flowrun_parse_Lexer__f_input;
+                  var i$21 = i;
+                  var this$135 = $n(x$20);
+                  text$3$1 = ($x_27 + $cToS($charAt(this$135, i$21)));
                   i = ((1 + i) | 0);
                 } else {
                   break;
                 }
               }
               var $x_30 = i;
-              var this$133 = $n(this.Ldev_sacode_flowrun_parse_Lexer__f_input);
-              if (($x_30 === this$133.length)) {
+              var this$136 = $n(this.Ldev_sacode_flowrun_parse_Lexer__f_input);
+              if (($x_30 === this$136.length)) {
                 $p_Ldev_sacode_flowrun_parse_Lexer__error__T__I__E(this, "Unclosed string. Expected '\"'", i);
               } else {
                 var tpe$24 = $s_Ldev_sacode_flowrun_parse_Token$Type$__String__Ldev_sacode_flowrun_parse_Token$Type();
