@@ -5301,6 +5301,19 @@ function $m_Ldev_sacode_flowrun_edit_ColumnCuts$() {
   }
   return $n_Ldev_sacode_flowrun_edit_ColumnCuts$;
 }
+function $p_Ldev_sacode_flowrun_edit_CtxMenu__place__Lorg_scalajs_dom_HTMLElement__Lorg_scalajs_dom_MouseEvent__V($thiz, menu, event) {
+  menu.style.left = ($uD(event.pageX) + "px");
+  menu.style.top = ($uD(event.pageY) + "px");
+  menu.classList.add("active");
+  var r = menu.getBoundingClientRect();
+  var win = window;
+  if (((($uD(event.clientY) + $uD(r.height)) > $uD(win.innerHeight)) && (($uD(event.clientY) - $uD(r.height)) >= 0.0))) {
+    menu.style.top = (($uD(event.pageY) - $uD(r.height)) + "px");
+  }
+  if (((($uD(event.clientX) + $uD(r.width)) > $uD(win.innerWidth)) && (($uD(event.clientX) - $uD(r.width)) >= 0.0))) {
+    menu.style.left = (($uD(event.pageX) - $uD(r.width)) + "px");
+  }
+}
 function $p_Ldev_sacode_flowrun_edit_CtxMenu__setEdgeIds__T__Z($thiz, edgeId) {
   var this$1 = $n(edgeId);
   var parts = $f_T__split__T__I__AT(this$1, "@", 0);
@@ -5624,11 +5637,7 @@ $c_Ldev_sacode_flowrun_edit_CtxMenu.prototype.handleEdgeRightClick__Lorg_scalajs
   this.hideAllMenus__V();
   var canActivate = $p_Ldev_sacode_flowrun_edit_CtxMenu__setEdgeIds__T__Z(this, $as_T(n.id));
   if (canActivate) {
-    var x = $uD(event.pageX);
-    var y = $uD(event.pageY);
-    this.Ldev_sacode_flowrun_edit_CtxMenu__f_edgeContextMenu.style.left = (x + "px");
-    this.Ldev_sacode_flowrun_edit_CtxMenu__f_edgeContextMenu.style.top = (y + "px");
-    this.Ldev_sacode_flowrun_edit_CtxMenu__f_edgeContextMenu.classList.add("active");
+    $p_Ldev_sacode_flowrun_edit_CtxMenu__place__Lorg_scalajs_dom_HTMLElement__Lorg_scalajs_dom_MouseEvent__V(this, this.Ldev_sacode_flowrun_edit_CtxMenu__f_edgeContextMenu, event);
     this.Ldev_sacode_flowrun_edit_CtxMenu__f_pasteButton.disabled = false;
   }
 });
@@ -5647,11 +5656,7 @@ $c_Ldev_sacode_flowrun_edit_CtxMenu.prototype.handleNodeRightClick__Lorg_scalajs
       x0.disabled = ((!removing) && (!$m_Ldev_sacode_flowrun_formatgen_ColumnSplit$().canCut__T__T__Z($m_Ldev_sacode_flowrun_formatgen_ColumnSplit$().Ldev_sacode_flowrun_formatgen_ColumnSplit$__f_lastRawDot, nodeId)));
       x0.title = ($uZ(x0.disabled) ? "Non puoi dividere dentro cicli, rami o gruppi di dichiarazioni" : "");
     }
-    var x = $uD(event.pageX);
-    var y = $uD(event.pageY);
-    this.Ldev_sacode_flowrun_edit_CtxMenu__f_nodeContextMenu.style.left = (x + "px");
-    this.Ldev_sacode_flowrun_edit_CtxMenu__f_nodeContextMenu.style.top = (y + "px");
-    this.Ldev_sacode_flowrun_edit_CtxMenu__f_nodeContextMenu.classList.add("active");
+    $p_Ldev_sacode_flowrun_edit_CtxMenu__place__Lorg_scalajs_dom_HTMLElement__Lorg_scalajs_dom_MouseEvent__V(this, this.Ldev_sacode_flowrun_edit_CtxMenu__f_nodeContextMenu, event);
   }
 });
 $c_Ldev_sacode_flowrun_edit_CtxMenu.prototype.hideAllMenus__V = (function() {
@@ -9863,7 +9868,7 @@ $c_Ldev_sacode_flowrun_edit_VersionLabel.prototype.init__V = (function() {
   var this$1 = $n($m_s_Option$().apply__O__s_Option($n(this.Ldev_sacode_flowrun_edit_VersionLabel__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelector(".fr-versione-barra")));
   if ((!this$1.isEmpty__Z())) {
     var x0 = this$1.get__O();
-    x0.textContent = "1.3.12";
+    x0.textContent = "1.3.13";
     x0.title = "Versione dell'applicazione";
   }
 });
