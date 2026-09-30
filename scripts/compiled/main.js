@@ -7009,9 +7009,11 @@ function $c_Ldev_sacode_flowrun_edit_FlowchartPresenter(programModel, flowRunEle
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_flowrunChannel = flowrunChannel;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_diagramStyle = new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => $m_Ldev_sacode_flowrun_formatgen_DiagramStyle$().Ldev_sacode_flowrun_formatgen_DiagramStyle$__f_default));
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_exportFontScale = 1.0;
-  var $x_2 = d3.select($n(flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_drawArea);
+  var $x_4 = d3.select($n(flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_drawArea);
   var fields = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$ct_T2__O__O__(new $c_T2(), "zoom", true), $ct_T2__O__O__(new $c_T2(), "fit", true)]));
-  var $x_1 = $x_2.graphviz($m_sjs_js_special_package$().objectLiteral__sci_Seq__sjs_js_Object(fields));
+  var $x_3 = $x_4.graphviz($m_sjs_js_special_package$().objectLiteral__sci_Seq__sjs_js_Object(fields));
+  var $x_2 = $x_3.tweenPaths(false);
+  var $x_1 = $x_2.tweenShapes(false);
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_graphviz = $x_1;
   this.Ldev_sacode_flowrun_edit_FlowchartPresenter__f_graphviz.on("end", (function() {
     this.zoomSelection().on("dblclick.zoom", null);
@@ -9861,7 +9863,7 @@ $c_Ldev_sacode_flowrun_edit_VersionLabel.prototype.init__V = (function() {
   var this$1 = $n($m_s_Option$().apply__O__s_Option($n(this.Ldev_sacode_flowrun_edit_VersionLabel__f_flowRunElements).Ldev_sacode_flowrun_FlowRunElements__f_mountElem.querySelector(".fr-versione-barra")));
   if ((!this$1.isEmpty__Z())) {
     var x0 = this$1.get__O();
-    x0.textContent = "1.3.11";
+    x0.textContent = "1.3.12";
     x0.title = "Versione dell'applicazione";
   }
 });
