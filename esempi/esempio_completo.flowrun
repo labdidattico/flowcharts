@@ -1,11 +1,19 @@
 {
+  "config": {
+    "echoEnteredValue": false,
+    "lang": "java",
+    "showDebugVars": true,
+    "showFunctions": false,
+    "showGenCode": false,
+    "showIoBtns": true,
+    "useInputPrompt": false
+  },
   "functions": [],
-  "name": "Esempio completo - tutti i blocchi",
+  "id": "esempio_completo",
   "main": {
-    "rawId": "main",
-    "tpe": "Void",
     "name": "main",
     "parameters": [],
+    "rawId": "main",
     "statements": [
       {
         "@type": "Begin",
@@ -14,22 +22,22 @@
       {
         "@type": "Declare",
         "id": "dic_n",
-        "name": "n",
-        "tpe": "Integer",
         "initValue": "0",
         "lengthValue": -1,
         "lengthValue1": "5",
-        "lengthValue2": "5"
+        "lengthValue2": "5",
+        "name": "n",
+        "tpe": "Integer"
       },
       {
         "@type": "Declare",
         "id": "dic_somma",
-        "name": "somma",
-        "tpe": "Integer",
         "initValue": "0",
         "lengthValue": -1,
         "lengthValue1": "5",
-        "lengthValue2": "5"
+        "lengthValue2": "5",
+        "name": "somma",
+        "tpe": "Integer"
       },
       {
         "@type": "Input",
@@ -39,19 +47,7 @@
       },
       {
         "@type": "If",
-        "id": "se_positivo",
         "condition": "n > 0",
-        "trueBlock": {
-          "id": "ramo_vero",
-          "statements": [
-            {
-              "@type": "Output",
-              "id": "out_vero",
-              "value": "\"Inizio elaborazione\"",
-              "newline": true
-            }
-          ]
-        },
         "falseBlock": {
           "id": "ramo_falso",
           "statements": [
@@ -62,15 +58,22 @@
               "value": "1"
             }
           ]
+        },
+        "id": "se_positivo",
+        "trueBlock": {
+          "id": "ramo_vero",
+          "statements": [
+            {
+              "@type": "Output",
+              "id": "out_vero",
+              "newline": true,
+              "value": "\"Inizio elaborazione\""
+            }
+          ]
         }
       },
       {
         "@type": "ForLoop",
-        "id": "ciclo_for",
-        "varName": "i",
-        "start": "1",
-        "incr": "1",
-        "end": "n",
         "body": {
           "id": "corpo_for",
           "statements": [
@@ -83,16 +86,18 @@
             {
               "@type": "Output",
               "id": "out_for",
-              "value": "i",
-              "newline": true
+              "newline": true,
+              "value": "i"
             }
           ]
-        }
+        },
+        "condition": "i <= n",
+        "id": "ciclo_for",
+        "init": "i = 1",
+        "update": "i = i + 1"
       },
       {
         "@type": "While",
-        "id": "ciclo_while",
-        "condition": "somma > 10",
         "body": {
           "id": "corpo_while",
           "statements": [
@@ -103,12 +108,12 @@
               "value": "somma - 10"
             }
           ]
-        }
+        },
+        "condition": "somma > 10",
+        "id": "ciclo_while"
       },
       {
         "@type": "DoWhile",
-        "id": "ciclo_dowhile",
-        "condition": "somma < 3",
         "body": {
           "id": "corpo_dowhile",
           "statements": [
@@ -119,31 +124,25 @@
               "value": "somma + 1"
             }
           ]
-        }
+        },
+        "condition": "somma < 3",
+        "id": "ciclo_dowhile"
       },
       {
         "@type": "Output",
         "id": "out_fine",
-        "value": "somma",
-        "newline": true
+        "newline": true,
+        "value": "somma"
       },
       {
         "@type": "Return",
         "id": "fine",
         "maybeValue": null
       }
-    ]
+    ],
+    "tpe": "Void"
   },
-  "id": "esempio_completo",
-  "config": {
-    "showDebugVars": true,
-    "useInputPrompt": false,
-    "echoEnteredValue": false,
-    "showIoBtns": true,
-    "showFunctions": false,
-    "lang": "java",
-    "showGenCode": false
-  },
-  "version": "0.3",
-  "revision": 1
+  "name": "Esempio completo - tutti i blocchi",
+  "revision": 1,
+  "version": "0.3"
 }

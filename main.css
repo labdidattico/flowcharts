@@ -188,15 +188,13 @@ body {
     width: min(400px, 72vw); box-sizing: border-box;
 }
 
-/* ciclo for: variabile, poi "da ... a ..." sulla stessa riga, poi passo */
-.fr-stmt-popup:has(.fr-for-campi) { width: 260px; }
+/* ciclo for: tre righe come in AlgoBuild, etichetta a sinistra */
+.fr-stmt-popup:has(.fr-for-campi) { width: 300px; }
 .fr-stmt-popup .flowrun-stmt-inputs.fr-for-campi {
-    display: grid; grid-template-columns: auto 1fr auto 1fr; gap: 5px 8px; align-items: center;
+    display: grid; grid-template-columns: auto 1fr; gap: 5px 8px; align-items: center;
 }
 .fr-stmt-popup .fr-for-campi label { color: #555; text-align: right; }
 .fr-stmt-popup .fr-for-campi input.flowrun-input-text { width: 100%; min-width: 0; }
-.fr-stmt-popup .fr-for-campi input:nth-of-type(1),
-.fr-stmt-popup .fr-for-campi input:nth-of-type(4) { grid-column: span 3; }
 
 /* nome del progetto: etichetta, si cambia salvando */
 .flowrun-instance .fr-toolbar .flowrun-program-name {
